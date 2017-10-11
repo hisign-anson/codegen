@@ -8,8 +8,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * æ¨¡æ¿æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * Ä£°åÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class TemplateModel implements Serializable  {
@@ -20,44 +20,44 @@ public class TemplateModel implements Serializable  {
 	
 	
 	/**
-	 * @return è·å–æ¨¡æ¿åç§°
+	 * @return »ñÈ¡Ä£°åÃû³Æ
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * @param name è®¾ç½®æ¨¡æ¿åç§°
+	 * @param name ÉèÖÃÄ£°åÃû³Æ
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	/**
-	 * @return è·å–æ¨¡æ¿ç±»å‹
+	 * @return »ñÈ¡Ä£°åÀàĞÍ
 	 */
 	public InOutType getType() {
 		return type;
 	}
 	/**
-	 * @param type è®¾ç½®æ¨¡æ¿ç±»å‹
+	 * @param type ÉèÖÃÄ£°åÀàĞÍ
 	 */
 	public void setType(InOutType type) {
 		this.type = type;
 	}
 	/**
-	 * @return è·å–æ¨¡æ¿å†…å®¹æˆ–æ¨¡æ¿è·¯å¾„ã€‚å¦‚æœæ¨¡æ¿ç±»å‹ä¸ºtextï¼Œè¿”å›çš„æ˜¯å†…å®¹ï¼Œå¦åˆ™è¿”å›æ¨¡æ¿æ–‡ä»¶è·¯å¾„
+	 * @return »ñÈ¡Ä£°åÄÚÈİ»òÄ£°åÂ·¾¶¡£Èç¹ûÄ£°åÀàĞÍÎªtext£¬·µ»ØµÄÊÇÄÚÈİ£¬·ñÔò·µ»ØÄ£°åÎÄ¼şÂ·¾¶
 	 */
 	public String getTemplate() {
 		return template;
 	}
 	/**
-	 * @param template è®¾ç½®æ¨¡æ¿å†…å®¹æˆ–æ‰€åœ¨çš„æ–‡ä»¶è·¯å¾„ã€‚å¦‚æœæ¨¡æ¿ç±»å‹ä¸ºtextï¼Œåˆ™è®¾ç½®çš„æ˜¯å†…å®¹ï¼Œå¦åˆ™ä¸ºæ–‡ä»¶è·¯å¾„
+	 * @param template ÉèÖÃÄ£°åÄÚÈİ»òËùÔÚµÄÎÄ¼şÂ·¾¶¡£Èç¹ûÄ£°åÀàĞÍÎªtext£¬ÔòÉèÖÃµÄÊÇÄÚÈİ£¬·ñÔòÎªÎÄ¼şÂ·¾¶
 	 */
 	public void setTemplate(String template) {
 		this.template = template;
 	}
 	
 	/**
-	 * ä½¿ç”¨åºåˆ—åŒ–æ–¹å¼æ·±åº¦å…‹éš†æ¨¡æ¿å¯¹è±¡æ¨¡å‹
+	 * Ê¹ÓÃĞòÁĞ»¯·½Ê½Éî¶È¿ËÂ¡Ä£°å¶ÔÏóÄ£ĞÍ
 	 * @return
 	 * @throws IOException
 	 * @throws ClassNotFoundException

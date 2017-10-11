@@ -18,19 +18,19 @@ public class SampleBuildConfigHandler implements BuildConfigHandler, Serializabl
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
         String tableName = pbConfig.getTableName();
 
-        //è¿‡æ»¤æ‰tb_
+        //¹ıÂËµôtb_
         /*if (tableName.substring(0, 3).equalsIgnoreCase("tb_")) {
 			tableName = tableName.substring(3);
 		}*/
 
-        //ä»è¡¨åä¸­å–å¾—ç»„åï¼ˆåŒ…åï¼‰å’Œè®¾ç½®æ¨¡å—å
+        //´Ó±íÃûÖĞÈ¡µÃ×éÃû£¨°üÃû£©ºÍÉèÖÃÄ£¿éÃû
         if (StringUtils.isNotBlank(tableName)) {
             int splitorCount = StringUtils.countMatches(tableName, "_");
-            //å»æ‰ç¬¬ä¸€ä¸ªä¸‹åˆ’çº¿å‰é¢çš„åº”ç”¨å‰ç¼€
+            //È¥µôµÚÒ»¸öÏÂ»®ÏßÇ°ÃæµÄÓ¦ÓÃÇ°×º
             if (splitorCount >= 1) {
                 tableName = StringUtils.substringAfter(tableName, "_");
             }
-            //æŠŠè¡¨åä¸­ç¬¬ä¸€ä¸ªå’Œç¬¬ä¸‰ä¸ªä¸‹åˆ’çº¿ä¹‹é—´çš„å†…å®¹ä½œä¸ºç»„å
+            //°Ñ±íÃûÖĞµÚÒ»¸öºÍµÚÈı¸öÏÂ»®ÏßÖ®¼äµÄÄÚÈİ×÷Îª×éÃû
             if (tableName.contains("_")) {
                 String groupName = StringUtils.substringBefore(tableName, "_");
                 pbConfig.setGroupName(groupName);
@@ -39,21 +39,21 @@ public class SampleBuildConfigHandler implements BuildConfigHandler, Serializabl
             pbConfig.setModuleName(formatForCamel(tableName, "_"));
         }
 
-        //è¡¨æ ‡ç­¾æ ¼å¼åŒ–
+        //±í±êÇ©¸ñÊ½»¯
         String tableLabel = pbConfig.getTableLabel();
         if (StringUtils.isNotBlank(tableLabel)) {
             if (tableLabel.indexOf("|") > 0) {
                 tableLabel = StringUtils.substringBefore(tableLabel, "|");
             }
-            //å»æ‰åç¼€å­—ç¬¦â€œè¡¨â€åå†ä½œä¸ºè¡¨æ ‡ç­¾
-            tableLabel = StringUtils.removeEnd(tableLabel, "è¡¨");
+            //È¥µôºó×º×Ö·û¡°±í¡±ºóÔÙ×÷Îª±í±êÇ©
+            tableLabel = StringUtils.removeEnd(tableLabel, "±í");
             pbConfig.setTableLabel(tableLabel);
         }
     }
 
     public void afterParseDataModel(BuildConfig buildConfig) {
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
-        //è·å–è¾“å‡ºæ–‡ä»¶å¤¹
+        //»ñÈ¡Êä³öÎÄ¼ş¼Ğ
         String outDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_OUTPUTDIRECTORY);
         /*if (OSinfo.isWindows()) {
             outDir = "f:" + outDir;
@@ -75,7 +75,7 @@ public class SampleBuildConfigHandler implements BuildConfigHandler, Serializabl
     }
 
     /**
-     * ä¸‹åˆ’çº¿è½¬é©¼å³°å¼
+     * ÏÂ»®Ïß×ªÍÕ·åÊ½
      *
      * @param str
      * @param splitor

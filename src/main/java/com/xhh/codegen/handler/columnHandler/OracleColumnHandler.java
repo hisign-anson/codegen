@@ -4,14 +4,14 @@ import com.xhh.codegen.model.ColumnModel;
 import com.xhh.codegen.service.ColumnHandler;
 
 /**
- * æŠŠoracleå¸¦ä¸‹åˆ’çº¿çš„åˆ—åç§°è½¬æ¢ä¸ºé©¼å³°å¼åˆ—åç§°
+ * °Ñoracle´øÏÂ»®ÏßµÄÁĞÃû³Æ×ª»»ÎªÍÕ·åÊ½ÁĞÃû³Æ
  * @author tengen
  *
  */
 public class OracleColumnHandler implements ColumnHandler{
 
     public void handle(ColumnModel col) {
-        //Javaæ›¿æ¢æ‰ä¸‹åˆ’çº¿å¹¶è®©ç´§è·Ÿå®ƒåé¢çš„å­—æ¯å¤§å†™  
+        //JavaÌæ»»µôÏÂ»®Ïß²¢ÈÃ½ô¸úËüºóÃæµÄ×ÖÄ¸´óĞ´  
         StringBuffer sb = new StringBuffer();  
         sb.append(col.getColumnName().toLowerCase());  
         int count = sb.indexOf("_");  

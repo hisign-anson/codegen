@@ -3,30 +3,30 @@ package com.xhh.codegen.service;
 
 public interface BuildConfigHandler {
 	/**
-	 * åˆå§‹åŒ–é…ç½®æ—¶å¤„ç†
+	 * ³õÊ¼»¯ÅäÖÃÊ±´¦Àí
 	 * @param buildConfig
 	 */
 	void initConfig(BuildConfig buildConfig);
 	/**
-	 * è·å–æ•°æ®æ¨¡å‹å‰å¤„ç†
+	 * »ñÈ¡Êı¾İÄ£ĞÍÇ°´¦Àí
 	 * @param buildConfig
 	 */
 	void beforeParseDataModel(BuildConfig buildConfig);
 	
 	/**
-	 * è·å–æ•°æ®æ¨¡å‹åå¤„ç†
+	 * »ñÈ¡Êı¾İÄ£ĞÍºó´¦Àí
 	 * @param buildConfig
 	 */
 	void afterParseDataModel(BuildConfig buildConfig);
 	
 	/**
-	 * è·å–è¾“å‡ºæ¨¡å‹å‰å¤„ç†
+	 * »ñÈ¡Êä³öÄ£ĞÍÇ°´¦Àí
 	 * @param buildConfig
 	 */
 	void beforeParseOutputModel(BuildConfig buildConfig);
 	
 	/**
-	 * è·å–è¾“å‡ºæ¨¡å‹åå¤„ç†
+	 * »ñÈ¡Êä³öÄ£ĞÍºó´¦Àí
 	 * @param buildConfig
 	 */
 	void afterParseOutputModel(BuildConfig buildConfig);

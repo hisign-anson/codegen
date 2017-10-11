@@ -17,8 +17,8 @@ import com.xhh.codegen.service.DbProvider;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * é’ˆå¯¹Oracleçš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…
- * @author é»„å¤©æ”¿
+ * Õë¶ÔOracleµÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+ * @author »ÆÌìÕş
  *
  */
 public class OracleProvider extends DbProvider {
@@ -33,7 +33,7 @@ public class OracleProvider extends DbProvider {
 	}
 	
 	/**
-	 * ç»Ÿä¸€è®¾ç½®å¤§å†™æ ¼å¼çš„è¡¨åæ¨¡å¼
+	 * Í³Ò»ÉèÖÃ´óĞ´¸ñÊ½µÄ±íÃûÄ£Ê½
 	 */
 	public void setTableNamePatterns(String tableNamePatterns) {
 		if(StringUtils.isNotBlank(tableNamePatterns)){
@@ -93,21 +93,21 @@ public class OracleProvider extends DbProvider {
 
 	@Override
 	protected List<PrimaryKeyModel> getPrimaryKeys(String tableName) {
-		//oracleåœ¨æ­¤æ–¹æ³•è°ƒç”¨éœ€è¦å¤§å†™è¡¨å
+		//oracleÔÚ´Ë·½·¨µ÷ÓÃĞèÒª´óĞ´±íÃû
 		tableName = StringUtils.upperCase(tableName);
 		return super.getPrimaryKeys(tableName);
 	}
 
 	@Override
 	protected List<ForeignKeyModel> getImportedKeys(String tableName) {
-		//oracleåœ¨æ­¤æ–¹æ³•è°ƒç”¨éœ€è¦å¤§å†™è¡¨å
+		//oracleÔÚ´Ë·½·¨µ÷ÓÃĞèÒª´óĞ´±íÃû
 		tableName = StringUtils.upperCase(tableName);
 		return super.getImportedKeys(tableName);
 	}
 
 	@Override
 	protected List<ForeignKeyModel> getExportedKeys(String tableName) {
-		//oracleåœ¨æ­¤æ–¹æ³•è°ƒç”¨éœ€è¦å¤§å†™è¡¨å
+		//oracleÔÚ´Ë·½·¨µ÷ÓÃĞèÒª´óĞ´±íÃû
 		tableName = StringUtils.upperCase(tableName);
 		return super.getExportedKeys(tableName);
 	}

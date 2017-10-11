@@ -73,6 +73,10 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<encoding>gbk</encoding>
+					<compilerArguments>
+						<bootclasspath>${JAVA_HOME}/jre/lib/rt.jar</bootclasspath>
+					</compilerArguments>
 				</configuration>
 			</plugin>
 			<plugin>

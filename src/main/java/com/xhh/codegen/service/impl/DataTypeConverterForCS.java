@@ -8,8 +8,8 @@ import com.xhh.codegen.model.ColumnModel;
 import com.xhh.codegen.service.ColumnHandler;
 
 /**
- * é’ˆå¯¹C#ç¼–ç¨‹ç¯å¢ƒçš„æ•°æ®ç±»å‹è½¬æ¢å™¨
- * @author é»„å¤©æ”¿
+ * Õë¶ÔC#±à³Ì»·¾³µÄÊı¾İÀàĞÍ×ª»»Æ÷
+ * @author »ÆÌìÕş
  *
  */
 @SuppressWarnings("serial")
@@ -21,7 +21,7 @@ public class DataTypeConverterForCS implements ColumnHandler,Serializable {
 		String className = typeName;
 		String simpleClassName = typeName;
 		
-		//æ ¹æ®javaTypeç¡®å®šC#ç¼–ç¨‹è¯­è¨€ä¸­çš„æ•°æ®ç±»å‹
+		//¸ù¾İjavaTypeÈ·¶¨C#±à³ÌÓïÑÔÖĞµÄÊı¾İÀàĞÍ
 		if("java.math.BigDecimal".equals(javaType) ){
 			if(columnModel.getScale()>0){
 				className = "System.Decimal";
@@ -55,7 +55,7 @@ public class DataTypeConverterForCS implements ColumnHandler,Serializable {
 			simpleClassName = "string";
         }
 		
-		//æ ¹æ®å…·ä½“æ•°æ®åº“æ–¹è¨€ä¸­çš„æ•°æ®ç±»å‹(sqlTypeName)ç¡®å®šC#ç¼–ç¨‹è¯­è¨€ä¸­çš„æ•°æ®ç±»å‹
+		//¸ù¾İ¾ßÌåÊı¾İ¿â·½ÑÔÖĞµÄÊı¾İÀàĞÍ(sqlTypeName)È·¶¨C#±à³ÌÓïÑÔÖĞµÄÊı¾İÀàĞÍ
 		if("int".equalsIgnoreCase(typeName)){
 			className = "System.Int32";
 			simpleClassName = "int";
@@ -73,16 +73,16 @@ public class DataTypeConverterForCS implements ColumnHandler,Serializable {
 			simpleClassName = "short";
 		}
 		
-		//æŠŠfloatç»Ÿä¸€ä¸ºdecimal
+		//°ÑfloatÍ³Ò»Îªdecimal
 		if("float".equals(simpleClassName)){
 			className = "System.Decimal";
 			simpleClassName = "decimal";
 		}
-		//ç”¨å…·ä½“çš„ç¼–ç¨‹è¯­è¨€æ•°æ®ç±»å‹è¦†ç›–é»˜è®¤çš„javaç±»å‹ã€‚
+		//ÓÃ¾ßÌåµÄ±à³ÌÓïÑÔÊı¾İÀàĞÍ¸²¸ÇÄ¬ÈÏµÄjavaÀàĞÍ¡£
 		columnModel.setColumnClassName(className);
-		//è®¾ç½®å…·ä½“ç¼–ç¨‹è¯­è¨€çš„æ•°æ®ç±»å‹æ‰€åœ¨çš„åŒ…ï¼Œåœ¨C#é‡Œä¹Ÿå«å‘½åç©ºé—´ã€‚å¦‚System.Stringçš„å‘½åç©ºé—´ä¸ºSystem
+		//ÉèÖÃ¾ßÌå±à³ÌÓïÑÔµÄÊı¾İÀàĞÍËùÔÚµÄ°ü£¬ÔÚC#ÀïÒ²½ĞÃüÃû¿Õ¼ä¡£ÈçSystem.StringµÄÃüÃû¿Õ¼äÎªSystem
 		columnModel.setColumnClassPackage(StringUtils.substringBeforeLast(className, "."));
-		//è®¾ç½®å…·ä½“ç¼–ç¨‹è¯­è¨€çš„æ•°æ®ç±»å‹çš„ç®€å•ç±»å
+		//ÉèÖÃ¾ßÌå±à³ÌÓïÑÔµÄÊı¾İÀàĞÍµÄ¼òµ¥ÀàÃû
 		columnModel.setColumnSimpleClassName(simpleClassName);
 	}
 

@@ -6,7 +6,7 @@ import com.xhh.codegen.model.ColumnModel;
 import com.xhh.codegen.service.ColumnHandler;
 
 /**
- * æŠŠoracleå¸¦ä¸‹åˆ’çº¿çš„åˆ—åç§°è½¬æ¢ä¸ºé©¼å³°å¼åˆ—åç§°
+ * °Ñoracle´øÏÂ»®ÏßµÄÁĞÃû³Æ×ª»»ÎªÍÕ·åÊ½ÁĞÃû³Æ
  * @author tengen
  *
  */
@@ -14,7 +14,7 @@ import com.xhh.codegen.service.ColumnHandler;
 public class CamelColumnHandler implements ColumnHandler,Serializable{
 
 	public void handle(ColumnModel col) {
-		//ä¸‹åˆ’çº¿è½¬é©¼å³°å¼
+		//ÏÂ»®Ïß×ªÍÕ·åÊ½
         StringBuffer sb = new StringBuffer();  
         sb.append(col.getColumnName().toLowerCase());  
         int count = sb.indexOf("_");  
@@ -29,7 +29,7 @@ public class CamelColumnHandler implements ColumnHandler,Serializable{
         }
         String ss = sb.toString().replaceAll("_","");
 		col.setColumnName(ss);
-		//SMALLINTè½¬Short
+		//SMALLINT×ªShort
 		if ("SMALLINT".equalsIgnoreCase(col.getColumnTypeName())) {
 			col.setColumnClassName("java.lang.Short");
 			col.setColumnSimpleClassName("Short");

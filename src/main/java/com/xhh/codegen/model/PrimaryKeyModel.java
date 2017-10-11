@@ -15,7 +15,7 @@ public class PrimaryKeyModel implements Serializable{
 	private String columnName;
 	private short keySeq;
 	private String pkName;
-	
+
 	/**
 	 * @return 取得表目录(一般为数据库名，可能为空)
 	 */
@@ -39,7 +39,7 @@ public class PrimaryKeyModel implements Serializable{
 	 */
 	public void setTableSchem(String tableSchem) {
 		this.tableSchem = tableSchem;
-	}	
+	}
 	/**
 	 * @return 取得提供其主键信息的表名
 	 */
@@ -109,7 +109,7 @@ public class PrimaryKeyModel implements Serializable{
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
+
+
+
 }

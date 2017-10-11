@@ -9,8 +9,8 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
 /**
- * ä»£ç ç”Ÿæˆå™¨DTDé…ç½®æ–‡ä»¶æ£€æŸ¥å™¨
- * @author é»„å¤©æ”¿
+ * ´úÂëÉú³ÉÆ÷DTDÅäÖÃÎÄ¼ş¼ì²éÆ÷
+ * @author »ÆÌìÕş
  *
  */
 public class CodegenDtdResolver implements EntityResolver {

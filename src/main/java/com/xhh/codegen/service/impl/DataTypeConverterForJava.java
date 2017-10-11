@@ -8,8 +8,8 @@ import com.xhh.codegen.model.ColumnModel;
 import com.xhh.codegen.service.ColumnHandler;
 
 /**
- * é’ˆå¯¹javaç¼–ç¨‹ç¯å¢ƒçš„æ•°æ®ç±»å‹è½¬æ¢å™¨
- * @author é»„å¤©æ”¿
+ * Õë¶Ôjava±à³Ì»·¾³µÄÊı¾İÀàĞÍ×ª»»Æ÷
+ * @author »ÆÌìÕş
  *
  */
 @SuppressWarnings("serial")
@@ -34,7 +34,7 @@ public class DataTypeConverterForJava implements ColumnHandler,Serializable {
 //        	type="java.lang.String";
 //        }
 		
-		//æ ¹æ®å…·ä½“æ•°æ®åº“æ–¹è¨€ä¸­çš„æ•°æ®ç±»å‹ç¡®å®šjavaç¼–ç¨‹è¯­è¨€ä¸­çš„æ•°æ®ç±»å‹
+		//¸ù¾İ¾ßÌåÊı¾İ¿â·½ÑÔÖĞµÄÊı¾İÀàĞÍÈ·¶¨java±à³ÌÓïÑÔÖĞµÄÊı¾İÀàĞÍ
 		String typeName = columnModel.getColumnTypeName();
 		if("decimal".equalsIgnoreCase(typeName)
 			||"money".equalsIgnoreCase(typeName)
@@ -53,8 +53,8 @@ public class DataTypeConverterForJava implements ColumnHandler,Serializable {
 		}
 				
 		columnModel.setColumnClassName(javaType);
-		columnModel.setColumnSimpleClassName(StringUtils.substringAfterLast(javaType, "."));//ä»å…¨é™å®šåä¸­æˆªå–ç®€å•ç±»å
-		//è®¾ç½®å…·ä½“ç¼–ç¨‹è¯­è¨€çš„æ•°æ®ç±»å‹æ‰€åœ¨çš„åŒ…ï¼Œå¦‚java.lang.Stringçš„å‘½åç©ºé—´ä¸ºjava.lang
+		columnModel.setColumnSimpleClassName(StringUtils.substringAfterLast(javaType, "."));//´ÓÈ«ÏŞ¶¨ÃûÖĞ½ØÈ¡¼òµ¥ÀàÃû
+		//ÉèÖÃ¾ßÌå±à³ÌÓïÑÔµÄÊı¾İÀàĞÍËùÔÚµÄ°ü£¬Èçjava.lang.StringµÄÃüÃû¿Õ¼äÎªjava.lang
 		columnModel.setColumnClassPackage(StringUtils.substringBeforeLast(javaType, "."));
 	}
 

@@ -23,8 +23,8 @@ import com.xhh.codegen.utils.IgnoreCaseMap;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * æ•°æ®åº“ä¿¡æ¯æä¾›è€…ã€‚è¯¥æŠ½è±¡ç±»åŸºäºJDBCå®ç°äº†ä¸æ•°æ®åº“æ–¹è¨€æ— å…³çš„æ–¹æ³•ï¼ŒæŠŠä¸æ•°æ®åº“æ–¹è¨€ç›¸å…³çš„æ“ä½œåˆ†æ´¾ç»™å­ç±»å®ç°ã€‚
- * @author é»„å¤©æ”¿ 
+ * Êı¾İ¿âĞÅÏ¢Ìá¹©Õß¡£¸Ã³éÏóÀà»ùÓÚJDBCÊµÏÖÁËÓëÊı¾İ¿â·½ÑÔÎŞ¹ØµÄ·½·¨£¬°ÑÓëÊı¾İ¿â·½ÑÔÏà¹ØµÄ²Ù×÷·ÖÅÉ¸ø×ÓÀàÊµÏÖ¡£
+ * @author »ÆÌìÕş 
  */
 public abstract class DbProvider implements Serializable{
 	private static final long serialVersionUID = -7312979095006311626L;
@@ -39,13 +39,13 @@ public abstract class DbProvider implements Serializable{
 	private List<String> tableNames;
 	private Map<String, TableMetaData> tableMetaDatas;
 	/**
-	 * ä»è¡¨ï¼ˆåˆ—ï¼‰æ³¨é‡Šä¸­æå–è¡¨ï¼ˆåˆ—ï¼‰æ ‡ç­¾æ‰€ç”¨çš„åˆ†éš”ç¬¦ï¼Œé»˜è®¤å€¼ä¸ºä¸€ä¸ªç©ºæ ¼ç¬¦
+	 * ´Ó±í£¨ÁĞ£©×¢ÊÍÖĞÌáÈ¡±í£¨ÁĞ£©±êÇ©ËùÓÃµÄ·Ö¸ô·û£¬Ä¬ÈÏÖµÎªÒ»¸ö¿Õ¸ñ·û
 	 */
 	private String splitorForLabelFromComment = " ";
 
 	/**
-	 * æ ¹æ®æ•°æ®åº“è¿æ¥æ„é€ ä¸€ä¸ªæ•°æ®åº“ä¿¡æ¯æä¾›è€…
-	 * @param conn æ•°æ®åº“è¿æ¥
+	 * ¸ù¾İÊı¾İ¿âÁ¬½Ó¹¹ÔìÒ»¸öÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+	 * @param conn Êı¾İ¿âÁ¬½Ó
 	 */
 	public DbProvider(Connection conn) {
 		super();
@@ -53,8 +53,8 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * æ ¹æ®jdbcé…ç½®æ¨¡å‹æ„é€ ä¸€ä¸ªæ•°æ®åº“ä¿¡æ¯æä¾›è€…
-	 * @param jdbcConfig jdbcé…ç½®æ¨¡å‹
+	 * ¸ù¾İjdbcÅäÖÃÄ£ĞÍ¹¹ÔìÒ»¸öÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+	 * @param jdbcConfig jdbcÅäÖÃÄ£ĞÍ
 	 */
 	public DbProvider(JdbcConfig jdbcConfig) {
 		super();
@@ -62,13 +62,13 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * @return è·å–ä¸€ä¸ªæ•°æ®åº“è¿æ¥
+	 * @return »ñÈ¡Ò»¸öÊı¾İ¿âÁ¬½Ó
 	 */
 	protected Connection getConn() {
 		if(conn==null){
 			if(jdbcConfig==null){
 				try {
-					throw new Exception(this.getClass().getName()+"jdbcConfigå’Œconnä¸èƒ½åŒæ—¶ä¸ºnull");
+					throw new Exception(this.getClass().getName()+"jdbcConfigºÍconn²»ÄÜÍ¬Ê±Îªnull");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,63 +79,63 @@ public abstract class DbProvider implements Serializable{
 	}
 
 	/**
-	 * @return è·å–å½“å‰çš„æ•°æ®åº“ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return »ñÈ¡µ±Ç°µÄÊı¾İ¿âÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getCatalog() {
 		return catalog;
 	}
 
 	/**
-	 * @param catalog è®¾ç½®å½“å‰çš„æ•°æ®åº“ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param catalog ÉèÖÃµ±Ç°µÄÊı¾İ¿âÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setCatalog(String catalog) {
 		this.catalog = catalog;
 	}
 
 	/**
-	 * @return è·å–å½“å‰çš„æ•°æ®åº“å±ä¸»(ä¸€èˆ¬ä¸ºç”¨æˆ·åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return »ñÈ¡µ±Ç°µÄÊı¾İ¿âÊôÖ÷(Ò»°ãÎªÓÃ»§Ãû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getSchema() {
 		return schema;
 	}
 
 	/**
-	 * @param schema è®¾ç½®å½“å‰çš„æ•°æ®åº“å±ä¸»(ä¸€èˆ¬ä¸ºç”¨æˆ·åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param schema ÉèÖÃµ±Ç°µÄÊı¾İ¿âÊôÖ÷(Ò»°ãÎªÓÃ»§Ãû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setSchema(String schema) {
 		this.schema = schema;
 	}
 	
 	/**
-	 * @return è·å–è¡¨åæ¨¡å¼ï¼Œæ”¯æŒå¤šä¸ªè¡¨åæ¨¡å¼ï¼Œä»¥è‹±æ–‡é€—å·åˆ†éš”
+	 * @return »ñÈ¡±íÃûÄ£Ê½£¬Ö§³Ö¶à¸ö±íÃûÄ£Ê½£¬ÒÔÓ¢ÎÄ¶ººÅ·Ö¸ô
 	 */
 	public String getTableNamePatterns() {
 		return tableNamePatterns;
 	}
 
 	/**
-	 * @param tableNamePatterns è®¾ç½®è¡¨åæ¨¡å¼
+	 * @param tableNamePatterns ÉèÖÃ±íÃûÄ£Ê½
 	 */
 	public void setTableNamePatterns(String tableNamePatterns) {
 		this.tableNamePatterns = tableNamePatterns;
 	}
 
 	/**
-	 * @return å–å¾—ä¸€ç»„åˆ—æ¨¡å‹å¤„ç†å™¨
+	 * @return È¡µÃÒ»×éÁĞÄ£ĞÍ´¦ÀíÆ÷
 	 */
 	public List<ColumnHandler> getColumnHandlers() {
 		return columnHandlers;
 	}
 
 	/**
-	 * @param columnHandlers è®¾ç½®ä¸€ç»„åˆ—æ¨¡å‹å¤„ç†å™¨
+	 * @param columnHandlers ÉèÖÃÒ»×éÁĞÄ£ĞÍ´¦ÀíÆ÷
 	 */
 	public void setColumnHandlers(List<ColumnHandler> columnHandlers) {
 		this.columnHandlers = columnHandlers;
 	}
 	
 	/**
-	 * è·å–åœ¨catalogå’ŒschemaèŒƒå›´å†…çš„æ‰€æœ‰è¡¨åç§°ã€‚
+	 * »ñÈ¡ÔÚcatalogºÍschema·¶Î§ÄÚµÄËùÓĞ±íÃû³Æ¡£
 	 * @return
 	 */
 	public List<String> getTableNames(){
@@ -168,7 +168,7 @@ public abstract class DbProvider implements Serializable{
 		return tableNames;
 	}
 	/**
-	 * å–å¾—è¡¨çš„å…ƒæ•°æ®
+	 * È¡µÃ±íµÄÔªÊı¾İ
 	 * @return
 	 */
 	public Map<String, TableMetaData> getTableMetaData(){
@@ -190,8 +190,8 @@ public abstract class DbProvider implements Serializable{
 	}
 
 	/**
-	 * å–å¾—è¡¨çš„å…ƒæ•°æ®
-	 * @param tableNamePattern è¡¨åç§°åŒ¹é…å­—ç¬¦ä¸²
+	 * È¡µÃ±íµÄÔªÊı¾İ
+	 * @param tableNamePattern ±íÃû³ÆÆ¥Åä×Ö·û´®
 	 * @return
 	 */
 	private Map<String, TableMetaData> getTableMetaData(String tableNamePattern){
@@ -249,7 +249,7 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * æ¸…ç†è¡¨çš„å…ƒæ•°æ®ç¼“å­˜
+	 * ÇåÀí±íµÄÔªÊı¾İ»º´æ
 	 */
 	public void clearTableMetaDataCache(){
 		if(tableMetaDatas!=null){
@@ -258,13 +258,13 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * å–å¾—æ‰€æœ‰è¡¨çš„è¡¨æ³¨é‡Šï¼Œä¸åŒçš„æ•°æ®åº“æ–¹è¨€æœ‰ä¸åŒçš„å®ç°æ–¹å¼ã€‚
+	 * È¡µÃËùÓĞ±íµÄ±í×¢ÊÍ£¬²»Í¬µÄÊı¾İ¿â·½ÑÔÓĞ²»Í¬µÄÊµÏÖ·½Ê½¡£
 	 * @return
 	 */
 	protected abstract Map<String,String> doGetTableComments();
 	
 	/**
-	 * ä¸€æ¬¡æ€§è·å–æ‰€æœ‰è¡¨çš„è¡¨æ³¨é‡Šï¼Œä¸åŒçš„æ•°æ®åº“æ–¹è¨€æœ‰ä¸åŒçš„å®ç°æ–¹å¼ã€‚
+	 * Ò»´ÎĞÔ»ñÈ¡ËùÓĞ±íµÄ±í×¢ÊÍ£¬²»Í¬µÄÊı¾İ¿â·½ÑÔÓĞ²»Í¬µÄÊµÏÖ·½Ê½¡£
 	 * @return
 	 */
 	public Map<String,String> getTableComments(){
@@ -275,7 +275,7 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * è·å–æŒ‡å®šè¡¨çš„æ‰€æœ‰çš„åˆ—åç§°
+	 * »ñÈ¡Ö¸¶¨±íµÄËùÓĞµÄÁĞÃû³Æ
 	 * @return
 	 */
 	public List<String> getColumnNames(String tableName){
@@ -299,13 +299,13 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * è·å–æŒ‡å®šè¡¨æ‰€æœ‰åˆ—æ³¨é‡Šã€‚è¿”å›çš„é›†åˆçš„å…ƒç´ æ ¼å¼ä¸ºï¼šåˆ—å(COLUMN_NAME)å’Œæ³¨é‡Š(COMMENTS)ã€‚
+	 * »ñÈ¡Ö¸¶¨±íËùÓĞÁĞ×¢ÊÍ¡£·µ»ØµÄ¼¯ºÏµÄÔªËØ¸ñÊ½Îª£ºÁĞÃû(COLUMN_NAME)ºÍ×¢ÊÍ(COMMENTS)¡£
 	 * @return
 	 */
 	protected abstract Map<String, String> doGetColumnComments(String tableName);
 	
 	/**
-	 * ä¸€æ¬¡æ€§è·å–æŒ‡å®šè¡¨çš„æ‰€æœ‰åˆ—æ³¨é‡Šã€‚è¿”å›çš„é›†åˆçš„å…ƒç´ æ ¼å¼ä¸ºï¼šåˆ—å(COLUMN_NAME)å’Œæ³¨é‡Š(COMMENTS)ã€‚
+	 * Ò»´ÎĞÔ»ñÈ¡Ö¸¶¨±íµÄËùÓĞÁĞ×¢ÊÍ¡£·µ»ØµÄ¼¯ºÏµÄÔªËØ¸ñÊ½Îª£ºÁĞÃû(COLUMN_NAME)ºÍ×¢ÊÍ(COMMENTS)¡£
 	 * @return 
 	 */
 	protected Map<String, String> getColumnComments(String tableName){
@@ -321,8 +321,8 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * è·å–æŒ‡å®šè¡¨çš„ä¸»é”®æ¨¡å‹é›†åˆ
-	 * @param tableName è¡¨åç§°
+	 * »ñÈ¡Ö¸¶¨±íµÄÖ÷¼üÄ£ĞÍ¼¯ºÏ
+	 * @param tableName ±íÃû³Æ
 	 * @return
 	 */
 	protected List<PrimaryKeyModel> getPrimaryKeys(String tableName){
@@ -350,8 +350,8 @@ public abstract class DbProvider implements Serializable{
 		return pkModelList;
 	}
 	/**
-	 * è·å–æŒ‡å®šè¡¨çš„å¤–é”®ï¼ˆå¼•å…¥ï¼‰æ¨¡å‹é›†åˆ
-	 * @param tableName è¡¨åç§°
+	 * »ñÈ¡Ö¸¶¨±íµÄÍâ¼ü£¨ÒıÈë£©Ä£ĞÍ¼¯ºÏ
+	 * @param tableName ±íÃû³Æ
 	 * @return
 	 */
 	protected List<ForeignKeyModel> getImportedKeys(String tableName){
@@ -387,8 +387,8 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * è·å–æŒ‡å®šè¡¨çš„å¤–é”®ï¼ˆå¯¼å‡ºï¼‰æ¨¡å‹é›†åˆ
-	 * @param tableName è¡¨åç§°
+	 * »ñÈ¡Ö¸¶¨±íµÄÍâ¼ü£¨µ¼³ö£©Ä£ĞÍ¼¯ºÏ
+	 * @param tableName ±íÃû³Æ
 	 * @return
 	 */
 	protected List<ForeignKeyModel> getExportedKeys(String tableName){
@@ -424,17 +424,17 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * æ ¹æ®è¡¨åè·å–è¡¨æ³¨é‡Šï¼Œå¦‚æœæœªå–å¾—æ³¨é‡Šï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²
-	 * @param tableName è¡¨åç§°
+	 * ¸ù¾İ±íÃû»ñÈ¡±í×¢ÊÍ£¬Èç¹ûÎ´È¡µÃ×¢ÊÍ£¬Ôò·µ»Ø¿Õ×Ö·û´®
+	 * @param tableName ±íÃû³Æ
 	 * @return
 	 */
 	public String getTableComment(String tableName){
 		return getTableComment(tableName,"");
 	}
 	/**
-	 * æ ¹æ®è¡¨åè·å–è¡¨æ³¨é‡Šï¼Œå¦‚æœæœªå–å¾—æ³¨é‡Šï¼Œåˆ™è¿”å›æŒ‡å®šçš„é»˜è®¤å€¼
-	 * @param tableName è¡¨åç§°
-	 * @param defaultValue æŒ‡å®šçš„é»˜è®¤è¡¨æ³¨é‡Š
+	 * ¸ù¾İ±íÃû»ñÈ¡±í×¢ÊÍ£¬Èç¹ûÎ´È¡µÃ×¢ÊÍ£¬Ôò·µ»ØÖ¸¶¨µÄÄ¬ÈÏÖµ
+	 * @param tableName ±íÃû³Æ
+	 * @param defaultValue Ö¸¶¨µÄÄ¬ÈÏ±í×¢ÊÍ
 	 * @return
 	 */
 	public String getTableComment(String tableName, String defaultValue){
@@ -443,38 +443,38 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * @return ä»è¡¨ï¼ˆåˆ—ï¼‰æ³¨é‡Šä¸­æå–è¡¨ï¼ˆåˆ—ï¼‰æ ‡ç­¾æ‰€ç”¨çš„åˆ†éš”ç¬¦ï¼Œé»˜è®¤å€¼ä¸ºä¸€ä¸ªç©ºæ ¼ç¬¦
+	 * @return ´Ó±í£¨ÁĞ£©×¢ÊÍÖĞÌáÈ¡±í£¨ÁĞ£©±êÇ©ËùÓÃµÄ·Ö¸ô·û£¬Ä¬ÈÏÖµÎªÒ»¸ö¿Õ¸ñ·û
 	 */
 	public String getSplitorForLabelFromComment() {
 		return splitorForLabelFromComment;
 	}
 
 	/**
-	 * @param splitorForLabelFromComment è®¾ç½®ä»è¡¨ï¼ˆåˆ—ï¼‰æ³¨é‡Šä¸­æå–è¡¨ï¼ˆåˆ—ï¼‰æ ‡ç­¾æ‰€ç”¨çš„åˆ†éš”ç¬¦ï¼Œé»˜è®¤å€¼ä¸ºä¸€ä¸ªç©ºæ ¼ç¬¦
+	 * @param splitorForLabelFromComment ÉèÖÃ´Ó±í£¨ÁĞ£©×¢ÊÍÖĞÌáÈ¡±í£¨ÁĞ£©±êÇ©ËùÓÃµÄ·Ö¸ô·û£¬Ä¬ÈÏÖµÎªÒ»¸ö¿Õ¸ñ·û
 	 */
 	public void setSplitorForLabelFromComment(String splitorForLabelFromComment) {
 		this.splitorForLabelFromComment = splitorForLabelFromComment;
 	}
 
 	/**
-	 * ä»è¡¨æ³¨é‡Šä¸­ æå–è¡¨çš„æ ‡ç­¾åï¼Œå¦‚æœæœªèƒ½æˆåŠŸè·å–ï¼Œåˆ™è¿”å›æŒ‡å®šçš„è¡¨æ³¨é‡Šã€‚
-	 * <br>è¡¨æ³¨é‡Šçº¦å®šï¼šè¡¨çš„æ ‡ç­¾å + åˆ†éš”ç¬¦  + è¡¨çš„å¤‡æ³¨ä¿¡æ¯ã€‚
-	 * <br>è‹¥splitorForLabelFromCommentå±æ€§ä¸ºç©ºå€¼ï¼Œåˆ™è¿”å›æ•´ä¸ªè¡¨æ³¨é‡Š
-	 * @param tabComment æŒ‡å®šçš„è¡¨æ³¨é‡Š
+	 * ´Ó±í×¢ÊÍÖĞ ÌáÈ¡±íµÄ±êÇ©Ãû£¬Èç¹ûÎ´ÄÜ³É¹¦»ñÈ¡£¬Ôò·µ»ØÖ¸¶¨µÄ±í×¢ÊÍ¡£
+	 * <br>±í×¢ÊÍÔ¼¶¨£º±íµÄ±êÇ©Ãû + ·Ö¸ô·û  + ±íµÄ±¸×¢ĞÅÏ¢¡£
+	 * <br>ÈôsplitorForLabelFromCommentÊôĞÔÎª¿ÕÖµ£¬Ôò·µ»ØÕû¸ö±í×¢ÊÍ
+	 * @param tabComment Ö¸¶¨µÄ±í×¢ÊÍ
 	 * @return
 	 */
 	public String getTableLabelFromComment(String tabComment){
 		String label = tabComment;
 		if(StringUtils.isNotBlank(splitorForLabelFromComment)){
-			label = StringUtils.substringBefore(tabComment, splitorForLabelFromComment);//è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ï¼ˆç©ºæ ¼ï¼‰ä¹‹å‰çš„æ‰€æœ‰å­—ç¬¦
+			label = StringUtils.substringBefore(tabComment, splitorForLabelFromComment);//·µ»ØÖ¸¶¨×Ö·û´®£¨¿Õ¸ñ£©Ö®Ç°µÄËùÓĞ×Ö·û
 		}	
 		return StringUtils.defaultString(label);
 	}
 	/**
-	 * è¿”å›æŒ‡å®šè¡¨æŒ‡å®šåˆ—çš„æ³¨é‡Šï¼Œå¦‚æœæœªå–å¾—æ³¨é‡Šï¼Œåˆ™è¿”å›æŒ‡å®šçš„åˆ—åç§°ã€‚
-	 * è¯¥æ“ä½œä¼šæŠŠåˆ—æ³¨é‡Šé‡Œçš„æ‰€æœ‰æ¢è¡Œç¬¦å·å’Œå›è½¦ç¬¦å·ç»Ÿä¸€æ›¿æ¢æˆç©ºæ ¼ç¬¦å·
-	 * @param tableName è¡¨å
-	 * @param columnName åˆ—å
+	 * ·µ»ØÖ¸¶¨±íÖ¸¶¨ÁĞµÄ×¢ÊÍ£¬Èç¹ûÎ´È¡µÃ×¢ÊÍ£¬Ôò·µ»ØÖ¸¶¨µÄÁĞÃû³Æ¡£
+	 * ¸Ã²Ù×÷»á°ÑÁĞ×¢ÊÍÀïµÄËùÓĞ»»ĞĞ·ûºÅºÍ»Ø³µ·ûºÅÍ³Ò»Ìæ»»³É¿Õ¸ñ·ûºÅ
+	 * @param tableName ±íÃû
+	 * @param columnName ÁĞÃû
 	 * @return
 	 */
 	public String getColumnComment(String tableName, String columnName){
@@ -482,41 +482,41 @@ public abstract class DbProvider implements Serializable{
 		Map<String,String> ccmap = getColumnComments(tableName);
 		if(ccmap!=null){
 			comment = StringUtils.defaultString(ccmap.get(columnName),columnName)
-						.replace("\n", " ").replace("\r", " "); //æŠŠæ¢è¡Œç¬¦å’Œå›è½¦ç¬¦ç»Ÿä¸€æ›¿æ¢æˆç©ºæ ¼
+						.replace("\n", " ").replace("\r", " "); //°Ñ»»ĞĞ·ûºÍ»Ø³µ·ûÍ³Ò»Ìæ»»³É¿Õ¸ñ
 		}
 		return comment;
 	}
 	/**
-	 * ä»åˆ—æ³¨é‡Šä¸­è·å–åˆ—æ ‡ç­¾ï¼ˆåˆ—çš„ä¸­æ–‡åˆ«åï¼‰ï¼Œå¦‚æœæœªèƒ½è·å–æˆåŠŸï¼Œåˆ™è¿”å›æŒ‡å®šçš„åˆ—æ³¨é‡Šã€‚
-	 * <br>åˆ—æ³¨é‡Šçº¦å®šï¼šåˆ—æ ‡ç­¾  + åˆ†éš”ç¬¦  + åˆ—å¤‡æ³¨ä¿¡æ¯
-	 * <br>è‹¥splitorForLabelFromCommentå±æ€§ä¸ºç©ºå€¼ï¼Œåˆ™è¿”å›æ•´ä¸ªåˆ—æ³¨é‡Š
-	 * @param columnComment åˆ—æ³¨é‡Š
+	 * ´ÓÁĞ×¢ÊÍÖĞ»ñÈ¡ÁĞ±êÇ©£¨ÁĞµÄÖĞÎÄ±ğÃû£©£¬Èç¹ûÎ´ÄÜ»ñÈ¡³É¹¦£¬Ôò·µ»ØÖ¸¶¨µÄÁĞ×¢ÊÍ¡£
+	 * <br>ÁĞ×¢ÊÍÔ¼¶¨£ºÁĞ±êÇ©  + ·Ö¸ô·û  + ÁĞ±¸×¢ĞÅÏ¢
+	 * <br>ÈôsplitorForLabelFromCommentÊôĞÔÎª¿ÕÖµ£¬Ôò·µ»ØÕû¸öÁĞ×¢ÊÍ
+	 * @param columnComment ÁĞ×¢ÊÍ
 	 * @return
 	 */
 	public String getColumnLabelFromComment(String columnComment){
 		if(StringUtils.isNotBlank(splitorForLabelFromComment)){
-			return StringUtils.substringBefore(columnComment, splitorForLabelFromComment);//è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ä¹‹å‰çš„æ‰€æœ‰å­—ç¬¦
+			return StringUtils.substringBefore(columnComment, splitorForLabelFromComment);//·µ»ØÖ¸¶¨×Ö·û´®Ö®Ç°µÄËùÓĞ×Ö·û
 		}else{
 			return StringUtils.defaultString(columnComment);
 		}
 	}
 	/**
-	 * ä»åˆ—æ³¨é‡Šä¸­è·å–åˆ—å¤‡æ³¨ä¿¡æ¯ï¼Œå¦‚æœæœªèƒ½è·å–æˆåŠŸï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²ã€‚
-	 * <br>åˆ—æ³¨é‡Šçº¦å®šï¼šåˆ—æ ‡ç­¾  + åˆ†éš”ç¬¦  + åˆ—çš„å¤‡æ³¨ä¿¡æ¯
-	 * <br>è‹¥splitorForLabelFromCommentå±æ€§ä¸ºç©ºå€¼ï¼Œåˆ™è¿”å›æ•´ä¸ªåˆ—æ³¨é‡Š
-	 * @param columnComment åˆ—æ³¨é‡Š
+	 * ´ÓÁĞ×¢ÊÍÖĞ»ñÈ¡ÁĞ±¸×¢ĞÅÏ¢£¬Èç¹ûÎ´ÄÜ»ñÈ¡³É¹¦£¬Ôò·µ»Ø¿Õ×Ö·û´®¡£
+	 * <br>ÁĞ×¢ÊÍÔ¼¶¨£ºÁĞ±êÇ©  + ·Ö¸ô·û  + ÁĞµÄ±¸×¢ĞÅÏ¢
+	 * <br>ÈôsplitorForLabelFromCommentÊôĞÔÎª¿ÕÖµ£¬Ôò·µ»ØÕû¸öÁĞ×¢ÊÍ
+	 * @param columnComment ÁĞ×¢ÊÍ
 	 * @return
 	 */
 	public String getColumnRemarkFromComment(String columnComment){
 		if(StringUtils.isNotBlank(splitorForLabelFromComment)){
-			return StringUtils.substringAfter(columnComment, splitorForLabelFromComment);//è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ï¼ˆç©ºæ ¼ï¼‰ä¹‹åçš„æ‰€æœ‰å­—ç¬¦
+			return StringUtils.substringAfter(columnComment, splitorForLabelFromComment);//·µ»ØÖ¸¶¨×Ö·û´®£¨¿Õ¸ñ£©Ö®ºóµÄËùÓĞ×Ö·û
 		}else{
 			return StringUtils.defaultString(columnComment);
 		}
 	}
 
 	/**
-	 * åˆ¤æ–­åˆ—ç±»å‹æ˜¯å¦ä¸ºä¸å¯ä»¥è¿”å›ç²¾åº¦ï¼ˆPrecisionï¼‰çš„åˆ—ç±»å‹ï¼Œå¦‚oracleçš„å¤§å­—æ®µç±»å‹Blobå’ŒClobã€‚
+	 * ÅĞ¶ÏÁĞÀàĞÍÊÇ·ñÎª²»¿ÉÒÔ·µ»Ø¾«¶È£¨Precision£©µÄÁĞÀàĞÍ£¬ÈçoracleµÄ´ó×Ö¶ÎÀàĞÍBlobºÍClob¡£
 	 * @param columnType
 	 * @return
 	 */
@@ -525,15 +525,15 @@ public abstract class DbProvider implements Serializable{
 	}
 	
 	/**
-	 * æ ¹æ®æŒ‡å®šçš„è¡¨ååˆ›å»ºä¸€ä¸ªè¡¨æ¨¡å‹
-	 * @param tableName è¡¨åç§°
+	 * ¸ù¾İÖ¸¶¨µÄ±íÃû´´½¨Ò»¸ö±íÄ£ĞÍ
+	 * @param tableName ±íÃû³Æ
 	 * @return
 	 * @throws SQLException
 	 */
 	public TableModel createTableModel(String tableName){
 		TableModel table = new TableModel();
 		
-		//è®¾ç½®è¡¨çš„ç›¸å…³å…ƒæ•°æ®
+		//ÉèÖÃ±íµÄÏà¹ØÔªÊı¾İ
 		table.setTableName(tableName);
 		table.setSchema(getSchema());
 		table.setCatalog(getCatalog());		
@@ -563,53 +563,53 @@ public abstract class DbProvider implements Serializable{
 				col.setColComment(getColumnComment(tableName, col.getColumnName()));
 				col.setColumnLabel(getColumnLabelFromComment(col.getColComment()));
 				col.setColRemark(getColumnRemarkFromComment(col.getColComment()));
-				//è®¾ç½®sqlæ•°æ®ç±»å‹
+				//ÉèÖÃsqlÊı¾İÀàĞÍ
 				col.setColumnType(rsmd.getColumnType(i));
-				//è®¾ç½®sqlæ•°æ®ç±»å‹çš„åç§°
+				//ÉèÖÃsqlÊı¾İÀàĞÍµÄÃû³Æ
 				col.setColumnTypeName(rsmd.getColumnTypeName(i));
-				//è®¾ç½®åˆ—çš„sqlæ•°æ®ç±»å‹åœ¨javaç¼–ç¨‹è¯­è¨€ä¸­å¯¹åº”çš„å…·ä½“æ•°æ®ç±»å‹
+				//ÉèÖÃÁĞµÄsqlÊı¾İÀàĞÍÔÚjava±à³ÌÓïÑÔÖĞ¶ÔÓ¦µÄ¾ßÌåÊı¾İÀàĞÍ
 				col.setColumnClassName(rsmd.getColumnClassName(i));
 								
-				//å–å¾—åˆ—æ˜¾ç¤ºçš„æœ€å¤§å®½åº¦
+				//È¡µÃÁĞÏÔÊ¾µÄ×î´ó¿í¶È
 				col.setColumnDisplaySize(rsmd.getColumnDisplaySize(i));
-				//è®¾ç½®åˆ—çš„æ•°æ®æ ‡åº¦
+				//ÉèÖÃÁĞµÄÊı¾İ±ê¶È
 				col.setScale(rsmd.getScale(i));
-				//åˆ¤æ–­è¯¥åˆ—æ˜¯å¦ä¸ºè‡ªå¢åˆ—
+				//ÅĞ¶Ï¸ÃÁĞÊÇ·ñÎª×ÔÔöÁĞ
 				col.setAutoIncrement(rsmd.isAutoIncrement(i));
-				//åˆ¤æ–­æ˜¯å¦ä¸ºè´§å¸ç±»å‹å­—æ®µ
+				//ÅĞ¶ÏÊÇ·ñÎª»õ±ÒÀàĞÍ×Ö¶Î
 				col.setCurrency(rsmd.isCurrency(i));
-				//åˆ¤æ–­å­—æ®µæ˜¯å¦ä¸ºåªè¯»çŠ¶æ€
+				//ÅĞ¶Ï×Ö¶ÎÊÇ·ñÎªÖ»¶Á×´Ì¬
 				col.setReadonly(rsmd.isReadOnly(i));
-				//åˆ¤æ–­è¯¥å­—æ®µæ˜¯å¦å¯ä»¥ä½œä¸ºæœç´¢æ¡ä»¶ï¼Œå¹¶å‡ºç°åœ¨whereè¯­å¥ä¸­
+				//ÅĞ¶Ï¸Ã×Ö¶ÎÊÇ·ñ¿ÉÒÔ×÷ÎªËÑË÷Ìõ¼ş£¬²¢³öÏÖÔÚwhereÓï¾äÖĞ
 				col.setSearchable(rsmd.isSearchable(i));
-				//åˆ¤æ–­åˆ—ç±»å‹æ˜¯å¦ä¸ºæœªçŸ¥ç±»å‹ï¼Œå¦‚oracleçš„å¤§å­—æ®µç±»å‹Blobå’ŒClobã€‚
+				//ÅĞ¶ÏÁĞÀàĞÍÊÇ·ñÎªÎ´ÖªÀàĞÍ£¬ÈçoracleµÄ´ó×Ö¶ÎÀàĞÍBlobºÍClob¡£
 				if(!isPrecisionUnknowType(rsmd.getColumnType(i))){
-					//å¦‚æœä¸æ˜¯æœªçŸ¥ç±»å‹ï¼Œåˆ™è®¾ç½®åˆ—çš„æ•°æ®ç²¾åº¦
+					//Èç¹û²»ÊÇÎ´ÖªÀàĞÍ£¬ÔòÉèÖÃÁĞµÄÊı¾İ¾«¶È
 				    col.setPrecision(rsmd.getPrecision(i));
 				}
-				//åˆ¤æ–­è¯¥åˆ—å…è®¸ç©ºå¦
+				//ÅĞ¶Ï¸ÃÁĞÔÊĞí¿Õ·ñ
 				if(rsmd.isNullable(i)==ResultSetMetaData.columnNoNulls){
 					col.setNullable(false);
 				}else{
 					col.setNullable(true);
 				}
-				//åˆ¤æ–­æ˜¯å¦ä¸ºä¸»é”®åˆ—
+				//ÅĞ¶ÏÊÇ·ñÎªÖ÷¼üÁĞ
 				if(table.isPrimaryKey(col.getColumnName())){
 					col.setPrimaryKey(true);
 				}
-				//åˆ¤æ–­æ˜¯å¦ä¸ºå¤–é”®åˆ—ï¼ˆå‚ç…§å…¶ä»–è¡¨çš„é”®ï¼‰
+				//ÅĞ¶ÏÊÇ·ñÎªÍâ¼üÁĞ£¨²ÎÕÕÆäËû±íµÄ¼ü£©
 				if(table.isImportedKey(col.getColumnName())){
 					col.setImportedKey(true);
 				}
-				//åˆ¤æ–­æ˜¯å¦ä¸ºå¤–é”®åˆ—ï¼ˆè¢«å…¶ä»–è¡¨å‚ç…§ï¼‰
+				//ÅĞ¶ÏÊÇ·ñÎªÍâ¼üÁĞ£¨±»ÆäËû±í²ÎÕÕ£©
 				if(table.isExportedKey(col.getColumnName())){
 					col.setExportedKey(true);
 				}
 				
-				//è®¾ç½®åˆ—æ‰€å½’å±çš„è¡¨æ¨¡å‹ï¼Œè¿™æ ·åœ¨åˆ—æ¨¡å‹å¤„ç†å™¨é‡Œè¿˜å¯ä»¥æ ¹æ®è¡¨æ¨¡å‹çš„æ•°æ®æ¥åšæ›´å¤šçš„é€»è¾‘åˆ¤æ–­
+				//ÉèÖÃÁĞËù¹éÊôµÄ±íÄ£ĞÍ£¬ÕâÑùÔÚÁĞÄ£ĞÍ´¦ÀíÆ÷Àï»¹¿ÉÒÔ¸ù¾İ±íÄ£ĞÍµÄÊı¾İÀ´×ö¸ü¶àµÄÂß¼­ÅĞ¶Ï
 				col.setTableModel(table);
 				
-				//å¦‚æœæ²¡æœ‰è®¾ç½®ä»»ä½•çš„åˆ—æ¨¡å‹å¤„ç†å™¨ï¼Œåˆ™é»˜è®¤ä½¿ç”¨ä¸€ä¸ªjavaæ•°æ®ç±»å‹è½¬æ¢å™¨æ¥å¤„ç†åˆ—æ¨¡å‹
+				//Èç¹ûÃ»ÓĞÉèÖÃÈÎºÎµÄÁĞÄ£ĞÍ´¦ÀíÆ÷£¬ÔòÄ¬ÈÏÊ¹ÓÃÒ»¸öjavaÊı¾İÀàĞÍ×ª»»Æ÷À´´¦ÀíÁĞÄ£ĞÍ
 				if(columnHandlers==null||columnHandlers.size()==0){					
 					new DataTypeConverterForJava().handle(col);
 				}else{
@@ -618,7 +618,7 @@ public abstract class DbProvider implements Serializable{
 					}
 				}
 			}
-			System.out.println("æˆåŠŸåˆ›å»ºè¡¨æ¨¡å‹"+table);
+			System.out.println("³É¹¦´´½¨±íÄ£ĞÍ"+table);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

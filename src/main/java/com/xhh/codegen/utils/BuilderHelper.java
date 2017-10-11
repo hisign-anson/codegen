@@ -9,12 +9,12 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 /**
- * æ„å»ºè¾…åŠ©ç±»
+ * ¹¹½¨¸¨ÖúÀà
  */
 public class BuilderHelper {
 		
 	/**
-	 * æ ¹æ®æŒ‡å®šçš„æ•°æ®æ¨¡å‹é›†åˆè§£ææ„å»ºå‚æ•°
+	 * ¸ù¾İÖ¸¶¨µÄÊı¾İÄ£ĞÍ¼¯ºÏ½âÎö¹¹½¨²ÎÊı
 	 * @param dataMap 
 	 * @param param
 	 * @return

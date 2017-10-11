@@ -3,8 +3,8 @@ package com.xhh.codegen.model;
 import java.io.Serializable;
 
 /**
- * è¡¨å…ƒæ•°æ®
- * @author é»„å¤©æ”¿
+ * ±íÔªÊı¾İ
+ * @author »ÆÌìÕş
  *
  */
 public class TableMetaData implements Serializable{
@@ -30,121 +30,121 @@ public class TableMetaData implements Serializable{
 	private String selfReferencingColName;
 	private String refGeneration;
 	/**
-	 * @return å–å¾—è¡¨ç±»åˆ«ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃ±íÀà±ğ£¨¿ÉÎª null£©
 	 */
 	public String getTableCat() {
 		return tableCat;
 	}
 	/**
-	 * @param tableCat è®¾ç½®è¡¨ç±»åˆ«ï¼ˆå¯ä¸º nullï¼‰
+	 * @param tableCat ÉèÖÃ±íÀà±ğ£¨¿ÉÎª null£©
 	 */
 	public void setTableCat(String tableCat) {
 		this.tableCat = tableCat;
 	}
 	/**
-	 * @return å–å¾—è¡¨æ¨¡å¼ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃ±íÄ£Ê½£¨¿ÉÎª null£©
 	 */
 	public String getTableSchem() {
 		return tableSchem;
 	}
 	/**
-	 * @param tableSchem è®¾ç½®è¡¨æ¨¡å¼ï¼ˆå¯ä¸º nullï¼‰
+	 * @param tableSchem ÉèÖÃ±íÄ£Ê½£¨¿ÉÎª null£©
 	 */
 	public void setTableSchem(String tableSchem) {
 		this.tableSchem = tableSchem;
 	}	
 	/**
-	 * @return å–å¾—è¡¨åç§°
+	 * @return È¡µÃ±íÃû³Æ
 	 */
 	public String getTableName() {
 		return tableName;
 	}
 	/**
-	 * @param tableName è®¾ç½®è¡¨åç§°
+	 * @param tableName ÉèÖÃ±íÃû³Æ
 	 */
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
 	/**
-	 * @return å–å¾—è¡¨ç±»å‹ã€‚å…¸å‹çš„ç±»å‹æ˜¯ "TABLE"ã€"VIEW"ã€"SYSTEM TABLE"ã€"GLOBAL TEMPORARY"ã€"LOCAL TEMPORARY"ã€"ALIAS" å’Œ "SYNONYM"ã€‚
+	 * @return È¡µÃ±íÀàĞÍ¡£µäĞÍµÄÀàĞÍÊÇ "TABLE"¡¢"VIEW"¡¢"SYSTEM TABLE"¡¢"GLOBAL TEMPORARY"¡¢"LOCAL TEMPORARY"¡¢"ALIAS" ºÍ "SYNONYM"¡£
 	 */
 	public String getTableType() {
 		return tableType;
 	}
 	/**
-	 * @param tableType è®¾ç½®è¡¨ç±»å‹ã€‚å…¸å‹çš„ç±»å‹æ˜¯ "TABLE"ã€"VIEW"ã€"SYSTEM TABLE"ã€"GLOBAL TEMPORARY"ã€"LOCAL TEMPORARY"ã€"ALIAS" å’Œ "SYNONYM"ã€‚
+	 * @param tableType ÉèÖÃ±íÀàĞÍ¡£µäĞÍµÄÀàĞÍÊÇ "TABLE"¡¢"VIEW"¡¢"SYSTEM TABLE"¡¢"GLOBAL TEMPORARY"¡¢"LOCAL TEMPORARY"¡¢"ALIAS" ºÍ "SYNONYM"¡£
 	 */
 	public void setTableType(String tableType) {
 		this.tableType = tableType;
 	}
 	/**
-	 * @return å–å¾—è¡¨çš„è§£é‡Šæ€§æ³¨é‡Š
+	 * @return È¡µÃ±íµÄ½âÊÍĞÔ×¢ÊÍ
 	 */
 	public String getRemarks() {
 		return remarks;
 	}
 	/**
-	 * @param remarks è®¾ç½®è¡¨çš„è§£é‡Šæ€§æ³¨é‡Š
+	 * @param remarks ÉèÖÃ±íµÄ½âÊÍĞÔ×¢ÊÍ
 	 */
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 	/**
-	 * @return å–å¾—ç±»å‹çš„ç±»åˆ«ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃÀàĞÍµÄÀà±ğ£¨¿ÉÎª null£©
 	 */
 	public String getTypeCat() {
 		return typeCat;
 	}
 	/**
-	 * @param typeCat è®¾ç½®ç±»å‹çš„ç±»åˆ«ï¼ˆå¯ä¸º nullï¼‰
+	 * @param typeCat ÉèÖÃÀàĞÍµÄÀà±ğ£¨¿ÉÎª null£©
 	 */
 	public void setTypeCat(String typeCat) {
 		this.typeCat = typeCat;
 	}
 	/**
-	 * @return å–å¾—ç±»å‹æ¨¡å¼ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃÀàĞÍÄ£Ê½£¨¿ÉÎª null£©
 	 */
 	public String getTypeSchem() {
 		return typeSchem;
 	}
 	/**
-	 * @param typeSchem è®¾ç½®ç±»å‹æ¨¡å¼ï¼ˆå¯ä¸º nullï¼‰
+	 * @param typeSchem ÉèÖÃÀàĞÍÄ£Ê½£¨¿ÉÎª null£©
 	 */
 	public void setTypeSchem(String typeSchem) {
 		this.typeSchem = typeSchem;
 	}
 	/**
-	 * @return å–å¾—ç±»å‹åç§°ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃÀàĞÍÃû³Æ£¨¿ÉÎª null£©
 	 */
 	public String getTypeName() {
 		return typeName;
 	}
 	/**
-	 * @param typeName è®¾ç½®ç±»å‹åç§°ï¼ˆå¯ä¸º nullï¼‰
+	 * @param typeName ÉèÖÃÀàĞÍÃû³Æ£¨¿ÉÎª null£©
 	 */
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
 	}
 	/**
-	 * @return å–å¾—æœ‰ç±»å‹è¡¨çš„æŒ‡å®š "identifier" åˆ—çš„åç§°ï¼ˆå¯ä¸º nullï¼‰
+	 * @return È¡µÃÓĞÀàĞÍ±íµÄÖ¸¶¨ "identifier" ÁĞµÄÃû³Æ£¨¿ÉÎª null£©
 	 */
 	public String getSelfReferencingColName() {
 		return selfReferencingColName;
 	}
 	/**
-	 * @param selfReferencingColName è®¾ç½®æœ‰ç±»å‹è¡¨çš„æŒ‡å®š "identifier" åˆ—çš„åç§°ï¼ˆå¯ä¸º nullï¼‰
+	 * @param selfReferencingColName ÉèÖÃÓĞÀàĞÍ±íµÄÖ¸¶¨ "identifier" ÁĞµÄÃû³Æ£¨¿ÉÎª null£©
 	 */
 	public void setSelfReferencingColName(String selfReferencingColName) {
 		this.selfReferencingColName = selfReferencingColName;
 	}
 	/**
-	 * @return å–å¾—æŒ‡å®šåœ¨ SELF_REFERENCING_COL_NAME ä¸­åˆ›å»ºå€¼çš„æ–¹å¼ã€‚è¿™äº›å€¼ä¸º "SYSTEM"ã€"USER" å’Œ "DERIVED"ã€‚ï¼ˆå¯èƒ½ä¸º nullï¼‰
+	 * @return È¡µÃÖ¸¶¨ÔÚ SELF_REFERENCING_COL_NAME ÖĞ´´½¨ÖµµÄ·½Ê½¡£ÕâĞ©ÖµÎª "SYSTEM"¡¢"USER" ºÍ "DERIVED"¡££¨¿ÉÄÜÎª null£©
 	 */
 	public String getRefGeneration() {
 		return refGeneration;
 	}
 	/**
-	 * @param refGeneration è®¾ç½®æŒ‡å®šåœ¨ SELF_REFERENCING_COL_NAME ä¸­åˆ›å»ºå€¼çš„æ–¹å¼ã€‚è¿™äº›å€¼ä¸º "SYSTEM"ã€"USER" å’Œ "DERIVED"ã€‚ï¼ˆå¯èƒ½ä¸º nullï¼‰
+	 * @param refGeneration ÉèÖÃÖ¸¶¨ÔÚ SELF_REFERENCING_COL_NAME ÖĞ´´½¨ÖµµÄ·½Ê½¡£ÕâĞ©ÖµÎª "SYSTEM"¡¢"USER" ºÍ "DERIVED"¡££¨¿ÉÄÜÎª null£©
 	 */
 	public void setRefGeneration(String refGeneration) {
 		this.refGeneration = refGeneration;

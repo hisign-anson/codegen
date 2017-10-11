@@ -8,8 +8,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * è¾“å‡ºæ¨¡å‹
- * @author é»„å¤©æ”¿
+ * Êä³öÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class OutputModel  implements Serializable {
@@ -21,8 +21,8 @@ public class OutputModel  implements Serializable {
 	private boolean disabled = false;
 	
 	/**
-	 * ç”±ä¸€ä¸ªè¾“å‡ºåç§°å®ä¾‹åŒ–ä¸€ä¸ªè¾“å‡ºæ¨¡å‹
-	 * @param name è¾“å‡ºåç§°
+	 * ÓÉÒ»¸öÊä³öÃû³ÆÊµÀı»¯Ò»¸öÊä³öÄ£ĞÍ
+	 * @param name Êä³öÃû³Æ
 	 */
 	public OutputModel(String name) {
 		super();
@@ -30,54 +30,54 @@ public class OutputModel  implements Serializable {
 	}
 	
 	/**
-	 * @return å–å¾—è¾“å‡ºåç§°
+	 * @return È¡µÃÊä³öÃû³Æ
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * @param name è®¾ç½®è¾“å‡ºåç§°
+	 * @param name ÉèÖÃÊä³öÃû³Æ
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 		
 	/**
-	 * @return è·å–äº§ç”Ÿè¯¥è¾“å‡ºçš„æ¨¡æ¿æ¨¡å‹
+	 * @return »ñÈ¡²úÉú¸ÃÊä³öµÄÄ£°åÄ£ĞÍ
 	 */
 	public TemplateModel getTemplateModel() {
 		return templateModel;
 	}
 
 	/**
-	 * @param templateModel è®¾ç½®äº§ç”Ÿè¯¥è¾“å‡ºçš„æ¨¡æ¿æ¨¡å‹
+	 * @param templateModel ÉèÖÃ²úÉú¸ÃÊä³öµÄÄ£°åÄ£ĞÍ
 	 */
 	public void setTemplateModel(TemplateModel templateModel) {
 		this.templateModel = templateModel;
 	}
 
 	/**
-	 * @return è·å–è¾“å‡ºç±»å‹
+	 * @return »ñÈ¡Êä³öÀàĞÍ
 	 */
 	public InOutType getType() {
 		return type;
 	}
 
 	/**
-	 * @param type è®¾ç½®è¾“å‡ºç±»å‹
+	 * @param type ÉèÖÃÊä³öÀàĞÍ
 	 */
 	public void setType(InOutType type) {
 		this.type = type;
 	}
 
 	/**
-	 * @return å–å¾—éœ€è¦è¾“å‡ºçš„æ–‡ä»¶ï¼Œå¦‚æœtype=textæ—¶ï¼Œåœ¨æ‰§è¡Œæ„å»ºæ“ä½œåï¼Œå–å¾—çš„æ˜¯è¢«è§£æå‡ºæ¥çš„æ–‡æœ¬å†…å®¹
+	 * @return È¡µÃĞèÒªÊä³öµÄÎÄ¼ş£¬Èç¹ûtype=textÊ±£¬ÔÚÖ´ĞĞ¹¹½¨²Ù×÷ºó£¬È¡µÃµÄÊÇ±»½âÎö³öÀ´µÄÎÄ±¾ÄÚÈİ
 	 */
 	public String getOutput() {
 		return output;
 	}
 	/**
-	 * @param output è®¾ç½®éœ€è¦è¾“å‡ºçš„æ–‡ä»¶
+	 * @param output ÉèÖÃĞèÒªÊä³öµÄÎÄ¼ş
 	 */
 	public void setOutput(String output) {
 		this.output = output;
@@ -85,20 +85,20 @@ public class OutputModel  implements Serializable {
 	
 	
 	/**
-	 * @return æ˜¯å¦ç¦ç”¨ï¼ˆé»˜è®¤ä¸ºfalseï¼‰
+	 * @return ÊÇ·ñ½ûÓÃ£¨Ä¬ÈÏÎªfalse£©
 	 */
 	public boolean isDisabled() {
 		return disabled;
 	}
 	/**
-	 * @param disabled è®¾ç½®æ˜¯å¦ç¦ç”¨ï¼ˆé»˜è®¤ä¸ºfalseï¼‰
+	 * @param disabled ÉèÖÃÊÇ·ñ½ûÓÃ£¨Ä¬ÈÏÎªfalse£©
 	 */
 	public void setDisabled(boolean disabled) {
 		this.disabled = disabled;
 	}
 
 	/**
-	 * ä½¿ç”¨åºåˆ—åŒ–æ–¹å¼æ·±åº¦å…‹éš†è¾“å‡ºæ¨¡å‹
+	 * Ê¹ÓÃĞòÁĞ»¯·½Ê½Éî¶È¿ËÂ¡Êä³öÄ£ĞÍ
 	 * @return
 	 * @throws IOException
 	 * @throws ClassNotFoundException

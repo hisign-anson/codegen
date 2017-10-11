@@ -18,8 +18,8 @@ import com.xhh.codegen.service.DbProvider;
 
 
 /**
- * é¡¹ç›®é…ç½®æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * ÏîÄ¿ÅäÖÃÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class ProjectConfig  implements Serializable {
@@ -32,104 +32,104 @@ public class ProjectConfig  implements Serializable {
 	private Map<String, OutputModel> outputMap = new LinkedHashMap<String,OutputModel>();
 	private boolean defaultProject;
 	/**
-	 * æ•°æ®æ¨¡å‹å¤„ç†å™¨
+	 * Êı¾İÄ£ĞÍ´¦ÀíÆ÷
 	 */
 	private List<BuildConfigHandler> buildConfigHandlers = new ArrayList<BuildConfigHandler>();
 	
 	
 	/**
-	 * @return å–å¾—é¡¹ç›®åç§°
+	 * @return È¡µÃÏîÄ¿Ãû³Æ
 	 */
 	public String getProjectName() {
 		return projectName;
 	}
 
 	/**
-	 * @param projectName è®¾ç½®é¡¹ç›®åç§°
+	 * @param projectName ÉèÖÃÏîÄ¿Ãû³Æ
 	 */
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
 
 	/**
-	 * @return å–å¾—é¡¹ç›®æ ‡ç­¾ï¼ˆä¸­æ–‡æè¿°ï¼‰
+	 * @return È¡µÃÏîÄ¿±êÇ©£¨ÖĞÎÄÃèÊö£©
 	 */
 	public String getProjectLabel() {
 		return projectLabel;
 	}
 
 	/**
-	 * @param projectLabel è®¾ç½®é¡¹ç›®æ ‡ç­¾ï¼ˆä¸­æ–‡æè¿°ï¼‰
+	 * @param projectLabel ÉèÖÃÏîÄ¿±êÇ©£¨ÖĞÎÄÃèÊö£©
 	 */
 	public void setProjectLabel(String projectLabel) {
 		this.projectLabel = projectLabel;
 	}
 
 	/**
-	 * @return å–å¾—è¾“å‡ºç¼–ç æ–¹å¼
+	 * @return È¡µÃÊä³ö±àÂë·½Ê½
 	 */
 	public String getOutputEncoding() {
 		return outputEncoding;
 	}
 
 	/**
-	 * @param outputEncoding è®¾ç½®è¾“å‡ºç¼–ç æ–¹å¼
+	 * @param outputEncoding ÉèÖÃÊä³ö±àÂë·½Ê½
 	 */
 	public void setOutputEncoding(String outputEncoding) {
 		this.outputEncoding = outputEncoding;
 	}
 
 	/**
-	 * @return å–å¾—æ•°æ®åº“ä¿¡æ¯æä¾›è€…
+	 * @return È¡µÃÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
 	 */
 	public DbProvider getDbProvider() {
 		return dbProvider;
 	}
 
 	/**
-	 * @param dbProvider è®¾ç½®æ•°æ®åº“ä¿¡æ¯æä¾›è€…
+	 * @param dbProvider ÉèÖÃÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
 	 */
 	public void setDbProvider(DbProvider dbProvider) {
 		this.dbProvider = dbProvider;
 	}
 
 	/**
-	 * @return å–å¾—æ•°æ®æ¨¡å‹æ˜ å°„é›†åˆ
+	 * @return È¡µÃÊı¾İÄ£ĞÍÓ³Éä¼¯ºÏ
 	 */
 	public Map<String, String> getDataModelMap() {
 		return dataModelMap;
 	}
 
 	/**
-	 * @param dataModelMap è®¾ç½®æ•°æ®æ¨¡å‹æ˜ å°„é›†åˆ
+	 * @param dataModelMap ÉèÖÃÊı¾İÄ£ĞÍÓ³Éä¼¯ºÏ
 	 */
 	public void setDataModelMap(Map<String, String> dataModelMap) {
 		this.dataModelMap = dataModelMap;
 	}
 
 	/**
-	 * @return å–å¾—è¾“å‡ºæ˜ å°„é›†åˆ
+	 * @return È¡µÃÊä³öÓ³Éä¼¯ºÏ
 	 */
 	public Map<String, OutputModel> getOutputMap() {
 		return outputMap;
 	}
 
 	/**
-	 * @param outputMap è®¾ç½®è¾“å‡ºæ˜ å°„é›†åˆ
+	 * @param outputMap ÉèÖÃÊä³öÓ³Éä¼¯ºÏ
 	 */
 	public void setOutputMap(Map<String, OutputModel> outputMap) {
 		this.outputMap = outputMap;
 	}
 
 	/**
-	 * @return æ˜¯å¦ä¸ºé»˜è®¤é¡¹ç›®
+	 * @return ÊÇ·ñÎªÄ¬ÈÏÏîÄ¿
 	 */
 	public boolean isDefaultProject() {
 		return defaultProject;
 	}
 
 	/**
-	 * @param defaultProject è®¾ç½®æ˜¯å¦ä¸ºé»˜è®¤é¡¹ç›®
+	 * @param defaultProject ÉèÖÃÊÇ·ñÎªÄ¬ÈÏÏîÄ¿
 	 */
 	public void setDefaultProject(boolean defaultProject) {
 		this.defaultProject = defaultProject;
@@ -137,21 +137,21 @@ public class ProjectConfig  implements Serializable {
 	
 
 	/**
-	 * @return è·å–æ„å»ºé…ç½®å¤„ç†å™¨
+	 * @return »ñÈ¡¹¹½¨ÅäÖÃ´¦ÀíÆ÷
 	 */
 	public List<BuildConfigHandler> getBuildConfigHandlers() {
 		return buildConfigHandlers;
 	}
 
 	/**
-	 * @param buildConfigHandlers è®¾ç½®æ„å»ºé…ç½®å¤„ç†å™¨
+	 * @param buildConfigHandlers ÉèÖÃ¹¹½¨ÅäÖÃ´¦ÀíÆ÷
 	 */
 	public void setBuildConfigHandlers(List<BuildConfigHandler> buildConfigHandlers) {
 		this.buildConfigHandlers = buildConfigHandlers;
 	}
 
 	/**
-	 * ä½¿ç”¨åºåˆ—åŒ–æ–¹å¼æ·±åº¦å…‹éš†é¡¹ç›®é…ç½®æ¨¡å‹
+	 * Ê¹ÓÃĞòÁĞ»¯·½Ê½Éî¶È¿ËÂ¡ÏîÄ¿ÅäÖÃÄ£ĞÍ
 	 * @return
 	 * @throws IOException
 	 * @throws ClassNotFoundException

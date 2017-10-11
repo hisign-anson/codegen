@@ -3,8 +3,8 @@ package com.xhh.codegen.model;
 import java.io.Serializable;
 
 /**
- * JDBCé…ç½®æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * JDBCÅäÖÃÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class JdbcConfig implements Serializable{
@@ -15,49 +15,49 @@ public class JdbcConfig implements Serializable{
 	private String password;
 	
 	/**
-	 * @return å–å¾—JDBCé©±åŠ¨ç±»
+	 * @return È¡µÃJDBCÇı¶¯Àà
 	 */
 	public String getDriver() {
 		return driver;
 	}
 	/**
-	 * @param driver è®¾ç½®JDBCé©±åŠ¨ç±»
+	 * @param driver ÉèÖÃJDBCÇı¶¯Àà
 	 */
 	public void setDriver(String driver) {
 		this.driver = driver;
 	}
 	/**
-	 * @return å–å¾—JDBCè¿æ¥å­—ç¬¦ä¸²
+	 * @return È¡µÃJDBCÁ¬½Ó×Ö·û´®
 	 */
 	public String getUrl() {
 		return url;
 	}
 	/**
-	 * @param url è®¾ç½®JDBCè¿æ¥å­—ç¬¦ä¸²
+	 * @param url ÉèÖÃJDBCÁ¬½Ó×Ö·û´®
 	 */
 	public void setUrl(String url) {
 		this.url = url;
 	}
 	/**
-	 * @return å–å¾—JDBCè¿æ¥çš„ç”¨æˆ·åï¼Œå³å½“å‰æ•°æ®åº“è¿æ¥çš„å±ä¸»
+	 * @return È¡µÃJDBCÁ¬½ÓµÄÓÃ»§Ãû£¬¼´µ±Ç°Êı¾İ¿âÁ¬½ÓµÄÊôÖ÷
 	 */
 	public String getUser() {
 		return user;
 	}
 	/**
-	 * @param user è®¾ç½®JDBCè¿æ¥çš„ç”¨æˆ·åï¼Œå³å½“å‰æ•°æ®åº“è¿æ¥çš„å±ä¸»
+	 * @param user ÉèÖÃJDBCÁ¬½ÓµÄÓÃ»§Ãû£¬¼´µ±Ç°Êı¾İ¿âÁ¬½ÓµÄÊôÖ÷
 	 */
 	public void setUser(String user) {
 		this.user = user;
 	}
 	/**
-	 * @return å–å¾—JDBCè¿æ¥çš„å¯†ç 
+	 * @return È¡µÃJDBCÁ¬½ÓµÄÃÜÂë
 	 */
 	public String getPassword() {
 		return password;
 	}
 	/**
-	 * @param password è®¾ç½®JDBCè¿æ¥çš„å¯†ç 
+	 * @param password ÉèÖÃJDBCÁ¬½ÓµÄÃÜÂë
 	 */
 	public void setPassword(String password) {
 		this.password = password;

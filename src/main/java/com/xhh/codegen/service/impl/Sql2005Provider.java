@@ -16,8 +16,8 @@ import com.xhh.codegen.service.DbProvider;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * é’ˆå¯¹MSSQLServer2005çš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…
- * @author é»„å¤©æ”¿
+ * Õë¶ÔMSSQLServer2005µÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+ * @author »ÆÌìÕş
  *
  */
 public class Sql2005Provider extends DbProvider {
@@ -39,23 +39,23 @@ public class Sql2005Provider extends DbProvider {
 		ResultSet rs = null;
 		String sql = "SELECT " +
 				"cast(d.name AS VARCHAR(100) ) as TABLE_NAME," +
-				//"å­—æ®µåºå·=a.colorder," +
+				//"×Ö¶ÎĞòºÅ=a.colorder," +
 				"cast(a.name AS VARCHAR(100) ) as COLUMN_NAME," +
-				//"æ ‡è¯†=case   when   COLUMNPROPERTY(   a.id,a.name, 'IsIdentity ')=1   then   'âˆš '   else   ' '   end," +
-				//"ä¸»é”®=case   when   exists(SELECT   1   FROM   sysobjects   where   xtype= 'PK '   and   name   in   (     SELECT   name   FROM   sysindexes   WHERE   indid   in(       SELECT   indid   FROM   sysindexkeys   WHERE   id   =   a.id   AND   colid=a.colid     )))   then   'âˆš '   else   ' '   end," +
-				//"ç±»å‹=b.name," +
-				//"å ç”¨å­—èŠ‚æ•°=a.length," +
-				//"é•¿åº¦=COLUMNPROPERTY(a.id,a.name, 'PRECISION ')," +
-				//"å°æ•°ä½æ•°=isnull(COLUMNPROPERTY(a.id,a.name, 'Scale '),0)," +
-				//"å…è®¸ç©º=case   when   a.isnullable=1   then   'âˆš 'else   ' '   end," +
-				//"é»˜è®¤å€¼=isnull(e.text, ' ')," +
+				//"±êÊ¶=case   when   COLUMNPROPERTY(   a.id,a.name, 'IsIdentity ')=1   then   '¡Ì '   else   ' '   end," +
+				//"Ö÷¼ü=case   when   exists(SELECT   1   FROM   sysobjects   where   xtype= 'PK '   and   name   in   (     SELECT   name   FROM   sysindexes   WHERE   indid   in(       SELECT   indid   FROM   sysindexkeys   WHERE   id   =   a.id   AND   colid=a.colid     )))   then   '¡Ì '   else   ' '   end," +
+				//"ÀàĞÍ=b.name," +
+				//"Õ¼ÓÃ×Ö½ÚÊı=a.length," +
+				//"³¤¶È=COLUMNPROPERTY(a.id,a.name, 'PRECISION ')," +
+				//"Ğ¡ÊıÎ»Êı=isnull(COLUMNPROPERTY(a.id,a.name, 'Scale '),0)," +
+				//"ÔÊĞí¿Õ=case   when   a.isnullable=1   then   '¡Ì 'else   ' '   end," +
+				//"Ä¬ÈÏÖµ=isnull(e.text, ' ')," +
 				"cast(g.[value] AS VARCHAR(100) ) as COMMENTS" +
 				" FROM   syscolumns   a   left   join   systypes   b   on   a.xtype=b.xusertype" +
 				"          inner   join   sysobjects   d   on   a.id=d.id     and   d.xtype= 'U '   and     d.name <> 'dtproperties '" +
 				//"          left   join   syscomments   e   on   a.cdefault=e.id" +
 				"          left   join   sys.extended_properties   g   on   d.id=g.major_id   and   a.colid=g.minor_id"+
 				" where d.name='"+tableName+"'";
-				//" where   g.name= 'MS_Description ' "//æ³¨é‡Šåˆ™åªè¿”å›æœ‰æè¿°çš„å­—æ®µ
+				//" where   g.name= 'MS_Description ' "//×¢ÊÍÔòÖ»·µ»ØÓĞÃèÊöµÄ×Ö¶Î
 		try{
 			stmt = getConn().createStatement();
 			rs = stmt.executeQuery(sql);
@@ -95,7 +95,7 @@ public class Sql2005Provider extends DbProvider {
 	}
 
 	/**
-	 * è·å–åœ¨catalogå’ŒschemaèŒƒå›´å†…çš„æ‰€æœ‰è¡¨å’Œæ‰€æœ‰è§†å›¾ï¼ˆä¸åŒ…æ‹¬ç³»ç»Ÿè§†å›¾ï¼‰é›†åˆã€‚
+	 * »ñÈ¡ÔÚcatalogºÍschema·¶Î§ÄÚµÄËùÓĞ±íºÍËùÓĞÊÓÍ¼£¨²»°üÀ¨ÏµÍ³ÊÓÍ¼£©¼¯ºÏ¡£
 	 */
 	@Override
 	public List<String> getTableNames() {

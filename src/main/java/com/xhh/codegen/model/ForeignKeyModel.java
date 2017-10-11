@@ -3,8 +3,8 @@ package com.xhh.codegen.model;
 import java.io.Serializable;
 
 /**
- * å¤–é”®æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * Íâ¼üÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class ForeignKeyModel implements Serializable{
@@ -24,169 +24,169 @@ public class ForeignKeyModel implements Serializable{
 	private String pkName;
 	private short Deferrability;
 	/**
-	 * @return å–å¾—ä¸»é”®è¡¨çš„ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃÖ÷¼ü±íµÄÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getPkTableCat() {
 		return pkTableCat;
 	}
 	/**
-	 * @param pkTableCat è®¾ç½®ä¸»é”®è¡¨çš„ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param pkTableCat ÉèÖÃÖ÷¼ü±íµÄÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setPkTableCat(String pkTableCat) {
 		this.pkTableCat = pkTableCat;
 	}
 	/**
-	 * @return å–å¾—ä¸»é”®è¡¨çš„æ¶æ„(ä¸€èˆ¬ä¸ºæ‰€æœ‰è€…åç§°ï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃÖ÷¼ü±íµÄ¼Ü¹¹(Ò»°ãÎªËùÓĞÕßÃû³Æ£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getPkTableSchem() {
 		return pkTableSchem;
 	}
 	/**
-	 * @param pkTableSchem è®¾ç½®ä¸»é”®è¡¨çš„æ¶æ„(ä¸€èˆ¬ä¸ºæ‰€æœ‰è€…åç§°ï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param pkTableSchem ÉèÖÃÖ÷¼ü±íµÄ¼Ü¹¹(Ò»°ãÎªËùÓĞÕßÃû³Æ£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setPkTableSchem(String pkTableSchem) {
 		this.pkTableSchem = pkTableSchem;
 	}
 	/**
-	 * @return å–å¾—ä¸»é”®è¡¨çš„åç§°
+	 * @return È¡µÃÖ÷¼ü±íµÄÃû³Æ
 	 */
 	public String getPkTableName() {
 		return pkTableName;
 	}
 	/**
-	 * @param pkTableName è®¾ç½®ä¸»é”®è¡¨çš„åç§°
+	 * @param pkTableName ÉèÖÃÖ÷¼ü±íµÄÃû³Æ
 	 */
 	public void setPkTableName(String pkTableName) {
 		this.pkTableName = pkTableName;
 	}
 	/**
-	 * @return å–å¾—è¯¥å¤–é”®æ‰€å¯¹åº”çš„ä¸»é”®åˆ—åç§°
+	 * @return È¡µÃ¸ÃÍâ¼üËù¶ÔÓ¦µÄÖ÷¼üÁĞÃû³Æ
 	 */
 	public String getPkColumnName() {
 		return pkColumnName;
 	}
 	/**
-	 * @param pkColumnName è®¾ç½®è¯¥å¤–é”®æ‰€å¯¹åº”çš„ä¸»é”®åˆ—åç§°
+	 * @param pkColumnName ÉèÖÃ¸ÃÍâ¼üËù¶ÔÓ¦µÄÖ÷¼üÁĞÃû³Æ
 	 */
 	public void setPkColumnName(String pkColumnName) {
 		this.pkColumnName = pkColumnName;
 	}
 	/**
-	 * @return å–å¾—è¯¥å¤–é”®æ‰€åœ¨è¡¨çš„ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ¸ÃÍâ¼üËùÔÚ±íµÄÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getFkTableCat() {
 		return fkTableCat;
 	}
 	/**
-	 * @param fkTableCat è®¾ç½®è¯¥å¤–é”®æ‰€åœ¨è¡¨çš„ç±»åˆ«(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param fkTableCat ÉèÖÃ¸ÃÍâ¼üËùÔÚ±íµÄÀà±ğ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setFkTableCat(String fkTableCat) {
 		this.fkTableCat = fkTableCat;
 	}
 	/**
-	 * @return å–å¾—è¯¥å¤–é”®æ‰€åœ¨è¡¨çš„æ¶æ„(ä¸€èˆ¬ä¸ºç”¨æˆ·åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ¸ÃÍâ¼üËùÔÚ±íµÄ¼Ü¹¹(Ò»°ãÎªÓÃ»§Ãû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getFkTableSchem() {
 		return fkTableSchem;
 	}
 	/**
-	 * @param fkTableSchem è®¾ç½®è¯¥å¤–é”®æ‰€åœ¨è¡¨çš„æ¶æ„(ä¸€èˆ¬ä¸ºç”¨æˆ·åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @param fkTableSchem ÉèÖÃ¸ÃÍâ¼üËùÔÚ±íµÄ¼Ü¹¹(Ò»°ãÎªÓÃ»§Ãû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public void setFkTableSchem(String fkTableSchem) {
 		this.fkTableSchem = fkTableSchem;
 	}
 	/**
-	 * @return å–å¾—è¯¥å¤–é”®æ‰€å¯¹åº”çš„è¡¨å
+	 * @return È¡µÃ¸ÃÍâ¼üËù¶ÔÓ¦µÄ±íÃû
 	 */
 	public String getFkTableName() {
 		return fkTableName;
 	}
 	/**
-	 * @param fkTableName è®¾ç½®è¯¥å¤–é”®æ‰€å¯¹åº”çš„è¡¨å
+	 * @param fkTableName ÉèÖÃ¸ÃÍâ¼üËù¶ÔÓ¦µÄ±íÃû
 	 */
 	public void setFkTableName(String fkTableName) {
 		this.fkTableName = fkTableName;
 	}
 	/**
-	 * @return å–å¾—å¤–é”®åˆ—çš„åç§°
+	 * @return È¡µÃÍâ¼üÁĞµÄÃû³Æ
 	 */
 	public String getFkColumnName() {
 		return fkColumnName;
 	}
 	/**
-	 * @param fkColumnName è®¾ç½®å¤–é”®åˆ—çš„åç§°
+	 * @param fkColumnName ÉèÖÃÍâ¼üÁĞµÄÃû³Æ
 	 */
 	public void setFkColumnName(String fkColumnName) {
 		this.fkColumnName = fkColumnName;
 	}
 	/**
-	 * @return å–å¾—è¯¥é”®åœ¨é”®åºåˆ—ä¸­çš„é¡ºåºï¼ˆå¤šä¸ªé”®çš„æ—¶å€™ï¼‰
+	 * @return È¡µÃ¸Ã¼üÔÚ¼üĞòÁĞÖĞµÄË³Ğò£¨¶à¸ö¼üµÄÊ±ºò£©
 	 */
 	public short getKeySeq() {
 		return keySeq;
 	}
 	/**
-	 * @param keySeq è®¾ç½®è¯¥é”®åœ¨é”®åºåˆ—ä¸­çš„é¡ºåºï¼ˆå¤šä¸ªé”®çš„æ—¶å€™ï¼‰
+	 * @param keySeq ÉèÖÃ¸Ã¼üÔÚ¼üĞòÁĞÖĞµÄË³Ğò£¨¶à¸ö¼üµÄÊ±ºò£©
 	 */
 	public void setKeySeq(short keySeq) {
 		this.keySeq = keySeq;
 	}
 	/**
-	 * @return å–å¾—è¯¥é”®çš„æ›´æ–°è§„åˆ™
+	 * @return È¡µÃ¸Ã¼üµÄ¸üĞÂ¹æÔò
 	 */
 	public short getUpdateRule() {
 		return updateRule;
 	}
 	/**
-	 * @param updateRule è®¾ç½®è¯¥é”®çš„æ›´æ–°è§„åˆ™
+	 * @param updateRule ÉèÖÃ¸Ã¼üµÄ¸üĞÂ¹æÔò
 	 */
 	public void setUpdateRule(short updateRule) {
 		this.updateRule = updateRule;
 	}
 	/**
-	 * @return å–å¾—è¯¥é”®çš„åˆ é™¤è§„åˆ™
+	 * @return È¡µÃ¸Ã¼üµÄÉ¾³ı¹æÔò
 	 */
 	public short getDeleteRule() {
 		return deleteRule;
 	}
 	/**
-	 * @param deleteRule è®¾ç½®è¯¥é”®çš„åˆ é™¤è§„åˆ™
+	 * @param deleteRule ÉèÖÃ¸Ã¼üµÄÉ¾³ı¹æÔò
 	 */
 	public void setDeleteRule(short deleteRule) {
 		this.deleteRule = deleteRule;
 	}
 	/**
-	 * @return å–å¾—å¤–é”®å
+	 * @return È¡µÃÍâ¼üÃû
 	 */
 	public String getFkName() {
 		return fkName;
 	}
 	/**
-	 * @param fkName è®¾ç½®å¤–é”®å
+	 * @param fkName ÉèÖÃÍâ¼üÃû
 	 */
 	public void setFkName(String fkName) {
 		this.fkName = fkName;
 	}
 	/**
-	 * @return å–å¾—ä¸»é”®å
+	 * @return È¡µÃÖ÷¼üÃû
 	 */
 	public String getPkName() {
 		return pkName;
 	}
 	/**
-	 * @param pkName è®¾ç½®ä¸»é”®å
+	 * @param pkName ÉèÖÃÖ÷¼üÃû
 	 */
 	public void setPkName(String pkName) {
 		this.pkName = pkName;
 	}
 	/**
-	 * @return å–å¾—æŒ‡ç¤ºæ˜¯å¦å¯å»¶è¿Ÿçº¦æŸæ£€æŸ¥ã€‚
+	 * @return È¡µÃÖ¸Ê¾ÊÇ·ñ¿ÉÑÓ³ÙÔ¼Êø¼ì²é¡£
 	 */
 	public short getDeferrability() {
 		return Deferrability;
 	}
 	/**
-	 * @param deferrability è®¾ç½®æ˜¯å¦å¯å»¶è¿Ÿçº¦æŸæ£€æŸ¥ã€‚
+	 * @param deferrability ÉèÖÃÊÇ·ñ¿ÉÑÓ³ÙÔ¼Êø¼ì²é¡£
 	 */
 	public void setDeferrability(short deferrability) {
 		Deferrability = deferrability;

@@ -5,8 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * å¿½ç•¥å¤§å°å†™çš„Mapç±»å‹
- * @author é»„å¤©æ”¿
+ * ºöÂÔ´óĞ¡Ğ´µÄMapÀàĞÍ
+ * @author »ÆÌìÕş
  *
  * @param <K>
  * @param <V>

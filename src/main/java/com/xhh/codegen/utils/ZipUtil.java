@@ -38,7 +38,7 @@ public class ZipUtil {
     @SuppressWarnings("rawtypes")
 	public void zip(ZipOutputStream out, File srcFile, String base, List filter) throws Exception {  
         if(srcFile.exists()==false) {  
-            throw new Exception("å‹ç¼©ç›®å½•ä¸å­˜åœ¨!");  
+            throw new Exception("Ñ¹ËõÄ¿Â¼²»´æÔÚ!");  
         }  
           
         if(srcFile.isDirectory()) {  
@@ -90,7 +90,7 @@ public class ZipUtil {
 	public void unZip(String srcFile,String dest,boolean deleteFile)  throws Exception {  
         File file = new File(srcFile);  
         if(!file.exists()) {  
-            throw new Exception("è§£å‹æ–‡ä»¶ä¸å­˜åœ¨!");  
+            throw new Exception("½âÑ¹ÎÄ¼ş²»´æÔÚ!");  
         }  
         ZipFile zipFile = new ZipFile(file);  
         Enumeration e = zipFile.getEntries();  
@@ -146,7 +146,7 @@ public class ZipUtil {
   
             zipFile.close();  
         } catch (Exception e) {  
-            System.out.println("è·å–zipæ–‡ä»¶æ³¨é‡Šä¿¡æ¯å¤±è´¥:" + e.getMessage());  
+            System.out.println("»ñÈ¡zipÎÄ¼ş×¢ÊÍĞÅÏ¢Ê§°Ü:" + e.getMessage());  
         }  
   
         return comment;  
@@ -158,7 +158,7 @@ public class ZipUtil {
         List<String> filter = new ArrayList<String>();  
         //filter.add("Bll.java");  
         //filter.add("BllImpl.java");  
-        zu.setComment("è¯¥å‹ç¼©åŒ…ç”±Codegenä»£ç ç”Ÿæˆå™¨ç”Ÿæˆçš„");
+        zu.setComment("¸ÃÑ¹Ëõ°üÓÉCodegen´úÂëÉú³ÉÆ÷Éú³ÉµÄ");
         zu.zip("e:\\QtoneProject\\TengenCode", "e:/TengenCode.zip",filter);  
         System.out.println(ZipUtil.getZipComment("e:/TengenCode.zip"));  
         //new ZipUtil().unZip("D:/TengenCode.zip", "D:/codegen/", true);

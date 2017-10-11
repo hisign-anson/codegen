@@ -15,8 +15,8 @@ import com.xhh.codegen.service.DbProvider;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * é’ˆå¯¹MSSQLServer2000çš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…
- * @author é»„å¤©æ”¿
+ * Õë¶ÔMSSQLServer2000µÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+ * @author »ÆÌìÕş
  *
  */
 public class Sql2000Provider extends DbProvider {

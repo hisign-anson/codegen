@@ -8,8 +8,8 @@ import org.apache.commons.lang.StringUtils;
 
 public class BuildHelper {
 	/**
-	 * æ ¹æ®æ–‡ä»¶åå–å¾—prettifyé«˜äº®ç€è‰²å¯¹åº”çš„è¯­è¨€ï¼šbashâ€, â€œcâ€, â€œccâ€, â€œcppâ€, â€œcsâ€, â€œcshâ€, â€œcycâ€, â€œcvâ€, 
-	 * â€œhtmâ€, â€œhtmlâ€, â€javaâ€, â€œjsâ€, â€œmâ€, â€œmxmlâ€, â€œperlâ€, â€œplâ€, â€œpmâ€, â€œpyâ€, â€œrbâ€, â€œshâ€, â€xhtmlâ€, â€œxmlâ€, â€œxslâ€
+	 * ¸ù¾İÎÄ¼şÃûÈ¡µÃprettify¸ßÁÁ×ÅÉ«¶ÔÓ¦µÄÓïÑÔ£ºbash¡±, ¡°c¡±, ¡°cc¡±, ¡°cpp¡±, ¡°cs¡±, ¡°csh¡±, ¡°cyc¡±, ¡°cv¡±, 
+	 * ¡°htm¡±, ¡°html¡±, ¡±java¡±, ¡°js¡±, ¡°m¡±, ¡°mxml¡±, ¡°perl¡±, ¡°pl¡±, ¡°pm¡±, ¡°py¡±, ¡°rb¡±, ¡°sh¡±, ¡±xhtml¡±, ¡°xml¡±, ¡°xsl¡±
 	 * @param filename
 	 * @return 
 	 */

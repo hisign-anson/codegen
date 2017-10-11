@@ -1,7 +1,7 @@
 package com.xhh.codegen.utils;
 
 /**
- * 鎿嶄綔绯荤粺鏋氫妇
+ * 操作系统枚举
  * Created by tengen on 2016/3/23.
  */
 public enum EPlatform {

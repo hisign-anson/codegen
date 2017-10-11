@@ -31,8 +31,8 @@ import com.xhh.codegen.service.ColumnHandler;
 import com.xhh.codegen.service.DbProvider;
 
 /**
- * ä»é…ç½®æ–‡ä»¶é‡Œè·å–é¡¹ç›®é…ç½®ä¿¡æ¯çš„è¾…åŠ©ç±»
- * @author é»„å¤©æ”¿
+ * ´ÓÅäÖÃÎÄ¼şÀï»ñÈ¡ÏîÄ¿ÅäÖÃĞÅÏ¢µÄ¸¨ÖúÀà
+ * @author »ÆÌìÕş
  *
  */
 public class ProjectConfigHelper {
@@ -45,11 +45,11 @@ public class ProjectConfigHelper {
 	private static ProjectConfig firstProjectConfig = null;
 	
 	/**
-	 * å–å¾—é¡¹ç›®é…ç½®æ–‡ä»¶ä¿¡æ¯ã€‚å¦‚æœweb.xmlé…ç½®äº†åç§°ä¸ºâ€œcodegen.configâ€çš„ä¸Šä¸‹æ–‡åˆå§‹åŒ–å‚æ•°
-	 * ï¼ˆç›¸å¯¹äºWEB-INFç›®å½•ä¸‹çš„æ–‡ä»¶è·¯å¾„ï¼Œå¤šä¸ªæ–‡ä»¶åä»¥è‹±æ–‡é€—å·åˆ†éš”ï¼‰ï¼Œ
-	 * åˆ™è¯»å–ç›¸åº”çš„é…ç½®æ–‡ä»¶ã€‚å¦‚æœæœªé…ç½®è¯¥å‚æ•°ï¼Œåˆ™é»˜è®¤è¯»å–ç±»è·¯å¾„æ ¹ç›®å½•ä¸‹çš„"codegen-config.xml"ï¼Œ
-	 * æ‰€ä»¥åœ¨è¿™ç§æƒ…å†µä¸‹è¯·ç¡®ä¿srcç›®å½•ä¸‹å­˜åœ¨codegen-config.xmlæ–‡ä»¶ã€‚
-	 * @param relativePath ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„
+	 * È¡µÃÏîÄ¿ÅäÖÃÎÄ¼şĞÅÏ¢¡£Èç¹ûweb.xmlÅäÖÃÁËÃû³ÆÎª¡°codegen.config¡±µÄÉÏÏÂÎÄ³õÊ¼»¯²ÎÊı
+	 * £¨Ïà¶ÔÓÚWEB-INFÄ¿Â¼ÏÂµÄÎÄ¼şÂ·¾¶£¬¶à¸öÎÄ¼şÃûÒÔÓ¢ÎÄ¶ººÅ·Ö¸ô£©£¬
+	 * Ôò¶ÁÈ¡ÏàÓ¦µÄÅäÖÃÎÄ¼ş¡£Èç¹ûÎ´ÅäÖÃ¸Ã²ÎÊı£¬ÔòÄ¬ÈÏ¶ÁÈ¡ÀàÂ·¾¶¸ùÄ¿Â¼ÏÂµÄ"codegen-config.xml"£¬
+	 * ËùÒÔÔÚÕâÖÖÇé¿öÏÂÇëÈ·±£srcÄ¿Â¼ÏÂ´æÔÚcodegen-config.xmlÎÄ¼ş¡£
+	 * @param relativePath Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶
 	 * @param projectName
 	 * @return
 	 */
@@ -66,8 +66,8 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * å–å¾—é»˜è®¤é¡¹ç›®é…ç½®ä¿¡æ¯ï¼Œå¦‚æœæ²¡æœ‰è®¾ç½®ï¼Œåˆ™é»˜è®¤ä¸ºæŒ‰é…ç½®æ–‡ä»¶ä¸­æ’åˆ—é¡ºåºçš„ç¬¬ä¸€ä¸ªé¡¹ç›®
-	 * @param relativePath ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„
+	 * È¡µÃÄ¬ÈÏÏîÄ¿ÅäÖÃĞÅÏ¢£¬Èç¹ûÃ»ÓĞÉèÖÃ£¬ÔòÄ¬ÈÏÎª°´ÅäÖÃÎÄ¼şÖĞÅÅÁĞË³ĞòµÄµÚÒ»¸öÏîÄ¿
+	 * @param relativePath Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶
 	 * @return
 	 */
 	public static ProjectConfig getDefaultProjectConfig(String relativePath){
@@ -83,8 +83,8 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * æ ¹æ®å½“å‰webä¸Šä¸‹æ–‡ç¯å¢ƒè·å–æ‰€æœ‰é¡¹ç›®é…ç½®
-	 * @param relativePath ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„
+	 * ¸ù¾İµ±Ç°webÉÏÏÂÎÄ»·¾³»ñÈ¡ËùÓĞÏîÄ¿ÅäÖÃ
+	 * @param relativePath Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶
 	 * @return
 	 */
 	public static Map<String, ProjectConfig> getAllProjectConfig(String relativePath){
@@ -95,8 +95,8 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * æ ¹æ®å½“å‰webä¸Šä¸‹æ–‡ç¯å¢ƒé‡æ–°åŠ è½½é…ç½®ä¿¡æ¯
-	 * @param relativePath ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„
+	 * ¸ù¾İµ±Ç°webÉÏÏÂÎÄ»·¾³ÖØĞÂ¼ÓÔØÅäÖÃĞÅÏ¢
+	 * @param relativePath Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶
 	 */
 	public static void refreshConfig(String relativePath){
 		if(projectConfigMap!=null){
@@ -106,8 +106,8 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * å®ç°ä»é…ç½®æ–‡ä»¶åŠ è½½é¡¹ç›®é…ç½®ä¿¡æ¯
-	 * @param relativePath ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„
+	 * ÊµÏÖ´ÓÅäÖÃÎÄ¼ş¼ÓÔØÏîÄ¿ÅäÖÃĞÅÏ¢
+	 * @param relativePath Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶
 	 */
 	private static void loadConfigFromFile(String relativePath){
 		projectConfigMap = new LinkedHashMap<String, ProjectConfig>();
@@ -131,7 +131,7 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * ä»è¾“å…¥æµä¸­åŠ è½½é¡¹ç›®é…ç½®ä¿¡æ¯
+	 * ´ÓÊäÈëÁ÷ÖĞ¼ÓÔØÏîÄ¿ÅäÖÃĞÅÏ¢
 	 * @param inputStream configFile
 	 * @return
 	 */
@@ -153,23 +153,23 @@ public class ProjectConfigHelper {
 				String projectName = projectNode.getAttribute("name");
 				String isEnabled = projectNode.getAttribute("isEnabled");
 				if(StringUtils.isNotBlank(isEnabled)&&isEnabled.equalsIgnoreCase("false")){
-					continue; //ä¸åŠ è½½å·²ç¦ç”¨çš„é…ç½®
+					continue; //²»¼ÓÔØÒÑ½ûÓÃµÄÅäÖÃ
 				}
 				
 				if(projectConfigMap.containsKey(projectName)){
-					throw new Exception("é…ç½®æ–‡ä»¶ä¸­å­˜åœ¨ç›¸åŒçš„é¡¹ç›®åç§°ï¼š"+projectName);
+					throw new Exception("ÅäÖÃÎÄ¼şÖĞ´æÔÚÏàÍ¬µÄÏîÄ¿Ãû³Æ£º"+projectName);
 				}
 				
 				if(projectNode.hasAttribute("extends")){
 					String extendsProject = projectNode.getAttribute("extends");
 					if(projectConfigMap.containsKey(extendsProject)==false){
-						//å¦‚æœæ˜¯ç»§æ‰¿ç³»ç»Ÿé»˜è®¤é…ç½®ï¼Œåˆ™åŠ è½½ï¼Œå¦åˆ™æŠ›å¼‚å¸¸
+						//Èç¹ûÊÇ¼Ì³ĞÏµÍ³Ä¬ÈÏÅäÖÃ£¬Ôò¼ÓÔØ£¬·ñÔòÅ×Òì³£
 						if(DEFAULT_PROJECT_NAME.equals(extendsProject)){
 							inputStream = ClassLoaderUtil.getStream(CODEGEN_DEFAULT);
 							loadConfigFromInputStream(inputStream);
 						}else{
-							throw new Exception("é…ç½®æ–‡ä»¶ä¸­é¡¹ç›®ã€"+projectName
-									+"ã€‘æ‰€ç»§æ‰¿çš„é¡¹ç›®ã€"+extendsProject+"ã€‘ä¸å­˜åœ¨æˆ–å·²ç¦ç”¨");
+							throw new Exception("ÅäÖÃÎÄ¼şÖĞÏîÄ¿¡¾"+projectName
+									+"¡¿Ëù¼Ì³ĞµÄÏîÄ¿¡¾"+extendsProject+"¡¿²»´æÔÚ»òÒÑ½ûÓÃ");
 						}
 					}
 					projectConfig = projectConfigMap.get(extendsProject).deepClone();
@@ -223,25 +223,25 @@ public class ProjectConfigHelper {
 								outputModel.setType(InOutType.TEXT);
 							}
 							
-							//å‘è¾“å‡ºæ¨¡å‹é‡Œè®¾ç½®æ¨¡æ¿æ¨¡å‹ï¼Œåˆ¤æ–­ä¼˜å…ˆé¡ºåºï¼šæ–‡æœ¬>æ–‡ä»¶>å¼•ç”¨ 
+							//ÏòÊä³öÄ£ĞÍÀïÉèÖÃÄ£°åÄ£ĞÍ£¬ÅĞ¶ÏÓÅÏÈË³Ğò£ºÎÄ±¾>ÎÄ¼ş>ÒıÓÃ 
 							TemplateModel templateModel;
-							if(childElement.hasAttribute("templateText")){ //æ–‡æœ¬æ¨¡æ¿
+							if(childElement.hasAttribute("templateText")){ //ÎÄ±¾Ä£°å
 								templateModel = new TemplateModel();
 								templateModel.setName(key);
 								templateModel.setType(InOutType.TEXT);
 								templateModel.setTemplate(childElement.getAttribute("templateText"));
-							}else if(childElement.hasAttribute("templateFile")){ //æ–‡ä»¶æ¨¡æ¿
+							}else if(childElement.hasAttribute("templateFile")){ //ÎÄ¼şÄ£°å
 								templateModel = new TemplateModel();
 								templateModel.setName(key);
 								templateModel.setType(InOutType.FILE);
 								templateModel.setTemplate(childElement.getAttribute("templateFile"));
-							}else if(childElement.hasAttribute("templateName")){ //å¼•ç”¨æ¨¡æ¿
+							}else if(childElement.hasAttribute("templateName")){ //ÒıÓÃÄ£°å
 								templateModel = templateModelMap.get(childElement.getAttribute("templateName"));
 							}else{
 								templateModel = new TemplateModel();
 								templateModel.setName(key);
-								templateModel.setType(InOutType.FILE); //é»˜è®¤ä¸ºæ–‡ä»¶æ¨¡æ¿ç±»å‹
-								templateModel.setTemplate(key);	//é»˜è®¤æ¨¡æ¿æ–‡ä»¶åç§°åˆæˆè§„åˆ™ï¼šå½“å‰åº”ç”¨ç±»è·¯å¾„+"template/" + é¡¹ç›®åç§° + "/" + è¾“å‡ºåç§°+".ftl"
+								templateModel.setType(InOutType.FILE); //Ä¬ÈÏÎªÎÄ¼şÄ£°åÀàĞÍ
+								templateModel.setTemplate(key);	//Ä¬ÈÏÄ£°åÎÄ¼şÃû³ÆºÏ³É¹æÔò£ºµ±Ç°Ó¦ÓÃÀàÂ·¾¶+"template/" + ÏîÄ¿Ãû³Æ + "/" + Êä³öÃû³Æ+".ftl"
 							}
 							outputModel.setTemplateModel(templateModel);
 							if(childElement.hasAttribute("disabled")){
@@ -279,7 +279,7 @@ public class ProjectConfigHelper {
 		
 	}
 	/**
-	 * ä»DOMæ¨¡å‹ä¸­è§£æè¾“å‡ºæ¨¡å‹
+	 * ´ÓDOMÄ£ĞÍÖĞ½âÎöÊä³öÄ£ĞÍ
 	 * @param element
 	 * @return
 	 *//*
@@ -313,7 +313,7 @@ public class ProjectConfigHelper {
 	}*/
 
 	/**
-	 * ä»DOMæ¨¡å‹ä¸­è§£æå‡ºé…ç½®çš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…
+	 * ´ÓDOMÄ£ĞÍÖĞ½âÎö³öÅäÖÃµÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
 	 * @param element
 	 * @return
 	 * @throws ClassNotFoundException 
@@ -380,7 +380,7 @@ public class ProjectConfigHelper {
 	}
 	
 	/**
-	 * ä»DOMæ¨¡å‹ä¸­è§£æå‡ºé…ç½®çš„åˆ—æ¨¡å‹å¤„ç†å™¨
+	 * ´ÓDOMÄ£ĞÍÖĞ½âÎö³öÅäÖÃµÄÁĞÄ£ĞÍ´¦ÀíÆ÷
 	 * @param nodeList
 	 * @return
 	 * @throws ClassNotFoundException 

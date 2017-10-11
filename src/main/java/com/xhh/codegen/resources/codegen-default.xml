@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="gbk"?>
 <!DOCTYPE codegen-config PUBLIC "-//Apache Software Foundation//DTD Tengen Configuration 1.0//EN"
 		"codegen-config_1_0.dtd">
 <codegen-config>
-	<project name="defaultProject" label="é»˜è®¤é¡¹ç›®" outputEncoding="UTF-8" isDefault="true">
+	<project name="defaultProject" label="Ä¬ÈÏÏîÄ¿" outputEncoding="UTF-8" isDefault="true">
 		<dataModel name="defaultCopyright">
 			<![CDATA[ 
 /*
 {*******************************************************************
 {  ${projectLabel} v${copyright.version}													
-{  ç‰ˆæƒä¿¡æ¯ (c) 2005-${(copyright.createDate)[0..3]} ${copyright.company}. ä¿ç•™æ‰€æœ‰æƒåˆ©.					
-{  åˆ›å»ºäººï¼š  ${copyright.author}
-{  å®¡æŸ¥äººï¼š
-{  æ¨¡å—ï¼š${table.tabComment?default(tableLabel)}											
-{  åŠŸèƒ½æè¿°:										
+{  °æÈ¨ĞÅÏ¢ (c) 2005-${(copyright.createDate)[0..3]} ${copyright.company}. ±£ÁôËùÓĞÈ¨Àû.					
+{  ´´½¨ÈË£º  ${copyright.author}
+{  Éó²éÈË£º
+{  Ä£¿é£º${table.tabComment?default(tableLabel)}											
+{  ¹¦ÄÜÃèÊö:										
 {															
 {  -----------------------------------------------------------------	
-{  ç»´æŠ¤å†å²:													
-{  æ—¥æœŸ        ç»´æŠ¤äºº        ç»´æŠ¤ç±»å‹						
+{  Î¬»¤ÀúÊ·:													
+{  ÈÕÆÚ        Î¬»¤ÈË        Î¬»¤ÀàĞÍ						
 {  -----------------------------------------------------------------	
-{  ${copyright.createDate}  ${copyright.author}        æ–°å»º	
+{  ${copyright.createDate}  ${copyright.author}        ĞÂ½¨	
 { 	                                                                     
 {  -----------------------------------------------------------------	
 {*******************************************************************	
@@ -28,7 +28,7 @@
 		<dataModel name="defaultJavaModelWithNoCopyright">
 		<![CDATA[
 /**
- * ã€${tableLabel}ã€‘ å®ä½“æ¨¡å‹
+ * ¡¾${tableLabel}¡¿ ÊµÌåÄ£ĞÍ
  * @author ${copyright.author}
  *
  */
@@ -40,7 +40,7 @@ public class ${moduleName?cap_first}{
 	</#list>
 	
 	/**
-	 *å®ä¾‹åŒ–ä¸€ä¸ª"${tableLabel}"å®ä½“æ¨¡å‹å¯¹è±¡
+	 *ÊµÀı»¯Ò»¸ö"${tableLabel}"ÊµÌåÄ£ĞÍ¶ÔÏó
 	 */
 	public ${moduleName?cap_first}() {
 		super();
@@ -48,14 +48,14 @@ public class ${moduleName?cap_first}{
 	
 	<#list table.columnList as column>
 	/**
-	 * è·å–"${column.columnLabel}"
-	 * @return è¿”å›"${column.columnLabel}"
+	 * »ñÈ¡"${column.columnLabel}"
+	 * @return ·µ»Ø"${column.columnLabel}"
 	 */
 	public ${column.columnSimpleClassName} get${column.columnName?cap_first}(){
 		return this.${column.columnName?uncap_first};
 	}
 	/**
-	 * è®¾ç½®"${column.columnLabel}"
+	 * ÉèÖÃ"${column.columnLabel}"
 	 * @param ${column.columnName?uncap_first} ${column.columnLabel}
 	 */
 	public void set${column.columnName?cap_first}(${column.columnSimpleClassName} ${column.columnName?uncap_first}){

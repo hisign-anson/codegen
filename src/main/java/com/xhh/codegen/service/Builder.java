@@ -5,14 +5,14 @@ import java.util.Map;
 import com.xhh.codegen.model.OutputModel;
 
 /**
- * ä¸€ä¸ªç®€å•çš„æ„å»ºæ¥å£
- * @author é»„å¤©æ”¿
+ * Ò»¸ö¼òµ¥µÄ¹¹½¨½Ó¿Ú
+ * @author »ÆÌìÕş
  *
  */
 public interface  Builder {	
 	/**
-	 * æ„å»ºæ“ä½œã€‚è¿”å›ç±»å‹Map&lt;è¾“å‡ºæ ‡è¯†,è¾“å‡ºæ¨¡å‹&gt;
-	 * @return è¿”å›è¾“å‡ºæ¨¡å‹çš„æ˜ å°„ã€‚
+	 * ¹¹½¨²Ù×÷¡£·µ»ØÀàĞÍMap&lt;Êä³ö±êÊ¶,Êä³öÄ£ĞÍ&gt;
+	 * @return ·µ»ØÊä³öÄ£ĞÍµÄÓ³Éä¡£
 	 */
 	Map<String, OutputModel> build();
 }

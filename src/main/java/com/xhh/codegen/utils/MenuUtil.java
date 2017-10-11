@@ -14,7 +14,7 @@ import com.xhh.codegen.service.DbProvider;
 public class MenuUtil {
 	
 	/**
-	 * æ„å»ºèœå•æ ‘ï¼šè¡¨åˆ—è¡¨
+	 * ¹¹½¨²Ëµ¥Ê÷£º±íÁĞ±í
 	 * @param projectConfig
 	 * @param tableType
 	 * @return
@@ -22,7 +22,7 @@ public class MenuUtil {
 	public static String buildTableListForJson(ProjectConfig projectConfig, String tableType, String tableNamePatterns){
 		StringBuilder sb = new StringBuilder("[");
 		DbProvider dbProvider = projectConfig.getDbProvider();
-		dbProvider.clearTableMetaDataCache(); //å…ˆæ¸…ç†ç¼“å­˜ï¼Œå¦åˆ™ä¸ä¼šåŠ è½½æ–°çš„æ•°æ®
+		dbProvider.clearTableMetaDataCache(); //ÏÈÇåÀí»º´æ£¬·ñÔò²»»á¼ÓÔØĞÂµÄÊı¾İ
 		dbProvider.setTableNamePatterns("%"+tableNamePatterns+"%");
 		Map<String,TableMetaData> tmdMap = dbProvider.getTableMetaData();
 		int index =0;
@@ -37,7 +37,7 @@ public class MenuUtil {
 			.append(",\"text\":\"<label title='"+entry.getKey()+"' onclick=\\\"operate('"+entry.getKey()+"')\\\">")
 			.append(entry.getKey()).append("</label>\"")
 			.append(",\"iconCls\":\"icon-").append(tableType.toLowerCase()).append("\"")
-			//.append("\"â€¢attributes\":{tableName}")
+			//.append("\"?attributes\":{tableName}")
 			.append("},");
 		}
 		String content = sb.toString();
@@ -48,7 +48,7 @@ public class MenuUtil {
 	}
 	
 	/**
-	 * æ„å»ºæ¨¡æ¿èœå•æ ‘
+	 * ¹¹½¨Ä£°å²Ëµ¥Ê÷
 	 * @param file
 	 * @return
 	 * @throws UnsupportedEncodingException 
@@ -77,7 +77,7 @@ public class MenuUtil {
 	}
 	
 	/**
-	 * æ„å»ºèœå•æ ‘ï¼šè¡¨åˆ—è¡¨
+	 * ¹¹½¨²Ëµ¥Ê÷£º±íÁĞ±í
 	 * @param projectConfig
 	 * @param tableType
 	 * @return
@@ -102,7 +102,7 @@ public class MenuUtil {
 	}
 	
 	/**
-	 * æ„å»ºæ¨¡æ¿èœå•æ ‘
+	 * ¹¹½¨Ä£°å²Ëµ¥Ê÷
 	 * @param file
 	 * @return
 	 * @throws UnsupportedEncodingException 

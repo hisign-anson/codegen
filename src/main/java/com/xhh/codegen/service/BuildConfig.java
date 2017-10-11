@@ -5,24 +5,24 @@ import java.util.Map;
 import com.xhh.codegen.model.OutputModel;
 
 /**
- * ã€æ„å»ºé…ç½®ã€‘æ¥å£
- * @author é»„å¤©æ”¿
+ * ¡¾¹¹½¨ÅäÖÃ¡¿½Ó¿Ú
+ * @author »ÆÌìÕş
  *
  */
 public interface BuildConfig {
 	/**
-	 * è·å–è¾“å‡ºç¼–ç ç±»å‹
+	 * »ñÈ¡Êä³ö±àÂëÀàĞÍ
 	 * @return
 	 */
 	String getOutputEncoding();
 	/**
-	 * è·å–æ•°æ®æ¨¡å‹
+	 * »ñÈ¡Êı¾İÄ£ĞÍ
 	 * @return
 	 */
 	Map<String,Object> getDataModel();
 	
 	/**
-	 * è·å–è¾“å‡ºæ¨¡å‹
+	 * »ñÈ¡Êä³öÄ£ĞÍ
 	 * @return
 	 */
 	Map<String,OutputModel> getOutputModel();

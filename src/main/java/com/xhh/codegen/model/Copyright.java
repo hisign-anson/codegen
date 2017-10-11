@@ -7,8 +7,8 @@ import java.util.Date;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * ç‰ˆæƒæ¨¡å‹
- * @author é»„å¤©æ”¿
+ * °æÈ¨Ä£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class Copyright implements Serializable{
@@ -24,7 +24,7 @@ public class Copyright implements Serializable{
 	private String version="1.0";
 	
 	/**
-	 * æ„å»ºä¸€ä¸ªç‰ˆæƒä¿¡æ¯å®ä¾‹
+	 * ¹¹½¨Ò»¸ö°æÈ¨ĞÅÏ¢ÊµÀı
 	 */
 	public Copyright() {
 		if(StringUtils.isBlank(author)){
@@ -32,117 +32,117 @@ public class Copyright implements Serializable{
 		}
 	}
 	/**
-	 * ç”±ä¸€ä¸ªä½œè€…åç§°æ„å»ºä¸€ä¸ªç‰ˆæƒä¿¡æ¯å®ä¾‹
-	 * @param author ä½œè€…åç§°
+	 * ÓÉÒ»¸ö×÷ÕßÃû³Æ¹¹½¨Ò»¸ö°æÈ¨ĞÅÏ¢ÊµÀı
+	 * @param author ×÷ÕßÃû³Æ
 	 */
 	public Copyright(String author) {
 		super();
 		this.author = author;
 	}
 	/**
-	 * @return å–å¾—ç‰ˆæœ¬æè¿°ä¿¡æ¯
+	 * @return È¡µÃ°æ±¾ÃèÊöĞÅÏ¢
 	 */
 	public String getDescription() {
 		return description;
 	}
 	/**
-	 * @param description è®¾ç½®ç‰ˆæœ¬æè¿°ä¿¡æ¯
+	 * @param description ÉèÖÃ°æ±¾ÃèÊöĞÅÏ¢
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 	/**
-	 * @return å–å¾—ä½œè€…ä¿¡æ¯
+	 * @return È¡µÃ×÷ÕßĞÅÏ¢
 	 */
 	public String getAuthor() {
 		return author;
 	}
 	/**
-	 * @param author è®¾ç½®ä½œè€…ä¿¡æ¯
+	 * @param author ÉèÖÃ×÷ÕßĞÅÏ¢
 	 */
 	public void setAuthor(String author) {
 		this.author = author;
 	}
 	/**
-	 * @return å–å¾—åˆ›å»ºæ—¥æœŸ
+	 * @return È¡µÃ´´½¨ÈÕÆÚ
 	 */
 	public String getCreateDate() {
 		return createDate;
 	}
 	/**
-	 * @param createDate è®¾ç½®åˆ›å»ºæ—¥æœŸ
+	 * @param createDate ÉèÖÃ´´½¨ÈÕÆÚ
 	 */
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
 	/**
-	 * @return å–å¾—ä½œè€…çš„Email
+	 * @return È¡µÃ×÷ÕßµÄEmail
 	 */
 	public String getAuthorEmail() {
 		return authorEmail;
 	}
 	/**
-	 * @param authorEmail è®¾ç½®ä½œè€…çš„Email
+	 * @param authorEmail ÉèÖÃ×÷ÕßµÄEmail
 	 */
 	public void setAuthorEmail(String authorEmail) {
 		this.authorEmail = authorEmail;
 	}
 	/**
-	 * @return å–å¾—ä¿®æ”¹äººä¿¡æ¯
+	 * @return È¡µÃĞŞ¸ÄÈËĞÅÏ¢
 	 */
 	public String getModifier() {
 		return modifier;
 	}
 	/**
-	 * @param modifier è®¾ç½®ä¿®æ”¹äººä¿¡æ¯
+	 * @param modifier ÉèÖÃĞŞ¸ÄÈËĞÅÏ¢
 	 */
 	public void setModifier(String modifier) {
 		this.modifier = modifier;
 	}
 	/**
-	 * @return å–å¾—ä¿®æ”¹æ—¥æœŸ
+	 * @return È¡µÃĞŞ¸ÄÈÕÆÚ
 	 */
 	public String getModifyDate() {
 		return modifyDate;
 	}
 	/**
-	 * @param modifyDate è®¾ç½®ä¿®æ”¹æ—¥æœŸ
+	 * @param modifyDate ÉèÖÃĞŞ¸ÄÈÕÆÚ
 	 */
 	public void setModifyDate(String modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 	/**
-	 * @return å–å¾—ä¿®æ”¹äººçš„Email
+	 * @return È¡µÃĞŞ¸ÄÈËµÄEmail
 	 */
 	public String getModifierEmail() {
 		return modifierEmail;
 	}
 	/**
-	 * @param modifierEmail è®¾ç½®ä¿®æ”¹äººçš„Email
+	 * @param modifierEmail ÉèÖÃĞŞ¸ÄÈËµÄEmail
 	 */
 	public void setModifierEmail(String modifierEmail) {
 		this.modifierEmail = modifierEmail;
 	}
 	/**
-	 * @return å–å¾—å…¬å¸ä¿¡æ¯
+	 * @return È¡µÃ¹«Ë¾ĞÅÏ¢
 	 */
 	public String getCompany() {
 		return company;
 	}
 	/**
-	 * @param company è®¾ç½®å…¬å¸ä¿¡æ¯
+	 * @param company ÉèÖÃ¹«Ë¾ĞÅÏ¢
 	 */
 	public void setCompany(String company) {
 		this.company = company;
 	}
 	/**
-	 * @return å–å¾—ç‰ˆæœ¬å·
+	 * @return È¡µÃ°æ±¾ºÅ
 	 */
 	public String getVersion() {
 		return version;
 	}
 	/**
-	 * @param version è®¾ç½®ç‰ˆæœ¬å·
+	 * @param version ÉèÖÃ°æ±¾ºÅ
 	 */
 	public void setVersion(String version) {
 		this.version = version;

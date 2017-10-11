@@ -15,16 +15,16 @@ import java.sql.Statement;
 import com.xhh.codegen.model.JdbcConfig;
 
 /**
- * Jdbcæ“ä½œå·¥å…·ç±»
- * @author é»„å¤©æ”¿
+ * Jdbc²Ù×÷¹¤¾ßÀà
+ * @author »ÆÌìÕş
  *
  */
 public class JdbcUtil {
 	//private static final Log logger = LogFactory.getLog(JdbcUtil.class);
 	/**
-	 * ä»ç»“æœé›†é‡Œå½“å‰è¡ŒæŸä¸€åˆ—æ•°æ®ï¼Œåˆ—å·indexä»1å¼€å§‹
+	 * ´Ó½á¹û¼¯Àïµ±Ç°ĞĞÄ³Ò»ÁĞÊı¾İ£¬ÁĞºÅindex´Ó1¿ªÊ¼
 	 * @param rs
-	 * @param index åˆ—å· ä»1å¼€å§‹ï¼Œ å¦‚1ï¼Œ2ï¼Œ3....
+	 * @param index ÁĞºÅ ´Ó1¿ªÊ¼£¬ Èç1£¬2£¬3....
 	 * @return
 	 * @throws SQLException
 	 */
@@ -59,7 +59,7 @@ public class JdbcUtil {
 		return obj;
 	}
 	/**
-	 * æŠŠOracleçš„Clobç±»å‹è½¬åŒ–ä¸ºString
+	 * °ÑOracleµÄClobÀàĞÍ×ª»¯ÎªString
 	 * @param clob
 	 * @return
 	 */
@@ -70,7 +70,7 @@ public class JdbcUtil {
 			inStream = clob.getCharacterStream();
 			char[] c = new char[(int) clob.length()];
 			inStream.read(c);
-			//dataæ˜¯è¯»å‡ºå¹¶éœ€è¦è¿”å›çš„æ•°æ®ï¼Œç±»å‹æ˜¯String
+			//dataÊÇ¶Á³ö²¢ĞèÒª·µ»ØµÄÊı¾İ£¬ÀàĞÍÊÇString
 			str = new String(c);
 			inStream.close();
 			return str;
@@ -147,7 +147,7 @@ public class JdbcUtil {
 		String user =jdbcConfig.getUser();
 		String password =jdbcConfig.getPassword(); 
 		try {
-			//System.out.println("æ•°æ®åº“é©±åŠ¨="+driver);
+			//System.out.println("Êı¾İ¿âÇı¶¯="+driver);
 			Class.forName(driver).newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
@@ -160,9 +160,9 @@ public class JdbcUtil {
 		try {
 			con = DriverManager.getConnection(url, user, password);
 			if(con!=null){
-				//System.out.println("å–å¾—jdbcæ•°æ®è¿æ¥æˆåŠŸï¼");
+				//System.out.println("È¡µÃjdbcÊı¾İÁ¬½Ó³É¹¦£¡");
 			}else{
-				System.out.println("å–å¾—jdbcæ•°æ®è¿æ¥å¤±è´¥ï¼"+jdbcConfig);
+				System.out.println("È¡µÃjdbcÊı¾İÁ¬½ÓÊ§°Ü£¡"+jdbcConfig);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

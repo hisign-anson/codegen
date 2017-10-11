@@ -1,8 +1,8 @@
 package com.xhh.codegen.utils;
 
 /**
- * æ“ä½œç³»ç»Ÿç±»ï¼š
- * è·å–System.getProperty("os.name")å¯¹åº”çš„æ“ä½œç³»ç»Ÿ
+ * ²Ù×÷ÏµÍ³Àà£º
+ * »ñÈ¡System.getProperty("os.name")¶ÔÓ¦µÄ²Ù×÷ÏµÍ³
  * @author tengen
  */
 public class OSinfo {
@@ -84,8 +84,8 @@ public class OSinfo {
     }
 
     /**
-     * è·å–æ“ä½œç³»ç»Ÿåå­—
-     * @return æ“ä½œç³»ç»Ÿå
+     * »ñÈ¡²Ù×÷ÏµÍ³Ãû×Ö
+     * @return ²Ù×÷ÏµÍ³Ãû
      */
     public static EPlatform getOSname(){
         if(isAix()){

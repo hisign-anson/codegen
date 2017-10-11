@@ -28,7 +28,7 @@ import org.apache.commons.logging.LogFactory;
 
 
 /**
- * æ–‡ä»¶æ“ä½œå·¥å…·ç±»
+ * ÎÄ¼ş²Ù×÷¹¤¾ßÀà
  * @author tengen
  */
 public class FileUtil {
@@ -41,7 +41,7 @@ public class FileUtil {
     //---------------------------------------------------------------------
 
     /**
-     * æ‹·è´è¾“å…¥æ–‡ä»¶å†…å®¹åˆ°è¾“å‡ºæ–‡ä»¶
+     * ¿½±´ÊäÈëÎÄ¼şÄÚÈİµ½Êä³öÎÄ¼ş
      *
      * @param in
      *            the file to copy from
@@ -56,7 +56,7 @@ public class FileUtil {
     }
 
     /**
-     * æ‹·è´å­—èŠ‚æ•°ç»„åˆ°æ–‡ä»¶
+     * ¿½±´×Ö½ÚÊı×éµ½ÎÄ¼ş
      *
      * @param in
      *            the byte array to copy from
@@ -73,7 +73,7 @@ public class FileUtil {
     }
 
     /**
-     * æ‹·è´è¾“å…¥æ–‡ä»¶å†…å®¹åˆ°æ–°çš„å­—èŠ‚æ•°ç»„
+     * ¿½±´ÊäÈëÎÄ¼şÄÚÈİµ½ĞÂµÄ×Ö½ÚÊı×é
      *
      * @param in
      *            the file to copy from
@@ -90,7 +90,7 @@ public class FileUtil {
     //---------------------------------------------------------------------
 
     /**
-     * æ‹·è´è¾“å…¥æµåˆ°è¾“å‡ºæµï¼Œå½“å®Œæˆåå…³é—­æµã€‚
+     * ¿½±´ÊäÈëÁ÷µ½Êä³öÁ÷£¬µ±Íê³Éºó¹Ø±ÕÁ÷¡£
      *
      * @param in
      *            the stream to copy from
@@ -123,7 +123,7 @@ public class FileUtil {
     }
 
     /**
-     * æ‹·è´å­—èŠ‚æ•°ç»„åˆ°è¾“å‡ºæµï¼Œå®Œæˆåå…³é—­æµã€‚
+     * ¿½±´×Ö½ÚÊı×éµ½Êä³öÁ÷£¬Íê³Éºó¹Ø±ÕÁ÷¡£
      *
      * @param in
      *            the byte array to copy from
@@ -145,7 +145,7 @@ public class FileUtil {
     }
 
     /**
-     * æ‹·è´è¾“å…¥æµå†…å®¹åˆ°å­—èŠ‚æ•°ç»„,å®Œæˆåå…³é—­æµã€‚
+     * ¿½±´ÊäÈëÁ÷ÄÚÈİµ½×Ö½ÚÊı×é,Íê³Éºó¹Ø±ÕÁ÷¡£
      *
      * @param in
      *            the stream to copy from
@@ -164,7 +164,7 @@ public class FileUtil {
     //---------------------------------------------------------------------
 
     /**
-     * æ‹·è´Readerå†…å®¹åˆ°Writer
+     * ¿½±´ReaderÄÚÈİµ½Writer
      *
      * @param in
      *            the Reader to copy from
@@ -196,7 +196,7 @@ public class FileUtil {
     }
 
     /**
-     * æ‹·è´å­—ç¬¦ä¸²å†…å®¹åˆ°Writer
+     * ¿½±´×Ö·û´®ÄÚÈİµ½Writer
      *
      * @param in
      *            the String to copy from
@@ -218,7 +218,7 @@ public class FileUtil {
     }
 
     /**
-     * å°†Readerå†…å®¹è½¬æ¢æˆå­—ç¬¦ä¸²
+     * ½«ReaderÄÚÈİ×ª»»³É×Ö·û´®
      *
      * @param in
      *            the reader to copy from
@@ -251,13 +251,13 @@ public class FileUtil {
     }
 
     /**
-     * å…³è”è·¯å¾„ä¸‹çš„æ–‡ä»¶, å¦‚æœå­˜åœ¨åˆ™è¿”å›è¯¥æ–‡ä»¶,å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œå°†åˆ›å»ºè¯¥æ–‡ä»¶ã€‚
+     * ¹ØÁªÂ·¾¶ÏÂµÄÎÄ¼ş, Èç¹û´æÔÚÔò·µ»Ø¸ÃÎÄ¼ş,Èç¹ûÎÄ¼ş²»´æÔÚ£¬½«´´½¨¸ÃÎÄ¼ş¡£
      *
      * @param directory
      * @param fileName
      */
     public static File assignFile(String directory, String fileName) {
-        // å…³è”(å»ºç«‹)æ–‡ä»¶è·¯å¾„
+        // ¹ØÁª(½¨Á¢)ÎÄ¼şÂ·¾¶
         File dir = new File(directory);
         if (!dir.exists()) {
             if (!dir.mkdirs()) {
@@ -266,7 +266,7 @@ public class FileUtil {
         } else if (!dir.isDirectory()) {
             logger.warn(directory + "is not a directory");
         }
-        // å…³è”(å»ºç«‹)æ–‡ä»¶
+        // ¹ØÁª(½¨Á¢)ÎÄ¼ş
         File _file = new File(dir, fileName);
         try {
             if (!_file.exists()) {
@@ -281,7 +281,7 @@ public class FileUtil {
     }
 
     /**
-     * å…³è”è·¯å¾„ä¸‹çš„æ–‡ä»¶, å¦‚æœå­˜åœ¨åˆ™è¿”å›è¯¥æ–‡ä»¶,å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ï¼Œå°†åˆ›å»ºè¯¥æ–‡ä»¶ã€‚
+     * ¹ØÁªÂ·¾¶ÏÂµÄÎÄ¼ş, Èç¹û´æÔÚÔò·µ»Ø¸ÃÎÄ¼ş,Èç¹ûÎÄ¼ş²»´æÔÚ£¬½«´´½¨¸ÃÎÄ¼ş¡£
      */
     public static File assignFile(File file) {
         String path = file.getPath();
@@ -292,8 +292,8 @@ public class FileUtil {
     }
 
     /**
-     * <h3>å°†æ–‡ä»¶æˆ–è·¯å¾„æ”¹ä¸ºå°å†™</h3>
-     * å‚æ•°renameDirectoryä¸ºçœŸæ—¶å¯æ”¹å˜ æ–‡ä»¶å¤¹çš„åç§°ä¸ºå°å†™
+     * <h3>½«ÎÄ¼ş»òÂ·¾¶¸ÄÎªĞ¡Ğ´</h3>
+     * ²ÎÊırenameDirectoryÎªÕæÊ±¿É¸Ä±ä ÎÄ¼ş¼ĞµÄÃû³ÆÎªĞ¡Ğ´
      *
      * @param filepath
      * @throws FileNotFoundException
@@ -304,7 +304,7 @@ public class FileUtil {
 
         if (file.isFile()) {
             /*
-             * å¦‚æœæ˜¯æ–‡ä»¶ï¼Œæ”¹ä¸ºå°å†™
+             * Èç¹ûÊÇÎÄ¼ş£¬¸ÄÎªĞ¡Ğ´
              */
             String lowerNameFilePath = file.getParent() + File.separator
                     + file.getName().toLowerCase();
@@ -312,7 +312,7 @@ public class FileUtil {
             file.renameTo(lowerFile);
         } else if (file.isDirectory()) {
             /*
-             * å¦‚æœæ˜¯è·¯å¾„ï¼Œå¹¶ä¸”renameDirectoryä¸ºtrueï¼Œ æ”¹å†™è·¯å¾„åç§°ä¸ºå°å†™ï¼Œå¦åˆ™å‘å‡ºè­¦å‘Š
+             * Èç¹ûÊÇÂ·¾¶£¬²¢ÇÒrenameDirectoryÎªtrue£¬ ¸ÄĞ´Â·¾¶Ãû³ÆÎªĞ¡Ğ´£¬·ñÔò·¢³ö¾¯¸æ
              */
             if (renameDirectory) {
                 String lowerNameDir = file.getParent() + File.separator
@@ -324,8 +324,8 @@ public class FileUtil {
     }
 
     /**
-     * <h3>å°†æŒ‡å®šè·¯å¾„çš„æ–‡ä»¶æˆ–è·¯å¾„æ”¹ä¸ºå°å†™</h3>
-     * å¦‚æœrenameDirectory == true æ‰å¯ä»¥æ”¹å†™è·¯å¾„
+     * <h3>½«Ö¸¶¨Â·¾¶µÄÎÄ¼ş»òÂ·¾¶¸ÄÎªĞ¡Ğ´</h3>
+     * Èç¹ûrenameDirectory == true ²Å¿ÉÒÔ¸ÄĞ´Â·¾¶
      *
      * @param filepath
      * @throws FileNotFoundException
@@ -339,7 +339,7 @@ public class FileUtil {
     }
 
     /**
-     * å°†è¯¥æ–‡ä»¶å¤¹ä¸‹çš„æ‰€æœ‰æ–‡ä»¶è¯¥ä¸ºå°å†™ å¦‚æœrenameDirectoryä¸ºtrueå°†è·¯å¾„ä¹Ÿæ”¹ä¸ºå°å†™
+     * ½«¸ÃÎÄ¼ş¼ĞÏÂµÄËùÓĞÎÄ¼ş¸ÃÎªĞ¡Ğ´ Èç¹ûrenameDirectoryÎªtrue½«Â·¾¶Ò²¸ÄÎªĞ¡Ğ´
      *
      * @param dir
      * @param renameDirectory
@@ -366,7 +366,7 @@ public class FileUtil {
     }
 
     /**
-     * åˆ é™¤ç›®å½•
+     * É¾³ıÄ¿Â¼
      *
      * @param file
      * @throws IOException
@@ -395,7 +395,7 @@ public class FileUtil {
     }
 
     /**
-     * æ–°å»ºç›®å½•
+     * ĞÂ½¨Ä¿Â¼
      *
      * @param folderPath
      * @return boolean
@@ -414,12 +414,12 @@ public class FileUtil {
     }
 
     /**
-     * æ–°å»ºæ–‡ä»¶
+     * ĞÂ½¨ÎÄ¼ş
      *
      * @param filePathAndName
-     *            String æ–‡ä»¶è·¯å¾„åŠåç§° å¦‚c:/moumoulrc.txt
+     *            String ÎÄ¼şÂ·¾¶¼°Ãû³Æ Èçc:/moumoulrc.txt
      * @param fileContent
-     *            String æ–‡ä»¶å†…å®¹
+     *            String ÎÄ¼şÄÚÈİ
      * @return boolean
      */
     public static void newFile(String filePathAndName, String fileContent) {
@@ -456,12 +456,12 @@ public class FileUtil {
     }
 
     /**
-     * å¤åˆ¶å•ä¸ªæ–‡ä»¶
+     * ¸´ÖÆµ¥¸öÎÄ¼ş
      *
      * @param oldPath
-     *            String åŸæ–‡ä»¶è·¯å¾„ å¦‚ï¼šc:/moumoulrc.txt
+     *            String Ô­ÎÄ¼şÂ·¾¶ Èç£ºc:/moumoulrc.txt
      * @param newPath
-     *            String å¤åˆ¶åè·¯å¾„ å¦‚ï¼šf:/moumo
+     *            String ¸´ÖÆºóÂ·¾¶ Èç£ºf:/moumo
      * @return boolean
      */
     public static void copyFile(String oldPath, String newPath) {
@@ -478,12 +478,12 @@ public class FileUtil {
     }
 
     /**
-     * å¤åˆ¶æ•´ä¸ªæ–‡ä»¶å¤¹å†…å®¹
+     * ¸´ÖÆÕû¸öÎÄ¼ş¼ĞÄÚÈİ
      *
      * @param oldPath
-     *            String åŸæ–‡ä»¶è·¯å¾„ å¦‚ï¼šc:/fqf
+     *            String Ô­ÎÄ¼şÂ·¾¶ Èç£ºc:/fqf
      * @param newPath
-     *            String å¤åˆ¶åè·¯å¾„ å¦‚ï¼šf:/fqf/ff
+     *            String ¸´ÖÆºóÂ·¾¶ Èç£ºf:/fqf/ff
      * @return boolean
      */
     public static void copyFolder(String oldPath, String newPath) {
@@ -525,7 +525,7 @@ public class FileUtil {
     }
 
     /**
-     * ç§»åŠ¨æ–‡ä»¶åˆ°æŒ‡å®šç›®å½•
+     * ÒÆ¶¯ÎÄ¼şµ½Ö¸¶¨Ä¿Â¼
      *
      * @param oldPath
      * @param newPath
@@ -536,7 +536,7 @@ public class FileUtil {
     }
 
     /**
-     * ç§»åŠ¨æ–‡ä»¶å¤¹åˆ°æŒ‡å®šç›®å½•
+     * ÒÆ¶¯ÎÄ¼ş¼Ğµ½Ö¸¶¨Ä¿Â¼
      *
      * @param oldPath
      * @param newPath

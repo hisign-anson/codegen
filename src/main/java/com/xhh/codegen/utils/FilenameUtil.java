@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * æ–‡ä»¶åç›¸å…³æ“ä½œè¾…åŠ©ç±» 
- * @author é»„å¤©æ”¿
+ * ÎÄ¼şÃûÏà¹Ø²Ù×÷¸¨ÖúÀà 
+ * @author »ÆÌìÕş
  *
  */
 public class FilenameUtil {

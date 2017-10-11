@@ -31,7 +31,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
 
     public void afterParseDataModel(BuildConfig buildConfig) {
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
-        //è·å–è¾“å‡ºæ–‡ä»¶å¤¹
+        //»ñÈ¡Êä³öÎÄ¼ş¼Ğ
         String outDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_OUTPUTDIRECTORY);
         /*if (OSinfo.isWindows()) {
             outDir = "f:" + outDir;
@@ -42,28 +42,28 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
 
     public void afterParseOutputModel(BuildConfig buildConfig) {
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
-        //è·å–æ¨¡æ¿æ–‡ä»¶å¤¹
+        //»ñÈ¡Ä£°åÎÄ¼ş¼Ğ
         String tplDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_TEMPLATEDIRECTORY);
         tplDir = new File(ClassLoaderUtil.getResource(tplDir).getFile()).getAbsolutePath();
         tplDir = FilenameUtil.normalize(tplDir + File.separatorChar);
 
-        //è·å–æ¨¡æ¿æ–‡ä»¶åˆ—è¡¨
+        //»ñÈ¡Ä£°åÎÄ¼şÁĞ±í
         List<String> tplFileList = new ArrayList<String>();
         getAllFiles(new File(tplDir), tplFileList);
 
-        //è·å–è¾“å‡ºæ–‡ä»¶å¤¹
+        //»ñÈ¡Êä³öÎÄ¼ş¼Ğ
         String outDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_OUTPUTDIRECTORY);
 
-        //å…ˆæ¸…ç†è¾“å‡ºæ–‡ä»¶å¤¹ï¼Œé˜²æ­¢æ‰“åŒ…ä¸‹è½½æ—¶åŒ…å«å†å²æ–‡ä»¶
+        //ÏÈÇåÀíÊä³öÎÄ¼ş¼Ğ£¬·ÀÖ¹´ò°üÏÂÔØÊ±°üº¬ÀúÊ·ÎÄ¼ş
         File outDirFile = new File(outDir);
         if (outDirFile.exists()) {
             FileUtil.deleteDirectory(outDirFile);
         }
 
-        //å…ˆæŠŠæ¨¡æ¿æ–‡ä»¶å¤¹æ‹·è´åˆ°ç›®æ ‡æ–‡ä»¶å¤¹ï¼Œç„¶åå†è§£æè¾“å‡ºæ›¿æ¢
+        //ÏÈ°ÑÄ£°åÎÄ¼ş¼Ğ¿½±´µ½Ä¿±êÎÄ¼ş¼Ğ£¬È»ºóÔÙ½âÎöÊä³öÌæ»»
         //FileUtil.copyFolder(tplDir, outDir);
 
-        //æ ¹æ®æ¨¡æ¿æ–‡ä»¶ç»“æ„ç»„è£…åŒç»“æ„çš„è¾“å‡ºæ–‡ä»¶åˆ—è¡¨
+        //¸ù¾İÄ£°åÎÄ¼ş½á¹¹×é×°Í¬½á¹¹µÄÊä³öÎÄ¼şÁĞ±í
         TemplateModel templateModel;
         OutputModel outputModel;
         Map<String, OutputModel> outputModelMap = pbConfig.getOutputModel();
@@ -75,7 +75,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
             templateModel.setTemplate(tplFile);
 
             String outFile = outDir + StringUtils.removeStart(tplFile, tplDir);
-            //è§£æå¸¦æœ‰æ„å»ºå‚æ•°çš„å­—ç¬¦ä¸²
+            //½âÎö´øÓĞ¹¹½¨²ÎÊıµÄ×Ö·û´®
             outFile = BuilderHelper.parseBuildParams(pbConfig.getDataModel(), outFile);
             outputModel = new OutputModel(outFile);
             outputModel.setType(InOutType.FILE);
@@ -88,19 +88,19 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
             }
         }
 
-        //ä¸éœ€è¦è§£ææ„å»ºçš„æ–‡ä»¶ç›´æ¥å¤åˆ¶
+        //²»ĞèÒª½âÎö¹¹½¨µÄÎÄ¼şÖ±½Ó¸´ÖÆ
         for (Entry<String, OutputModel> entry : excludeOutputMap.entrySet()) {
             File file = new File(entry.getValue().getOutput());
             if (file.getParentFile().exists() == false) {
                 file.getParentFile().mkdirs();
             }
             String outputPath = entry.getValue().getOutput();
-            //ç‰¹æ®Šæ–‡ä»¶å¤„ç†
+            //ÌØÊâÎÄ¼ş´¦Àí
             if (outputPath.endsWith("gitignore") && !outputPath.endsWith(".gitignore")) {
                 outputPath = outputPath.replace("gitignore", ".gitignore");
             }
             FileUtil.copyFile(entry.getValue().getTemplateModel().getTemplate(), outputPath);
-            System.out.println("å¤åˆ¶åŸå§‹æ–‡ä»¶=" + entry.getValue().getOutput());
+            System.out.println("¸´ÖÆÔ­Ê¼ÎÄ¼ş=" + entry.getValue().getOutput());
         }
     }
 
@@ -131,7 +131,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
     }
 
     /**
-     * æ˜¯å¦åŒ…å«æ–‡ä»¶ï¼Œè¿”å›trueåˆ™åŒ…å«ï¼Œå¦åˆ™ä¸åŒ…å«
+     * ÊÇ·ñ°üº¬ÎÄ¼ş£¬·µ»ØtrueÔò°üº¬£¬·ñÔò²»°üº¬
      *
      * @param outputModel
      * @return

@@ -9,8 +9,8 @@ import java.util.Map;
 import freemarker.cache.TemplateLoader;
 
 /**
- * å­—ç¬¦ä¸²æ¨¡æ¿è£…è½½å™¨
- * @author é»„å¤©æ”¿
+ * ×Ö·û´®Ä£°å×°ÔØÆ÷
+ * @author »ÆÌìÕş
  *
  */
 public class StringTemplateLoader implements TemplateLoader {

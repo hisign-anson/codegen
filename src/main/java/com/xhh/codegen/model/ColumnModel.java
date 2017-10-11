@@ -7,7 +7,6 @@ import com.sun.xml.internal.bind.CycleRecoverable;
  * @author 黄天政
  *
  */
-@SuppressWarnings("restriction")
 public class ColumnModel implements CycleRecoverable{
 	/**
 	 * 列名 （一般和字段名称相同，但为了增加可读性，列名称可以不同于字段名，如列名一般不包含下划线，有可能需要做替换掉下划线并让紧跟它后面的字母大写）
@@ -465,7 +464,6 @@ public class ColumnModel implements CycleRecoverable{
 	 */
 	public Object onCycleDetected(Context arg0) {
 		ColumnModel temp = new ColumnModel();
-
         temp.setColumnName(columnName);
 
         return temp;

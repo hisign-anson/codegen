@@ -14,8 +14,8 @@ import com.xhh.codegen.service.DbProvider;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * é’ˆå¯¹Mysqlçš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…
- * @author é»„å¤©æ”¿
+ * Õë¶ÔMysqlµÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß
+ * @author »ÆÌìÕş
  *
  */
 public class MysqlProvider extends DbProvider {

@@ -13,9 +13,9 @@ import com.xhh.codegen.service.DbProvider;
 import com.xhh.codegen.utils.JdbcUtil;
 
 /**
- * ä¸€ä¸ªé»˜è®¤çš„æ•°æ®åº“ä¿¡æ¯æä¾›è€…ï¼Œè¯¥ç±»ä¸»è¦ä½¿ç”¨JDBCçš„æ–¹å¼æ¥å°è¯•è·å¾—åˆ—æ³¨é‡Šå’Œè¡¨æ³¨é‡Šï¼Œ
- * è€Œå¯¹äºé‚£äº›åœ¨JDBCé©±åŠ¨é‡Œæ²¡æœ‰æä¾›åˆ—æ³¨é‡Šå’Œè¡¨æ³¨é‡Šçš„DBMSï¼Œåˆ™éœ€è¦å¦å¤–æ‰©å±•DbProvideræ¥å®ç°è‡ªå®šä¹‰è·å–åˆ—æ³¨é‡Šå’Œè¡¨æ³¨é‡Š
- * @author é»„å¤©æ”¿
+ * Ò»¸öÄ¬ÈÏµÄÊı¾İ¿âĞÅÏ¢Ìá¹©Õß£¬¸ÃÀàÖ÷ÒªÊ¹ÓÃJDBCµÄ·½Ê½À´³¢ÊÔ»ñµÃÁĞ×¢ÊÍºÍ±í×¢ÊÍ£¬
+ * ¶ø¶ÔÓÚÄÇĞ©ÔÚJDBCÇı¶¯ÀïÃ»ÓĞÌá¹©ÁĞ×¢ÊÍºÍ±í×¢ÊÍµÄDBMS£¬ÔòĞèÒªÁíÍâÀ©Õ¹DbProviderÀ´ÊµÏÖ×Ô¶¨Òå»ñÈ¡ÁĞ×¢ÊÍºÍ±í×¢ÊÍ
+ * @author »ÆÌìÕş
  *
  */
 public class DefaultProvider extends DbProvider {
@@ -30,8 +30,8 @@ public class DefaultProvider extends DbProvider {
 	}
 
 	/**
-	 * ä»JDBCä¸­é€šè¿‡DatabaseMetaData.getColumnsæ–¹æ³•è·å–æŒ‡å®šè¡¨æ‰€æœ‰åˆ—æ³¨é‡Šã€‚
-	 * è¿”å›çš„é›†åˆçš„å…ƒç´ æ ¼å¼ä¸ºï¼šMap&lt;åˆ—åç§°,åˆ—æ³¨é‡Š&gt;ã€‚
+	 * ´ÓJDBCÖĞÍ¨¹ıDatabaseMetaData.getColumns·½·¨»ñÈ¡Ö¸¶¨±íËùÓĞÁĞ×¢ÊÍ¡£
+	 * ·µ»ØµÄ¼¯ºÏµÄÔªËØ¸ñÊ½Îª£ºMap&lt;ÁĞÃû³Æ,ÁĞ×¢ÊÍ&gt;¡£
 	 */
 	@Override
 	protected Map<String, String> doGetColumnComments(String tableName) {
@@ -51,8 +51,8 @@ public class DefaultProvider extends DbProvider {
 	}
 
 	/**
-	 * ä»JDBCä¸­é€šè¿‡DatabaseMetaData.getTablesæ–¹æ³•è·å–æŒ‡å®šè¡¨æ‰€æœ‰åˆ—æ³¨é‡Šã€‚
-	 * è¿”å›çš„é›†åˆçš„å…ƒç´ æ ¼å¼ä¸ºï¼šMap&lt;è¡¨åç§°,è¡¨æ³¨é‡Š&gt;ã€‚
+	 * ´ÓJDBCÖĞÍ¨¹ıDatabaseMetaData.getTables·½·¨»ñÈ¡Ö¸¶¨±íËùÓĞÁĞ×¢ÊÍ¡£
+	 * ·µ»ØµÄ¼¯ºÏµÄÔªËØ¸ñÊ½Îª£ºMap&lt;±íÃû³Æ,±í×¢ÊÍ&gt;¡£
 	 */
 	@Override
 	protected Map<String, String> doGetTableComments() {

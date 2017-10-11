@@ -24,8 +24,8 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 /**
- * ä»£ç ç”Ÿæˆå™¨
- * @author é»„å¤©æ”¿  360138308@qq.com
+ * ´úÂëÉú³ÉÆ÷
+ * @author »ÆÌìÕş  360138308@qq.com
  *
  */
 public class CodeBuilder implements Builder {
@@ -37,9 +37,9 @@ public class CodeBuilder implements Builder {
 	private Map<String,OutputModel> outputMap = new LinkedHashMap<String, OutputModel>();
 	
 	/**
-	 * æ ¹æ®æŒ‡å®šçš„æ•°æ®æ¨¡å‹é›†åˆå’Œè¾“å‡ºæ¨¡å‹é›†åˆå®ä¾‹åŒ–ä¸€ä¸ªä»£ç æ–‡ä»¶ç”Ÿæˆå™¨
-	 * @param dataModelMap æ•°æ®æ¨¡å‹é›†åˆ
-	 * @param outputMap è¾“å‡ºæ¨¡å‹é›†åˆ
+	 * ¸ù¾İÖ¸¶¨µÄÊı¾İÄ£ĞÍ¼¯ºÏºÍÊä³öÄ£ĞÍ¼¯ºÏÊµÀı»¯Ò»¸ö´úÂëÎÄ¼şÉú³ÉÆ÷
+	 * @param dataModelMap Êı¾İÄ£ĞÍ¼¯ºÏ
+	 * @param outputMap Êä³öÄ£ĞÍ¼¯ºÏ
 	 */
 	public CodeBuilder(Map<String, Object> dataModelMap,
 			Map<String, OutputModel> outputMap) {
@@ -49,7 +49,7 @@ public class CodeBuilder implements Builder {
 	}
 	
 	/**
-	 * æ ¹æ®ä¸€ä¸ªæ„å»ºé…ç½®æ¨¡å‹å®ä¾‹åŒ–ä¸€ä¸ªä»£ç æ–‡ä»¶ç”Ÿæˆå™¨
+	 * ¸ù¾İÒ»¸ö¹¹½¨ÅäÖÃÄ£ĞÍÊµÀı»¯Ò»¸ö´úÂëÎÄ¼şÉú³ÉÆ÷
 	 * @param buildConfig
 	 */
 	public CodeBuilder(BuildConfig buildConfig){
@@ -67,53 +67,53 @@ public class CodeBuilder implements Builder {
 	}
 
 	/**
-	 * @return è·å–å½“å‰çš„æœ¬åœ°åŒ–ä¿¡æ¯
+	 * @return »ñÈ¡µ±Ç°µÄ±¾µØ»¯ĞÅÏ¢
 	 */
 	public Locale getLocale() {
 		return locale;
 	}
 
 	/**
-	 * @param locale è®¾ç½®å½“å‰çš„æœ¬åœ°åŒ–ä¿¡æ¯
+	 * @param locale ÉèÖÃµ±Ç°µÄ±¾µØ»¯ĞÅÏ¢
 	 */
 	public void setLocale(Locale locale) {
 		this.locale = locale;
 	}
 
 	/**
-	 * @return è·å–æ–‡ä»¶è¾“å‡ºçš„ç¼–ç ç±»å‹
+	 * @return »ñÈ¡ÎÄ¼şÊä³öµÄ±àÂëÀàĞÍ
 	 */
 	public String getOutputEncoding() {
 		return outputEncoding;
 	}
 
 	/**
-	 * @param outputEncoding è®¾ç½®æ–‡ä»¶è¾“å‡ºçš„ç¼–ç ç±»å‹
+	 * @param outputEncoding ÉèÖÃÎÄ¼şÊä³öµÄ±àÂëÀàĞÍ
 	 */
 	public void setOutputEncoding(String outputEncoding) {
 		this.outputEncoding = outputEncoding;
 	}
 
 	/**
-	 * @return è·å–å½“å‰çš„æ•°æ®æ¨¡å‹é›†åˆ
+	 * @return »ñÈ¡µ±Ç°µÄÊı¾İÄ£ĞÍ¼¯ºÏ
 	 */
 	public Map<String, Object> getDataModelMap() {
 		return dataModelMap;
 	}
 	/**
-	 * @param dataModelMap è®¾ç½®å½“å‰çš„æ•°æ®æ¨¡å‹é›†åˆ
+	 * @param dataModelMap ÉèÖÃµ±Ç°µÄÊı¾İÄ£ĞÍ¼¯ºÏ
 	 */
 	public void setDataModelMap(Map<String, Object> dataModelMap) {
 		this.dataModelMap = dataModelMap;
 	}
 	/**
-	 * @return è·å–å½“å‰çš„è¾“å‡ºæ¨¡å‹é›†åˆ
+	 * @return »ñÈ¡µ±Ç°µÄÊä³öÄ£ĞÍ¼¯ºÏ
 	 */
 	public Map<String, OutputModel> getOutputMap() {
 		return outputMap;
 	}
 	/**
-	 * @param outputMap è®¾ç½®å½“å‰çš„è¾“å‡ºæ¨¡å‹é›†åˆ
+	 * @param outputMap ÉèÖÃµ±Ç°µÄÊä³öÄ£ĞÍ¼¯ºÏ
 	 */
 	public void setOutputMap(Map<String, OutputModel> outputMap) {
 		this.outputMap = outputMap;
@@ -121,7 +121,7 @@ public class CodeBuilder implements Builder {
 	
 	
 	/***
-	 * ç”Ÿæˆä»£ç æ–‡ä»¶æ“ä½œã€‚
+	 * Éú³É´úÂëÎÄ¼ş²Ù×÷¡£
 	 */
 	public Map<String, OutputModel> build(){
 		Template tp = null;
@@ -132,12 +132,12 @@ public class CodeBuilder implements Builder {
 			cfg.setEncoding(locale, outputEncoding);
 			for (Entry<String, OutputModel>  entry : outputMap.entrySet()) {
 				if(entry.getValue().isDisabled()){
-					continue; //ç¦ç”¨çš„è¾“å‡ºæ¨¡å‹ä¸ä½œç”Ÿæˆ
+					continue; //½ûÓÃµÄÊä³öÄ£ĞÍ²»×÷Éú³É
 				}
 				if(entry.getValue().getTemplateModel().getType()==InOutType.FILE){
 					templateFile = new File(entry.getValue().getTemplateModel().getTemplate());
 					if(templateFile.exists()==false){
-						throw new IOException(String.format("æ¨¡æ¿æ–‡ä»¶%sä¸å­˜åœ¨ï¼",templateFile));
+						throw new IOException(String.format("Ä£°åÎÄ¼ş%s²»´æÔÚ£¡",templateFile));
 					}
 					cfg.setDirectoryForTemplateLoading(templateFile.getParentFile());
 					tp = cfg.getTemplate(templateFile.getName(), locale);
@@ -154,7 +154,7 @@ public class CodeBuilder implements Builder {
 					pw = new PrintWriter(new OutputStreamWriter(new FileOutputStream(outputFile), outputEncoding));
 					tp.process(dataModelMap, pw);
 					pw.close();
-					log.debug("æ„å»ºå¹¶è¾“å‡ºæ–‡ä»¶="+outputFile.getAbsolutePath());
+					log.debug("¹¹½¨²¢Êä³öÎÄ¼ş="+outputFile.getAbsolutePath());
 				}else{
 					StringWriter writer = new StringWriter(); 
 					tp.process(dataModelMap, writer);

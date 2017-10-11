@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE codegen-config PUBLIC "-//Apache Software Foundation//DTD Tengen Configuration 1.0//EN" "com/xhh/codegen/resources/codegen-config_1_0.dtd">
+<!DOCTYPE codegen-config PUBLIC "-//Apache Software Foundation//DTD Tengen Configuration 1.0//EN" "codegen-config_1_0.dtd">
 <codegen-config>
 	<project name="sample" label="测试" outputEncoding="UTF-8" isDefault="true">
 		<dbProvider class="com.xhh.codegen.service.impl.MysqlProvider">

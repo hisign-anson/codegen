@@ -1,22 +1,22 @@
 package com.xhh.codegen.model;
 
 /**
- * è¾“å…¥è¾“å‡ºç±»å‹
- * @author é»„å¤©æ”¿
+ * ÊäÈëÊä³öÀàĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public enum InOutType {
 	/**
 	 * file
 	 */
-	FILE("file","æ–‡ä»¶"),
+	FILE("file","ÎÄ¼ş"),
 	/**
 	 * text
 	 */
-	TEXT("text","æ–‡æœ¬");
-	
+	TEXT("text","ÎÄ±¾");
+
 	/**
-	 * ç”±ä¸€ä¸ªå€¼å’Œæ ‡ç­¾å®ä¾‹åŒ–ä¸€ä¸ªè¾“å…¥è¾“å‡ºç±»å‹æšä¸¾
+	 * ÓÉÒ»¸öÖµºÍ±êÇ©ÊµÀı»¯Ò»¸öÊäÈëÊä³öÀàĞÍÃ¶¾Ù
 	 * @param value
 	 * @param label
 	 */
@@ -27,9 +27,9 @@ public enum InOutType {
 
 	private final String value;
 	private final String label;
-	
+
 	/**
-	 * å–å¾—æšä¸¾çš„å€¼
+	 * È¡µÃÃ¶¾ÙµÄÖµ
 	 * @return
 	 */
 	public String getValue() {
@@ -37,7 +37,7 @@ public enum InOutType {
 	}
 
 	/**
-	 * å–å¾—æšä¸¾çš„æ ‡ç­¾
+	 * È¡µÃÃ¶¾ÙµÄ±êÇ©
 	 * @return
 	 */
 	public String getLabel() {
@@ -45,7 +45,7 @@ public enum InOutType {
 	}
 
 	/**
-	 * æ ¹æ®æšä¸¾å€¼è·å–å¯¹åº”çš„æ˜¾ç¤ºæ ‡ç­¾
+	 * ¸ù¾İÃ¶¾ÙÖµ»ñÈ¡¶ÔÓ¦µÄÏÔÊ¾±êÇ©
 	 * @param value
 	 * @return
 	 */

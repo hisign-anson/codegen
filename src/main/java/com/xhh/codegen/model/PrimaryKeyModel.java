@@ -3,8 +3,8 @@ package com.xhh.codegen.model;
 import java.io.Serializable;
 
 /**
- * ä¸»é”®æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * Ö÷¼üÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 public class PrimaryKeyModel implements Serializable{
@@ -17,73 +17,73 @@ public class PrimaryKeyModel implements Serializable{
 	private String pkName;
 	
 	/**
-	 * @return å–å¾—è¡¨ç›®å½•(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ±íÄ¿Â¼(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getTableCat() {
 		return tableCat;
 	}
 	/**
-	 * @param tableCat è®¾ç½®è¡¨ç›®å½•(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param tableCat ÉèÖÃ±íÄ¿Â¼(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setTableCat(String tableCat) {
 		this.tableCat = tableCat;
 	}
 	/**
-	 * @return å–å¾—è¡¨æ¶æ„(ä¸€èˆ¬ä¸ºæ‰€æœ‰è€…åç§°ï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ±í¼Ü¹¹(Ò»°ãÎªËùÓĞÕßÃû³Æ£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getTableSchem() {
 		return tableSchem;
 	}
 	/**
-	 * @param tableSchem è®¾ç½®è¡¨æ¶æ„(ä¸€èˆ¬ä¸ºæ‰€æœ‰è€…åç§°ï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param tableSchem ÉèÖÃ±í¼Ü¹¹(Ò»°ãÎªËùÓĞÕßÃû³Æ£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setTableSchem(String tableSchem) {
 		this.tableSchem = tableSchem;
 	}	
 	/**
-	 * @return å–å¾—æä¾›å…¶ä¸»é”®ä¿¡æ¯çš„è¡¨å
+	 * @return È¡µÃÌá¹©ÆäÖ÷¼üĞÅÏ¢µÄ±íÃû
 	 */
 	public String getTableName() {
 		return tableName;
 	}
 	/**
-	 * @param tableName è®¾ç½®æä¾›å…¶ä¸»é”®ä¿¡æ¯çš„è¡¨å
+	 * @param tableName ÉèÖÃÌá¹©ÆäÖ÷¼üĞÅÏ¢µÄ±íÃû
 	 */
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
 	/**
-	 * @return å–å¾—è¯¥ä¸»é”®å¯¹åº”çš„åˆ—åç§°
+	 * @return È¡µÃ¸ÃÖ÷¼ü¶ÔÓ¦µÄÁĞÃû³Æ
 	 */
 	public String getColumnName() {
 		return columnName;
 	}
 	/**
-	 * @param columnName è®¾ç½®è¯¥ä¸»é”®å¯¹åº”çš„åˆ—åç§°
+	 * @param columnName ÉèÖÃ¸ÃÖ÷¼ü¶ÔÓ¦µÄÁĞÃû³Æ
 	 */
 	public void setColumnName(String columnName) {
 		this.columnName = columnName;
 	}
 	/**
-	 * @return å–å¾—è¯¥ä¸»é”®åœ¨é”®åºåˆ—ä¸­çš„åºå·ï¼ˆå¤šä¸ªé”®çš„æ—¶å€™ï¼‰
+	 * @return È¡µÃ¸ÃÖ÷¼üÔÚ¼üĞòÁĞÖĞµÄĞòºÅ£¨¶à¸ö¼üµÄÊ±ºò£©
 	 */
 	public short getKeySeq() {
 		return keySeq;
 	}
 	/**
-	 * @param keySeq è®¾ç½®è¯¥ä¸»é”®åœ¨é”®åºåˆ—ä¸­çš„åºå·ï¼ˆå¤šä¸ªé”®çš„æ—¶å€™ï¼‰
+	 * @param keySeq ÉèÖÃ¸ÃÖ÷¼üÔÚ¼üĞòÁĞÖĞµÄĞòºÅ£¨¶à¸ö¼üµÄÊ±ºò£©
 	 */
 	public void setKeySeq(short keySeq) {
 		this.keySeq = keySeq;
 	}
 	/**
-	 * @return å–å¾—è¯¥ä¸»é”®åç§°
+	 * @return È¡µÃ¸ÃÖ÷¼üÃû³Æ
 	 */
 	public String getPkName() {
 		return pkName;
 	}
 	/**
-	 * @param pkName è®¾ç½®è¯¥ä¸»é”®åç§°
+	 * @param pkName ÉèÖÃ¸ÃÖ÷¼üÃû³Æ
 	 */
 	public void setPkName(String pkName) {
 		this.pkName = pkName;

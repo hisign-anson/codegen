@@ -24,199 +24,199 @@ import java.util.Properties;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+/**
+ *ÓÃÀ´¼ÓÔØÀà£¬classpathÏÂµÄ×ÊÔ´ÎÄ¼ş£¬ÊôĞÔÎÄ¼şµÈ¡£
+ *getExtendResource(StringrelativePath)·½·¨£¬¿ÉÒÔÊ¹ÓÃ../·ûºÅÀ´¼ÓÔØclasspathÍâ²¿µÄ×ÊÔ´¡£
+ */
+public class ClassLoaderUtil {
+	private static Log log=LogFactory.getLog(ClassLoaderUtil.class);
 	/**
-	 *ç”¨æ¥åŠ è½½ç±»ï¼Œclasspathä¸‹çš„èµ„æºæ–‡ä»¶ï¼Œå±æ€§æ–‡ä»¶ç­‰ã€‚
-	 *getExtendResource(StringrelativePath)æ–¹æ³•ï¼Œå¯ä»¥ä½¿ç”¨../ç¬¦å·æ¥åŠ è½½classpathå¤–éƒ¨çš„èµ„æºã€‚
+	 *Thread.currentThread().getContextClassLoader().getResource("")
 	 */
-	public class ClassLoaderUtil {
-	    private static Log log=LogFactory.getLog(ClassLoaderUtil.class);
-	    /**
-	     *Thread.currentThread().getContextClassLoader().getResource("")
-	     */
-	    
-	    /**
-	     *åŠ è½½Javaç±»ã€‚ ä½¿ç”¨å…¨é™å®šç±»å
-	     *@paramclassName
-	     *@return
-	     */
-	    @SuppressWarnings("rawtypes")
-		public static Class loadClass(String className) {
-	        try {
-	          return getClassLoader().loadClass(className);
-	        } catch (ClassNotFoundException e) {
-	          throw new RuntimeException("class not found '"+className+"'", e);
-	        }
-	     }
-	     /**
-	       *å¾—åˆ°ç±»åŠ è½½å™¨
-	       *@return
-	       */
-	     public static ClassLoader getClassLoader() {
-	     
-	        return ClassLoaderUtil.class.getClassLoader();
-	     }
-	     /**
-	       *æä¾›ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„ï¼Œè¿”å›æ–‡ä»¶çš„è¾“å…¥æµ
-	       *@paramrelativePathå¿…é¡»ä¼ é€’èµ„æºçš„ç›¸å¯¹è·¯å¾„ã€‚æ˜¯ç›¸å¯¹äºclasspathçš„è·¯å¾„ã€‚å¦‚æœéœ€è¦æŸ¥æ‰¾classpathå¤–éƒ¨çš„èµ„æºï¼Œéœ€è¦ä½¿ç”¨../æ¥æŸ¥æ‰¾
-	       *@return æ–‡ä»¶è¾“å…¥æµ
-	     *@throwsIOException
-	     *@throwsMalformedURLException
-	       */
-	     public static InputStream getStream(String relativePath) throws MalformedURLException, IOException {
-	         if(!relativePath.contains("../")){
-	             return getClassLoader().getResourceAsStream(relativePath);
-	             
-	         }else{
-	             return ClassLoaderUtil.getStreamByExtendResource(relativePath);
-	         }
-	        
-	     }
-	     /**
-	       *
-	       *@paramurl
-	       *@return
-	       *@throwsIOException
-	       */
-	     public static InputStream getStream(URL url) throws IOException{
-	         if(url!=null){
-	             
-	                return url.openStream();
-	            
-	             
-	         }else{
-	             return null;
-	         }
-	     }
-	     /**
-	       *
-	       *@paramrelativePathå¿…é¡»ä¼ é€’èµ„æºçš„ç›¸å¯¹è·¯å¾„ã€‚æ˜¯ç›¸å¯¹äºclasspathçš„è·¯å¾„ã€‚å¦‚æœéœ€è¦æŸ¥æ‰¾classpathå¤–éƒ¨çš„èµ„æºï¼Œéœ€è¦ä½¿ç”¨../æ¥æŸ¥æ‰¾
-	       *@return
-	       *@throwsMalformedURLException
-	       *@throwsIOException
-	       */
-	     public static InputStream getStreamByExtendResource(String relativePath) throws MalformedURLException, IOException{
-	        return ClassLoaderUtil.getStream(ClassLoaderUtil.getExtendResource(relativePath));
-	         
-	         
-	     }
-	     
-	      /**
-	       *æä¾›ç›¸å¯¹äºclasspathçš„èµ„æºè·¯å¾„ï¼Œè¿”å›å±æ€§å¯¹è±¡ï¼Œå®ƒæ˜¯ä¸€ä¸ªæ•£åˆ—è¡¨
-	       *@paramresource
-	       *@return
-	       */
-	     public static Properties getProperties(String resource) {
-	        Properties properties = new Properties();
-	        try {
-	          properties.load(getStream(resource));
-	        } catch (IOException e) {
-	          throw new RuntimeException("couldn't load properties file '"+resource+"'", e);
-	        }
-	        return properties;
-	     }
-	     /**
-	       *å¾—åˆ°æœ¬Classæ‰€åœ¨çš„ClassLoaderçš„Classpatçš„ç»å¯¹è·¯å¾„ã€‚
-	       *URLå½¢å¼çš„
-	       *@return
-	       */
-	     public static String getAbsolutePathOfClassLoaderClassPath(){
-	         
-	         
-	         ClassLoaderUtil.log.info(ClassLoaderUtil.getClassLoader().getResource("").toString());
-	         return ClassLoaderUtil.getClassLoader().getResource("").toString();
-	         
-	     }
-	     /**
-	       *
-	       *@paramrelativePath å¿…é¡»ä¼ é€’èµ„æºçš„ç›¸å¯¹è·¯å¾„ã€‚æ˜¯ç›¸å¯¹äºclasspathçš„è·¯å¾„ã€‚å¦‚æœéœ€è¦æŸ¥æ‰¾classpathå¤–éƒ¨çš„èµ„æºï¼Œéœ€è¦ä½¿ç”¨../æ¥æŸ¥æ‰¾
-	       *@returnèµ„æºçš„ç»å¯¹URL
-	     *@throwsMalformedURLException
-	       */
-	     public static URL getExtendResource(String relativePath) throws MalformedURLException{
-	     
-	         ClassLoaderUtil.log.info("ä¼ å…¥çš„ç›¸å¯¹è·¯å¾„ï¼š"+relativePath) ;
-	         //ClassLoaderUtil.log.info(Integer.valueOf(relativePath.indexOf("../"))) ;
-	         if(!relativePath.contains("../")){
-	             return ClassLoaderUtil.getResource(relativePath);
-	             
-	         }
-	         String classPathAbsolutePath=ClassLoaderUtil.getAbsolutePathOfClassLoaderClassPath();
-	         if(relativePath.substring(0, 1).equals("/")){
-	             relativePath=relativePath.substring(1);
-	         }
-	         ClassLoaderUtil.log.info(Integer.valueOf(relativePath.lastIndexOf("../"))) ;
-	        
-	         String wildcardString=relativePath.substring(0,relativePath.lastIndexOf("../")+3);
-	        relativePath=relativePath.substring(relativePath.lastIndexOf("../")+3);
-	         int containSum=ClassLoaderUtil.containSum(wildcardString, "../");
-	         classPathAbsolutePath= ClassLoaderUtil.cutLastString(classPathAbsolutePath, "/", containSum);
-	         String resourceAbsolutePath=classPathAbsolutePath+relativePath;
-	         ClassLoaderUtil.log.info("ç»å¯¹è·¯å¾„ï¼š"+resourceAbsolutePath) ;
-	         URL resourceAbsoluteURL=new URL(resourceAbsolutePath);
-	         return resourceAbsoluteURL;
-	     }
-	     /**
-	      *
-	       *@paramsource
-	       *@paramdest
-	       *@return
-	       */
-	     private static int containSum(String source,String dest){
-	         int containSum=0;
-	         int destLength=dest.length();
-	         while(source.contains(dest)){
-	             containSum=containSum+1;
-	             source=source.substring(destLength);
-	             
-	         }
-	         
-	         
-	         return containSum;
-	     }
-	     /**
-	       *
-	       *@paramsource
-	       *@paramdest
-	       *@paramnum
-	       *@return
-	       */
-	     private static String cutLastString(String source,String dest,int num){
-	         // String cutSource=null;
-	         for(int i=0;i<num;i++){
-	             source=source.substring(0, source.lastIndexOf(dest, source.length()-2)+1);
-	             
-	             
-	         }
-	         
-	         
-	         
-	         return source;
-	     }
-	     /**
-	       *
-	       *@paramresource
-	       *@return
-	       */
-	      public static URL getResource(String resource){
-	      ClassLoaderUtil.log.info("ä¼ å…¥çš„ç›¸å¯¹äºclasspathçš„è·¯å¾„ï¼š"+resource) ;
-	         return ClassLoaderUtil.getClassLoader().getResource(resource);
-	     }
-	     
-	 
-	     
-	 
-	    /**
-	     *@paramargs
-	     *@throwsMalformedURLException
-	     */
-	    public static void main(String[] args) throws MalformedURLException {
-	        
-	            //ClassLoaderUtil.getExtendResource("../spring/dao.xml");
-	        //ClassLoaderUtil.getExtendResource("../../../src/log4j.properties");
-	        ClassLoaderUtil.getExtendResource("log4j.properties");
-	        
-	        System.out.println(ClassLoaderUtil.getClassLoader().getResource("log4j.properties").toString());
-	 
-	    }
+
+	/**
+	 *¼ÓÔØJavaÀà¡£ Ê¹ÓÃÈ«ÏŞ¶¨ÀàÃû
+	 *@paramclassName
+	 *@return
+	 */
+	@SuppressWarnings("rawtypes")
+	public static Class loadClass(String className) {
+		try {
+			return getClassLoader().loadClass(className);
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException("class not found '"+className+"'", e);
+		}
+	}
+	/**
+	 *µÃµ½Àà¼ÓÔØÆ÷
+	 *@return
+	 */
+	public static ClassLoader getClassLoader() {
+
+		return ClassLoaderUtil.class.getClassLoader();
+	}
+	/**
+	 *Ìá¹©Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶£¬·µ»ØÎÄ¼şµÄÊäÈëÁ÷
+	 *@paramrelativePath±ØĞë´«µİ×ÊÔ´µÄÏà¶ÔÂ·¾¶¡£ÊÇÏà¶ÔÓÚclasspathµÄÂ·¾¶¡£Èç¹ûĞèÒª²éÕÒclasspathÍâ²¿µÄ×ÊÔ´£¬ĞèÒªÊ¹ÓÃ../À´²éÕÒ
+	 *@return ÎÄ¼şÊäÈëÁ÷
+	 *@throwsIOException
+	 *@throwsMalformedURLException
+	 */
+	public static InputStream getStream(String relativePath) throws MalformedURLException, IOException {
+		if(!relativePath.contains("../")){
+			return getClassLoader().getResourceAsStream(relativePath);
+
+		}else{
+			return ClassLoaderUtil.getStreamByExtendResource(relativePath);
+		}
+
+	}
+	/**
+	 *
+	 *@paramurl
+	 *@return
+	 *@throwsIOException
+	 */
+	public static InputStream getStream(URL url) throws IOException{
+		if(url!=null){
+
+			return url.openStream();
+
+
+		}else{
+			return null;
+		}
+	}
+	/**
+	 *
+	 *@paramrelativePath±ØĞë´«µİ×ÊÔ´µÄÏà¶ÔÂ·¾¶¡£ÊÇÏà¶ÔÓÚclasspathµÄÂ·¾¶¡£Èç¹ûĞèÒª²éÕÒclasspathÍâ²¿µÄ×ÊÔ´£¬ĞèÒªÊ¹ÓÃ../À´²éÕÒ
+	 *@return
+	 *@throwsMalformedURLException
+	 *@throwsIOException
+	 */
+	public static InputStream getStreamByExtendResource(String relativePath) throws MalformedURLException, IOException{
+		return ClassLoaderUtil.getStream(ClassLoaderUtil.getExtendResource(relativePath));
+
+
+	}
+
+	/**
+	 *Ìá¹©Ïà¶ÔÓÚclasspathµÄ×ÊÔ´Â·¾¶£¬·µ»ØÊôĞÔ¶ÔÏó£¬ËüÊÇÒ»¸öÉ¢ÁĞ±í
+	 *@paramresource
+	 *@return
+	 */
+	public static Properties getProperties(String resource) {
+		Properties properties = new Properties();
+		try {
+			properties.load(getStream(resource));
+		} catch (IOException e) {
+			throw new RuntimeException("couldn't load properties file '"+resource+"'", e);
+		}
+		return properties;
+	}
+	/**
+	 *µÃµ½±¾ClassËùÔÚµÄClassLoaderµÄClasspatµÄ¾ø¶ÔÂ·¾¶¡£
+	 *URLĞÎÊ½µÄ
+	 *@return
+	 */
+	public static String getAbsolutePathOfClassLoaderClassPath(){
+
+
+		ClassLoaderUtil.log.info(ClassLoaderUtil.getClassLoader().getResource("").toString());
+		return ClassLoaderUtil.getClassLoader().getResource("").toString();
+
+	}
+	/**
+	 *
+	 *@paramrelativePath ±ØĞë´«µİ×ÊÔ´µÄÏà¶ÔÂ·¾¶¡£ÊÇÏà¶ÔÓÚclasspathµÄÂ·¾¶¡£Èç¹ûĞèÒª²éÕÒclasspathÍâ²¿µÄ×ÊÔ´£¬ĞèÒªÊ¹ÓÃ../À´²éÕÒ
+	 *@return×ÊÔ´µÄ¾ø¶ÔURL
+	 *@throwsMalformedURLException
+	 */
+	public static URL getExtendResource(String relativePath) throws MalformedURLException{
+
+		ClassLoaderUtil.log.info("´«ÈëµÄÏà¶ÔÂ·¾¶£º"+relativePath) ;
+		//ClassLoaderUtil.log.info(Integer.valueOf(relativePath.indexOf("../"))) ;
+		if(!relativePath.contains("../")){
+			return ClassLoaderUtil.getResource(relativePath);
+
+		}
+		String classPathAbsolutePath=ClassLoaderUtil.getAbsolutePathOfClassLoaderClassPath();
+		if(relativePath.substring(0, 1).equals("/")){
+			relativePath=relativePath.substring(1);
+		}
+		ClassLoaderUtil.log.info(Integer.valueOf(relativePath.lastIndexOf("../"))) ;
+
+		String wildcardString=relativePath.substring(0,relativePath.lastIndexOf("../")+3);
+		relativePath=relativePath.substring(relativePath.lastIndexOf("../")+3);
+		int containSum=ClassLoaderUtil.containSum(wildcardString, "../");
+		classPathAbsolutePath= ClassLoaderUtil.cutLastString(classPathAbsolutePath, "/", containSum);
+		String resourceAbsolutePath=classPathAbsolutePath+relativePath;
+		ClassLoaderUtil.log.info("¾ø¶ÔÂ·¾¶£º"+resourceAbsolutePath) ;
+		URL resourceAbsoluteURL=new URL(resourceAbsolutePath);
+		return resourceAbsoluteURL;
+	}
+	/**
+	 *
+	 *@paramsource
+	 *@paramdest
+	 *@return
+	 */
+	private static int containSum(String source,String dest){
+		int containSum=0;
+		int destLength=dest.length();
+		while(source.contains(dest)){
+			containSum=containSum+1;
+			source=source.substring(destLength);
+
+		}
+
+
+		return containSum;
+	}
+	/**
+	 *
+	 *@paramsource
+	 *@paramdest
+	 *@paramnum
+	 *@return
+	 */
+	private static String cutLastString(String source,String dest,int num){
+		// String cutSource=null;
+		for(int i=0;i<num;i++){
+			source=source.substring(0, source.lastIndexOf(dest, source.length()-2)+1);
+
+
+		}
+
+
+
+		return source;
+	}
+	/**
+	 *
+	 *@paramresource
+	 *@return
+	 */
+	public static URL getResource(String resource){
+		ClassLoaderUtil.log.info("´«ÈëµÄÏà¶ÔÓÚclasspathµÄÂ·¾¶£º"+resource) ;
+		return ClassLoaderUtil.getClassLoader().getResource(resource);
+	}
+
+
+
+
+	/**
+	 *@paramargs
+	 *@throwsMalformedURLException
+	 */
+	public static void main(String[] args) throws MalformedURLException {
+
+		//ClassLoaderUtil.getExtendResource("../spring/dao.xml");
+		//ClassLoaderUtil.getExtendResource("../../../src/log4j.properties");
+		ClassLoaderUtil.getExtendResource("log4j.properties");
+
+		System.out.println(ClassLoaderUtil.getClassLoader().getResource("log4j.properties").toString());
+
+	}
 
 }

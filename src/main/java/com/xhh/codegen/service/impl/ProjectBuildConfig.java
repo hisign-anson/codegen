@@ -20,57 +20,57 @@ import com.xhh.codegen.utils.FilenameUtil;
 import com.xhh.codegen.utils.ProjectConfig;
 
 /**
- * é’ˆå¯¹é¡¹ç›®çš„æ„å»ºé…ç½®ä¿¡æ¯
- * @author é»„å¤©æ”¿
+ * Õë¶ÔÏîÄ¿µÄ¹¹½¨ÅäÖÃĞÅÏ¢
+ * @author »ÆÌìÕş
  *
  */
 public class ProjectBuildConfig implements BuildConfig {
 
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šç‰ˆæƒä¿¡æ¯å®ä½“
+	 * Êı¾İÄ£ĞÍ¼ü£º°æÈ¨ĞÅÏ¢ÊµÌå
 	 */
 	public static final String DMK_COPYRIGHT = "copyright";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šæ¨¡å—åç§°
+	 * Êı¾İÄ£ĞÍ¼ü£ºÄ£¿éÃû³Æ
 	 */
 	public static final String DMK_MODULE_NAME = "moduleName";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šåˆ†ç»„åç§°
+	 * Êı¾İÄ£ĞÍ¼ü£º·Ö×éÃû³Æ
 	 */
 	public static final String DMK_GROUP_NAME = "groupName";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šè¡¨æ ‡ç­¾
+	 * Êı¾İÄ£ĞÍ¼ü£º±í±êÇ©
 	 */
 	public static final String DMK_TABLE_LABEL = "tableLabel";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šè¡¨æ¨¡å‹å®ä½“
+	 * Êı¾İÄ£ĞÍ¼ü£º±íÄ£ĞÍÊµÌå
 	 */
 	public static final String DMK_TABLE = "table";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šè¡¨å
+	 * Êı¾İÄ£ĞÍ¼ü£º±íÃû
 	 */
 	public static final String DMK_TABLE_NAME = "tableName";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šè¾“å‡ºç¼–ç ç±»å‹
+	 * Êı¾İÄ£ĞÍ¼ü£ºÊä³ö±àÂëÀàĞÍ
 	 */
 	public static final String DMK_OUTPUT_ENCODING = "outputEncoding";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šé¡¹ç›®æ ‡ç­¾
+	 * Êı¾İÄ£ĞÍ¼ü£ºÏîÄ¿±êÇ©
 	 */
 	public static final String DMK_PROJECT_LABEL = "projectLabel";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šé¡¹ç›®åç§°
+	 * Êı¾İÄ£ĞÍ¼ü£ºÏîÄ¿Ãû³Æ
 	 */
 	public static final String DMK_PROJECT_NAME = "projectName";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šé»˜è®¤çš„æ¨¡æ¿æ–‡ä»¶å¤¹
+	 * Êı¾İÄ£ĞÍ¼ü£ºÄ¬ÈÏµÄÄ£°åÎÄ¼ş¼Ğ
 	 */
 	public final static String DMK_TEMPLATEDIRECTORY = "templateDirectory";
 	/**
-	 * æ•°æ®æ¨¡å‹é”®ï¼šé»˜è®¤çš„è¾“å‡ºæ–‡ä»¶å¤¹
+	 * Êı¾İÄ£ĞÍ¼ü£ºÄ¬ÈÏµÄÊä³öÎÄ¼ş¼Ğ
 	 */
 	public final static String DMK_OUTPUTDIRECTORY = "outputDirectory";
-	
+
 	private ProjectConfig projectConfig;
 	private Map<String,Object> dataModelMap = null;
 	private Map<String,OutputModel> outputModelMap = null;
@@ -79,36 +79,36 @@ public class ProjectBuildConfig implements BuildConfig {
 	private String tableLabel;
 	private String groupName;
 	private Copyright copyright = new Copyright();
-	
-	private boolean hasParseDataModel = false;//æ˜¯å¦å·²è§£æäº†æ•°æ®æ¨¡å‹
-	private boolean hasParseOutputModel = false;//æ˜¯å¦å·²è§£æäº†è¾“å‡ºæ¨¡å‹
-		
+
+	private boolean hasParseDataModel = false;//ÊÇ·ñÒÑ½âÎöÁËÊı¾İÄ£ĞÍ
+	private boolean hasParseOutputModel = false;//ÊÇ·ñÒÑ½âÎöÁËÊä³öÄ£ĞÍ
+
 	/**
-	 * æ ¹æ®ä¸€ä¸ªé¡¹ç›®é…ç½®æ¨¡å‹å®ä¾‹åŒ–ä¸€ä¸ªé¡¹ç›®æ„å»ºé…ç½®ä¿¡æ¯
-	 * @param projectConfig é¡¹ç›®é…ç½®æ¨¡å‹
+	 * ¸ù¾İÒ»¸öÏîÄ¿ÅäÖÃÄ£ĞÍÊµÀı»¯Ò»¸öÏîÄ¿¹¹½¨ÅäÖÃĞÅÏ¢
+	 * @param projectConfig ÏîÄ¿ÅäÖÃÄ£ĞÍ
 	 */
 	public ProjectBuildConfig(ProjectConfig projectConfig) {
 		super();
 		this.projectConfig = projectConfig;
 		initConfig();
 	}
-	
+
 	/**
-	 * åˆå§‹åŒ–é…ç½®ä¿¡æ¯
+	 * ³õÊ¼»¯ÅäÖÃĞÅÏ¢
 	 */
 	public void initConfig() {
 		doInitConfig();
 	}
 
 	/**
-	 * @return è·å–å½“å‰çš„é¡¹ç›®é…ç½®æ¨¡å‹
+	 * @return »ñÈ¡µ±Ç°µÄÏîÄ¿ÅäÖÃÄ£ĞÍ
 	 */
 	public ProjectConfig getProjectConfig() {
 		return projectConfig;
 	}
 
 	/**
-	 * @param projectConfig è®¾ç½®å½“å‰çš„é¡¹ç›®é…ç½®æ¨¡å‹
+	 * @param projectConfig ÉèÖÃµ±Ç°µÄÏîÄ¿ÅäÖÃÄ£ĞÍ
 	 */
 	public void setProjectConfig(ProjectConfig projectConfig) {
 		this.projectConfig = projectConfig;
@@ -116,78 +116,78 @@ public class ProjectBuildConfig implements BuildConfig {
 	}
 
 	/**
-	 * @return è·å–å½“å‰æ„å»ºçš„æ¨¡å—åç§°
+	 * @return »ñÈ¡µ±Ç°¹¹½¨µÄÄ£¿éÃû³Æ
 	 */
 	public String getModuleName() {
 		return moduleName;
 	}
 
 	/**
-	 * @param moduleName è®¾ç½®å½“å‰æ„å»ºçš„æ¨¡å—åç§°
+	 * @param moduleName ÉèÖÃµ±Ç°¹¹½¨µÄÄ£¿éÃû³Æ
 	 */
 	public void setModuleName(String moduleName) {
 		this.moduleName = moduleName;
 	}
 
 	/**
-	 * @return è·å–å½“å‰æ„å»ºçš„è¡¨åç§°
+	 * @return »ñÈ¡µ±Ç°¹¹½¨µÄ±íÃû³Æ
 	 */
 	public String getTableName() {
 		return tableName;
 	}
 
 	/**
-	 * @param tableName è®¾ç½®å½“å‰æ„å»ºçš„è¡¨åç§°
+	 * @param tableName ÉèÖÃµ±Ç°¹¹½¨µÄ±íÃû³Æ
 	 */
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
 
 	/**
-	 * @return è·å–å½“å‰æ„å»ºçš„è¡¨æ ‡ç­¾
+	 * @return »ñÈ¡µ±Ç°¹¹½¨µÄ±í±êÇ©
 	 */
 	public String getTableLabel() {
 		return tableLabel;
 	}
 
 	/**
-	 * @param tableLabel è®¾ç½®å½“å‰æ„å»ºçš„è¡¨æ ‡ç­¾
+	 * @param tableLabel ÉèÖÃµ±Ç°¹¹½¨µÄ±í±êÇ©
 	 */
 	public void setTableLabel(String tableLabel) {
 		this.tableLabel = tableLabel;
 	}
 
 	/**
-	 * @return è·å–å½“å‰æ„å»ºçš„æ‰€å±ç»„åç§°
+	 * @return »ñÈ¡µ±Ç°¹¹½¨µÄËùÊô×éÃû³Æ
 	 */
 	public String getGroupName() {
 		return groupName;
 	}
 
 	/**
-	 * @param groupName è®¾ç½®å½“å‰æ„å»ºçš„æ‰€å±ç»„åç§°
+	 * @param groupName ÉèÖÃµ±Ç°¹¹½¨µÄËùÊô×éÃû³Æ
 	 */
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
-	
+
 	/**
-	 * @return è·å–å½“å‰æ„å»ºçš„ç‰ˆæƒä¿¡æ¯
+	 * @return »ñÈ¡µ±Ç°¹¹½¨µÄ°æÈ¨ĞÅÏ¢
 	 */
 	public Copyright getCopyright() {
 		return copyright;
 	}
 
 	/**
-	 * @param copyright è®¾ç½®å½“å‰æ„å»ºçš„ç‰ˆæƒä¿¡æ¯
+	 * @param copyright ÉèÖÃµ±Ç°¹¹½¨µÄ°æÈ¨ĞÅÏ¢
 	 */
 	public void setCopyright(Copyright copyright) {
 		this.copyright = copyright;
 	}
-	
+
 
 	/**
-	 * è®¾ç½®æ•°æ®æ¨¡å‹
+	 * ÉèÖÃÊı¾İÄ£ĞÍ
 	 * @param dataModelMap
 	 */
 	public void setDataModel(Map<String, Object> dataModelMap) {
@@ -195,13 +195,13 @@ public class ProjectBuildConfig implements BuildConfig {
 	}
 
 	/**
-	 * è®¾ç½®è¾“å‡ºæ¨¡å‹
+	 * ÉèÖÃÊä³öÄ£ĞÍ
 	 * @param outputModelMap
 	 */
 	public void setOutputModel(Map<String, OutputModel> outputModelMap) {
 		this.outputModelMap = outputModelMap;
 	}
-			
+
 	public boolean isHasParseDataModel() {
 		return hasParseDataModel;
 	}
@@ -229,28 +229,28 @@ public class ProjectBuildConfig implements BuildConfig {
 		if(hasParseDataModel){
 			return dataModelMap;
 		}
-		
+
 		doBeforeParseDataModel();
-		
-		getDataModel();//ç¡®ä¿å·²å®ä¾‹åŒ–
-		dataModelMap.put(DMK_PROJECT_NAME, projectConfig.getProjectName());		
+
+		getDataModel();//È·±£ÒÑÊµÀı»¯
+		dataModelMap.put(DMK_PROJECT_NAME, projectConfig.getProjectName());
 		dataModelMap.put(DMK_PROJECT_LABEL, projectConfig.getProjectLabel());
 		dataModelMap.put(DMK_OUTPUT_ENCODING, projectConfig.getOutputEncoding());
 		dataModelMap.put(DMK_OUTPUTDIRECTORY, getDefaultOutputDirectory());
-		
-		//åˆ›å»ºè¡¨æ¨¡å‹	
+
+		//´´½¨±íÄ£ĞÍ
 		if(StringUtils.isBlank(getTableName())){
-			//throw new Exception(this.getClass().getName()+"å±æ€§tableNameçš„å€¼ä¸å…è®¸ä¸ºç©ºï¼");
+			//throw new Exception(this.getClass().getName()+"ÊôĞÔtableNameµÄÖµ²»ÔÊĞíÎª¿Õ£¡");
 		}else{
 			dataModelMap.put(DMK_TABLE_NAME, getTableName());
-			TableModel tm = projectConfig.getDbProvider().createTableModel(getTableName());			
+			TableModel tm = projectConfig.getDbProvider().createTableModel(getTableName());
 			if(StringUtils.isNotBlank(this.tableLabel)){
 				tm.setTableLabel(this.tableLabel);
 			}else{
 				this.tableLabel = tm.getTableLabel();
 			}
 			dataModelMap.put(DMK_TABLE, tm);
-		
+
 			if(StringUtils.isBlank(this.groupName)&&this.tableName.contains("_")){
 				this.groupName = StringUtils.substringBefore(this.tableName, "_");
 			}
@@ -265,34 +265,34 @@ public class ProjectBuildConfig implements BuildConfig {
 			dataModelMap.put(DMK_GROUP_NAME, this.groupName);
 			dataModelMap.put(DMK_MODULE_NAME, this.moduleName);
 		}
-		
-		//è®¾ç½®ç‰ˆæƒä¿¡æ¯
+
+		//ÉèÖÃ°æÈ¨ĞÅÏ¢
 		dataModelMap.put(DMK_COPYRIGHT, this.copyright);
-		
-		
-		
-		//è¿½åŠ é¡¹ç›®é…ç½®çš„ã€æ•°æ®æ¨¡å‹ã€‘ä¿¡æ¯
+
+
+
+		//×·¼ÓÏîÄ¿ÅäÖÃµÄ¡¾Êı¾İÄ£ĞÍ¡¿ĞÅÏ¢
 		String key,value;
 		for(Entry<String, String> entry: projectConfig.getDataModelMap().entrySet()){
 			key = entry.getKey();
 			value = entry.getValue();
-			//System.out.println("å¼€å§‹è§£ææ•°æ®æ¨¡å‹="+key);
+			//System.out.println("¿ªÊ¼½âÎöÊı¾İÄ£ĞÍ="+key);
 			if(StringUtils.isNotBlank(value)&&value.contains("${")){
-				value = BuilderHelper.parseBuildParams(dataModelMap, value); //è§£æå¸¦æœ‰æ„å»ºå‚æ•°çš„å­—ç¬¦ä¸²
+				value = BuilderHelper.parseBuildParams(dataModelMap, value); //½âÎö´øÓĞ¹¹½¨²ÎÊıµÄ×Ö·û´®
 			}
 			dataModelMap.put(key, value);
 		}
-			
+
 		hasParseDataModel = true;
 		doAfterParseDataModel();
-		
+
 		return dataModelMap;
 	}
-	
+
 	public String getOutputEncoding() {
 		return projectConfig.getOutputEncoding();
 	}
-	
+
 	public Map<String, OutputModel> getOutputModel() {
 		if(outputModelMap==null){
 			outputModelMap = new LinkedHashMap<String, OutputModel>();
@@ -303,45 +303,45 @@ public class ProjectBuildConfig implements BuildConfig {
 	public Map<String, OutputModel> parseOutputModel() {
 		if(hasParseOutputModel){
 			return outputModelMap;
-		}		
-		
-		//ç¡®ä¿å·²ç»è·å–æ•°æ®æ¨¡å‹
-		if(hasParseDataModel==false){
-			parseDataModel(); 
 		}
-		
+
+		//È·±£ÒÑ¾­»ñÈ¡Êı¾İÄ£ĞÍ
+		if(hasParseDataModel==false){
+			parseDataModel();
+		}
+
 		doBeforeParseOutputModel();
-		
-		getOutputModel();//ç¡®ä¿å·²å®ä¾‹åŒ–
+
+		getOutputModel();//È·±£ÒÑÊµÀı»¯
 		String templateFilename,outputFilename;
 		OutputModel outputModel;
 		for(Entry<String,OutputModel> entry: projectConfig.getOutputMap().entrySet()){
 			outputModel = entry.getValue();
-			
+
 			templateFilename = outputModel.getTemplateModel().getTemplate();
 			if(templateFilename.contains("${")
-					//å¦‚æœæ¨¡æ¿æ˜¯æ–‡æœ¬ç±»å‹ï¼Œåˆ™åœ¨è¿™é‡Œä¸éœ€è¦è§£æï¼Œè€Œåœ¨è¾“å‡ºçš„æ—¶å€™å†è§£é‡Šï¼Œ
-					//é˜²æ­¢å¤šæ¬¡è§£é‡Šåè½¬ä¹‰ç¬¦å¤±æ•ˆçš„é—®é¢˜ï¼Œè­¬å¦‚ï¼š${'$'}{rootMap}åªèƒ½è§£é‡Šä¸€æ¬¡
-					&&outputModel.getTemplateModel().getType()==InOutType.FILE){  
-				templateFilename = BuilderHelper.parseBuildParams(dataModelMap, templateFilename); //è§£æå¸¦æœ‰æ„å»ºå‚æ•°çš„æ¨¡æ¿
+					//Èç¹ûÄ£°åÊÇÎÄ±¾ÀàĞÍ£¬ÔòÔÚÕâÀï²»ĞèÒª½âÎö£¬¶øÔÚÊä³öµÄÊ±ºòÔÙ½âÊÍ£¬
+					//·ÀÖ¹¶à´Î½âÊÍºó×ªÒå·ûÊ§Ğ§µÄÎÊÌâ£¬Æ©Èç£º${'$'}{rootMap}Ö»ÄÜ½âÊÍÒ»´Î
+					&&outputModel.getTemplateModel().getType()==InOutType.FILE){
+				templateFilename = BuilderHelper.parseBuildParams(dataModelMap, templateFilename); //½âÎö´øÓĞ¹¹½¨²ÎÊıµÄÄ£°å
 			}
-			
+
 			if(entry.getValue().getTemplateModel().getType()==InOutType.FILE){
 				templateFilename = formatTemplateFilename(templateFilename);
 			}
-			
+
 			outputFilename = outputModel.getOutput();
 			if(StringUtils.isNotBlank(outputFilename)){
 				if(outputFilename.contains("${")){
-					outputFilename = BuilderHelper.parseBuildParams(dataModelMap, outputFilename); //è§£æå¸¦æœ‰æ„å»ºå‚æ•°çš„è¾“å‡ºè·¯å¾„
+					outputFilename = BuilderHelper.parseBuildParams(dataModelMap, outputFilename); //½âÎö´øÓĞ¹¹½¨²ÎÊıµÄÊä³öÂ·¾¶
 				}
-				//å¦‚æœä¸æ˜¯ç»å¯¹è·¯å¾„ï¼Œåˆ™å½“ä½œæ˜¯ç›¸å¯¹é»˜è®¤è¾“å‡ºè·¯å¾„çš„ç›¸å¯¹è·¯å¾„
+				//Èç¹û²»ÊÇ¾ø¶ÔÂ·¾¶£¬Ôòµ±×÷ÊÇÏà¶ÔÄ¬ÈÏÊä³öÂ·¾¶µÄÏà¶ÔÂ·¾¶
 				if(outputFilename.contains(":")==false){
 					String outputDirectory = dataModelMap.get(DMK_OUTPUTDIRECTORY).toString().replace("\\", "/");
 					if(outputDirectory.endsWith("/")==false){
 						outputDirectory += "/";
 					}
-					outputFilename = outputDirectory + outputFilename; 
+					outputFilename = outputDirectory + outputFilename;
 					outputFilename = FilenameUtil.normalize(outputFilename);
 				}
 			}
@@ -358,12 +358,12 @@ public class ProjectBuildConfig implements BuildConfig {
 		}
 		hasParseOutputModel=true;
 		doAfterParseOutputModel();
-		
+
 		return outputModelMap;
 	}
-	
+
 	/**
-	 * å–å¾—ç³»ç»Ÿé»˜è®¤çš„è¾“å‡ºç›®å½•ä¸ºï¼šSystem.getProperty("user.dir")
+	 * È¡µÃÏµÍ³Ä¬ÈÏµÄÊä³öÄ¿Â¼Îª£ºSystem.getProperty("user.dir")
 	 * @return
 	 */
 	private String getDefaultOutputDirectory(){
@@ -372,9 +372,9 @@ public class ProjectBuildConfig implements BuildConfig {
 	}
 
 	/**
-	 * æ ¼å¼åŒ–æ¨¡æ¿æ–‡ä»¶åä¸ºå®Œæ•´çš„æ–‡ä»¶URLï¼Œå¦‚æœåç§°æœªåŒ…å«è·¯å¾„ï¼Œåˆ™é»˜è®¤ä¸ºç±»æ ¹è·¯å¾„ä¸‹çš„ â€œtemplate/â€+é¡¹ç›®åç§°
+	 * ¸ñÊ½»¯Ä£°åÎÄ¼şÃûÎªÍêÕûµÄÎÄ¼şURL£¬Èç¹ûÃû³ÆÎ´°üº¬Â·¾¶£¬ÔòÄ¬ÈÏÎªÀà¸ùÂ·¾¶ÏÂµÄ ¡°template/¡±+ÏîÄ¿Ãû³Æ
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private String formatTemplateFilename(String filename){
 		filename = filename.replace("\\", "/");
@@ -385,17 +385,17 @@ public class ProjectBuildConfig implements BuildConfig {
 				filename = "template/" + projectConfig.getProjectName()+"/"+filename;
 			}
 		}
-		
-		if(filename.contains(".")==false 
-			|| StringUtils.substringAfterLast(filename, ".").contains("/")){
+
+		if(filename.contains(".")==false
+				|| StringUtils.substringAfterLast(filename, ".").contains("/")){
 			filename += ".ftl";
 		}
-		
+
 		if(filename.contains(":")==false ){
 			URL url = ClassLoaderUtil.getResource(filename);
 			if(url==null){
 				try {
-					throw new IOException(String.format("æ¨¡æ¿æ–‡ä»¶%sä¸å­˜åœ¨ï¼",filename));
+					throw new IOException(String.format("Ä£°åÎÄ¼ş%s²»´æÔÚ£¡",filename));
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -403,22 +403,22 @@ public class ProjectBuildConfig implements BuildConfig {
 				filename = url.getFile();
 			}
 		}
-		
+
 		filename = FilenameUtil.normalize(filename);
 		return filename;
 	}
 
 	/**
-	 * åˆå§‹åŒ–é…ç½®æ—¶å¤„ç†
+	 * ³õÊ¼»¯ÅäÖÃÊ±´¦Àí
 	 */
 	private void doInitConfig(){
 		for (BuildConfigHandler handler : projectConfig.getBuildConfigHandlers()) {
 			handler.initConfig(this);
 		}
 	}
-	
+
 	/**
-	 * æ•°æ®æ¨¡å‹å¤„ç†å‰ï¼Œå¯ä»¥å¯¹å·²åŠ è½½çš„é¡¹ç›®é…ç½®ä¿¡æ¯è¿›è¡Œå†å¤„ç†
+	 * Êı¾İÄ£ĞÍ´¦ÀíÇ°£¬¿ÉÒÔ¶ÔÒÑ¼ÓÔØµÄÏîÄ¿ÅäÖÃĞÅÏ¢½øĞĞÔÙ´¦Àí
 	 */
 	private void doBeforeParseDataModel(){
 		for (BuildConfigHandler handler : projectConfig.getBuildConfigHandlers()) {
@@ -427,25 +427,25 @@ public class ProjectBuildConfig implements BuildConfig {
 	}
 
 	/**
-	 * æ•°æ®æ¨¡å‹å¤„ç†åï¼Œå¯ä»¥å¯¹å·²ç»„è£…å¥½çš„æ•°æ®æ¨¡å‹é›†è¿›è¡Œå†å¤„ç†
+	 * Êı¾İÄ£ĞÍ´¦Àíºó£¬¿ÉÒÔ¶ÔÒÑ×é×°ºÃµÄÊı¾İÄ£ĞÍ¼¯½øĞĞÔÙ´¦Àí
 	 */
 	private void doAfterParseDataModel(){
 		for (BuildConfigHandler handler : projectConfig.getBuildConfigHandlers()) {
 			handler.afterParseDataModel(this);
 		}
 	}
-	
+
 	/**
-	 * è·å–è¾“å‡ºæ¨¡å‹å‰å¤„ç†
+	 * »ñÈ¡Êä³öÄ£ĞÍÇ°´¦Àí
 	 */
 	private void doBeforeParseOutputModel(){
 		for (BuildConfigHandler handler : projectConfig.getBuildConfigHandlers()) {
 			handler.beforeParseOutputModel(this);
 		}
 	}
-	
+
 	/**
-	 * è·å–è¾“å‡ºæ¨¡å‹åå¤„ç†
+	 * »ñÈ¡Êä³öÄ£ĞÍºó´¦Àí
 	 */
 	private void doAfterParseOutputModel(){
 		for (BuildConfigHandler handler : projectConfig.getBuildConfigHandlers()) {

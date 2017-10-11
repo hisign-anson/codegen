@@ -6,203 +6,203 @@ import java.util.List;
 import com.sun.xml.internal.bind.CycleRecoverable;
 
 /**
- * è¡¨æ¨¡å‹
- * @author é»„å¤©æ”¿
+ * ±íÄ£ĞÍ
+ * @author »ÆÌìÕş
  *
  */
 @SuppressWarnings("restriction")
 public class TableModel  implements CycleRecoverable{
 	/**
-	 * è¡¨å
+	 * ±íÃû
 	 */
-    private String tableName;
-    
-    /**
-     * è¡¨æ‰€å±ç±»åˆ«
-     */
-    private String catalog;
-    /**
-     * è¡¨æ‰€å±æ¨¡å¼
-     */
-    private String schema;
-    /**
-     * è¡¨ç±»å‹ã€‚å…¸å‹çš„ç±»å‹æ˜¯ "TABLE"ã€"VIEW"ã€"SYSTEM TABLE"ã€"GLOBAL TEMPORARY"ã€"LOCAL TEMPORARY"ã€"ALIAS" å’Œ "SYNONYM"ã€‚
-     */
-    private String tableType;
+	private String tableName;
 
-    /**
-     * è¡¨æ³¨é‡Š(ä¸­æ–‡)
-     */
-    private String tabComment;
-    /**
-     * è¡¨æ ‡ç­¾ ä¹Ÿå°±æ˜¯è¡¨çš„ä¸­æ–‡åˆ«å
-     */
-    private String tableLabel;
-
-    /**
-     * åˆ—æ¨¡å‹é›†åˆ
-     */
-    private List<ColumnModel> columnList=new ArrayList<ColumnModel>();
-    
-    /**
-     * ä¸»é”®æ¨¡å‹é›†åˆ
-     */
-    private List<PrimaryKeyModel> primaryKeyList=new ArrayList<PrimaryKeyModel>();
-    
-    /**
-     * å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¼•å…¥ï¼‰
-     */
-    private List<ForeignKeyModel> importedKeyList=new ArrayList<ForeignKeyModel>();
-    /**
-     * å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¯¼å‡ºï¼‰
-     */
-    private List<ForeignKeyModel> exportedKeyList=new ArrayList<ForeignKeyModel>();
-    
-	
 	/**
-	 * @return å–å¾—è¡¨åç§°
+	 * ±íËùÊôÀà±ğ
+	 */
+	private String catalog;
+	/**
+	 * ±íËùÊôÄ£Ê½
+	 */
+	private String schema;
+	/**
+	 * ±íÀàĞÍ¡£µäĞÍµÄÀàĞÍÊÇ "TABLE"¡¢"VIEW"¡¢"SYSTEM TABLE"¡¢"GLOBAL TEMPORARY"¡¢"LOCAL TEMPORARY"¡¢"ALIAS" ºÍ "SYNONYM"¡£
+	 */
+	private String tableType;
+
+	/**
+	 * ±í×¢ÊÍ(ÖĞÎÄ)
+	 */
+	private String tabComment;
+	/**
+	 * ±í±êÇ© Ò²¾ÍÊÇ±íµÄÖĞÎÄ±ğÃû
+	 */
+	private String tableLabel;
+
+	/**
+	 * ÁĞÄ£ĞÍ¼¯ºÏ
+	 */
+	private List<ColumnModel> columnList=new ArrayList<ColumnModel>();
+
+	/**
+	 * Ö÷¼üÄ£ĞÍ¼¯ºÏ
+	 */
+	private List<PrimaryKeyModel> primaryKeyList=new ArrayList<PrimaryKeyModel>();
+
+	/**
+	 * Íâ¼üÄ£ĞÍ¼¯ºÏ£¨ÒıÈë£©
+	 */
+	private List<ForeignKeyModel> importedKeyList=new ArrayList<ForeignKeyModel>();
+	/**
+	 * Íâ¼üÄ£ĞÍ¼¯ºÏ£¨µ¼³ö£©
+	 */
+	private List<ForeignKeyModel> exportedKeyList=new ArrayList<ForeignKeyModel>();
+
+
+	/**
+	 * @return È¡µÃ±íÃû³Æ
 	 */
 	public String getTableName() {
 		return tableName;
 	}
 
 	/**
-	 * @param tableName è®¾ç½®è¡¨åç§°
+	 * @param tableName ÉèÖÃ±íÃû³Æ
 	 */
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
 
 	/**
-	 * @return å–å¾—è¡¨çš„ç›®å½•åç§°(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ±íµÄÄ¿Â¼Ãû³Æ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getCatalog() {
 		return catalog;
 	}
 
 	/**
-	 * @param catalog è®¾ç½®è¡¨çš„ç›®å½•åç§°(ä¸€èˆ¬ä¸ºæ•°æ®åº“åï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param catalog ÉèÖÃ±íµÄÄ¿Â¼Ãû³Æ(Ò»°ãÎªÊı¾İ¿âÃû£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setCatalog(String catalog) {
 		this.catalog = catalog;
 	}
 
 	/**
-	 * @return å–å¾—è¡¨çš„æ¶æ„åç§°(ä¸€èˆ¬ä¸ºè¡¨çš„æ‰€æœ‰è€…ï¼Œå¯èƒ½ä¸ºç©º)
+	 * @return È¡µÃ±íµÄ¼Ü¹¹Ãû³Æ(Ò»°ãÎª±íµÄËùÓĞÕß£¬¿ÉÄÜÎª¿Õ)
 	 */
 	public String getSchema() {
 		return schema;
 	}
 
 	/**
-	 * @param schema è®¾ç½®è¡¨çš„æ¶æ„åç§°(ä¸€èˆ¬ä¸ºè¡¨çš„æ‰€æœ‰è€…ï¼Œå¯ä»¥ä¸ºç©º)
+	 * @param schema ÉèÖÃ±íµÄ¼Ü¹¹Ãû³Æ(Ò»°ãÎª±íµÄËùÓĞÕß£¬¿ÉÒÔÎª¿Õ)
 	 */
 	public void setSchema(String schema) {
 		this.schema = schema;
 	}
-	
+
 	/**
-	 * @return å–å¾—è¡¨ç±»å‹ã€‚å…¸å‹çš„ç±»å‹æ˜¯ "TABLE"ã€"VIEW"ã€"SYSTEM TABLE"ã€"GLOBAL TEMPORARY"ã€"LOCAL TEMPORARY"ã€"ALIAS" å’Œ "SYNONYM"ã€‚
+	 * @return È¡µÃ±íÀàĞÍ¡£µäĞÍµÄÀàĞÍÊÇ "TABLE"¡¢"VIEW"¡¢"SYSTEM TABLE"¡¢"GLOBAL TEMPORARY"¡¢"LOCAL TEMPORARY"¡¢"ALIAS" ºÍ "SYNONYM"¡£
 	 */
 	public String getTableType() {
 		return tableType;
 	}
 
 	/**
-	 * @param tableType è®¾ç½®è¡¨çš„ç±»å‹ã€‚å…¸å‹çš„ç±»å‹æ˜¯ "TABLE"ã€"VIEW"ã€"SYSTEM TABLE"ã€"GLOBAL TEMPORARY"ã€"LOCAL TEMPORARY"ã€"ALIAS" å’Œ "SYNONYM"ã€‚
+	 * @param tableType ÉèÖÃ±íµÄÀàĞÍ¡£µäĞÍµÄÀàĞÍÊÇ "TABLE"¡¢"VIEW"¡¢"SYSTEM TABLE"¡¢"GLOBAL TEMPORARY"¡¢"LOCAL TEMPORARY"¡¢"ALIAS" ºÍ "SYNONYM"¡£
 	 */
 	public void setTableType(String tableType) {
 		this.tableType = tableType;
 	}
 
 	/**
-	 * @return å–å¾—è¡¨çš„æ³¨é‡Š
+	 * @return È¡µÃ±íµÄ×¢ÊÍ
 	 */
 	public String getTabComment() {
 		return tabComment;
 	}
 
 	/**
-	 * @param tabComment è®¾ç½®è¡¨çš„æ³¨é‡Š
+	 * @param tabComment ÉèÖÃ±íµÄ×¢ÊÍ
 	 */
 	public void setTabComment(String tabComment) {
 		this.tabComment = tabComment;
 	}
 
 	/**
-	 * @return å–å¾—è¡¨çš„æ˜¾ç¤ºæ ‡ç­¾
+	 * @return È¡µÃ±íµÄÏÔÊ¾±êÇ©
 	 */
 	public String getTableLabel() {
 		return tableLabel;
 	}
 
 	/**
-	 * @param tableLabel è®¾ç½®è¡¨çš„æ˜¾ç¤ºæ ‡ç­¾
+	 * @param tableLabel ÉèÖÃ±íµÄÏÔÊ¾±êÇ©
 	 */
 	public void setTableLabel(String tableLabel) {
 		this.tableLabel = tableLabel;
 	}
 
 	/**
-	 * @return å–å¾—è¯¥è¡¨ä¸‹åŒ…å«çš„æ‰€æœ‰åˆ—æ¨¡å‹
+	 * @return È¡µÃ¸Ã±íÏÂ°üº¬µÄËùÓĞÁĞÄ£ĞÍ
 	 */
 	public List<ColumnModel> getColumnList() {
 		return columnList;
 	}
 
 	/**
-	 * @param columnList è®¾ç½®è¯¥è¡¨ä¸‹åŒ…å«çš„æ‰€æœ‰åˆ—æ¨¡å‹
+	 * @param columnList ÉèÖÃ¸Ã±íÏÂ°üº¬µÄËùÓĞÁĞÄ£ĞÍ
 	 */
 	public void setColumnList(List<ColumnModel> columnList) {
 		this.columnList = columnList;
 	}
 
 	/**
-	 * @return å–å¾—è¯¥è¡¨ä¸‹åŒ…å«çš„æ‰€æœ‰ä¸»é”®æ¨¡å‹
+	 * @return È¡µÃ¸Ã±íÏÂ°üº¬µÄËùÓĞÖ÷¼üÄ£ĞÍ
 	 */
 	public List<PrimaryKeyModel> getPrimaryKeyList() {
 		return primaryKeyList;
 	}
 
 	/**
-	 * @param primaryKeyList è®¾ç½®è¯¥è¡¨ä¸‹åŒ…å«çš„æ‰€æœ‰ä¸»é”®æ¨¡å‹
+	 * @param primaryKeyList ÉèÖÃ¸Ã±íÏÂ°üº¬µÄËùÓĞÖ÷¼üÄ£ĞÍ
 	 */
 	public void setPrimaryKeyList(List<PrimaryKeyModel> primaryKeyList) {
 		this.primaryKeyList = primaryKeyList;
 	}
 
 	/**
-	 * @return å–å¾—è¯¥è¡¨çš„å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¼•å…¥ï¼‰
+	 * @return È¡µÃ¸Ã±íµÄÍâ¼üÄ£ĞÍ¼¯ºÏ£¨ÒıÈë£©
 	 */
 	public List<ForeignKeyModel> getImportedKeyList() {
 		return importedKeyList;
 	}
 
 	/**
-	 * @param importedKeyList è®¾ç½®è¯¥è¡¨çš„å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¼•å…¥ï¼‰
+	 * @param importedKeyList ÉèÖÃ¸Ã±íµÄÍâ¼üÄ£ĞÍ¼¯ºÏ£¨ÒıÈë£©
 	 */
 	public void setImportedKeyList(List<ForeignKeyModel> importedKeyList) {
 		this.importedKeyList = importedKeyList;
 	}
 
 	/**
-	 * @return å–å¾—è¯¥è¡¨çš„å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¯¼å‡ºï¼‰
+	 * @return È¡µÃ¸Ã±íµÄÍâ¼üÄ£ĞÍ¼¯ºÏ£¨µ¼³ö£©
 	 */
 	public List<ForeignKeyModel> getExportedKeyList() {
 		return exportedKeyList;
 	}
 
 	/**
-	 * @param exportedKeyList è®¾ç½®è¯¥è¡¨çš„å¤–é”®æ¨¡å‹é›†åˆï¼ˆå¯¼å‡ºï¼‰
+	 * @param exportedKeyList ÉèÖÃ¸Ã±íµÄÍâ¼üÄ£ĞÍ¼¯ºÏ£¨µ¼³ö£©
 	 */
 	public void setExportedKeyList(List<ForeignKeyModel> exportedKeyList) {
 		this.exportedKeyList = exportedKeyList;
 	}
 
 	/**
-	 * æ ¹æ®åˆ—åå–å¾—åˆ—æ¨¡å‹
-	 * @param name åˆ—åç§°
-	 * @return è¿”å›çš„åˆ—æ¨¡å‹
+	 * ¸ù¾İÁĞÃûÈ¡µÃÁĞÄ£ĞÍ
+	 * @param name ÁĞÃû³Æ
+	 * @return ·µ»ØµÄÁĞÄ£ĞÍ
 	 */
 	public ColumnModel getColumnByName(String name){
 		for(ColumnModel cm : columnList){
@@ -210,18 +210,18 @@ public class TableModel  implements CycleRecoverable{
 		}
 		return null;
 	}
-	
+
 	/**
-	 * åˆ¤æ–­æ˜¯å¦æœ‰ä¸»é”®
-	 * @return å¦‚æœæœ‰åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶ÏÊÇ·ñÓĞÖ÷¼ü
+	 * @return Èç¹ûÓĞÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean hasPrimaryKey(){
 		return primaryKeyList!=null&&primaryKeyList.size()>0;
 	}
 	/**
-	 * åˆ¤æ–­æŒ‡å®šåˆ—åæ˜¯å¦ä¸ºä¸»é”®
-	 * @param columnName è¦åˆ¤æ–­çš„åˆ—åç§°
-	 * @return å¦‚æœæŒ‡å®šåˆ—ä¸ºä¸»é”®åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶ÏÖ¸¶¨ÁĞÃûÊÇ·ñÎªÖ÷¼ü
+	 * @param columnName ÒªÅĞ¶ÏµÄÁĞÃû³Æ
+	 * @return Èç¹ûÖ¸¶¨ÁĞÎªÖ÷¼üÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean isPrimaryKey(String columnName){
 		boolean result = false;
@@ -232,18 +232,18 @@ public class TableModel  implements CycleRecoverable{
 		}
 		return result;
 	}
-	
+
 	/**
-	 * åˆ¤æ–­è¯¥è¡¨æ˜¯å¦æœ‰å¤–é”®å¼•å…¥(å‚ç…§å…¶ä»–è¡¨çš„é”®)
-	 * @return å­˜åœ¨å¤–é”®å¼•å…¥åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶Ï¸Ã±íÊÇ·ñÓĞÍâ¼üÒıÈë(²ÎÕÕÆäËû±íµÄ¼ü)
+	 * @return ´æÔÚÍâ¼üÒıÈëÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean hasImportedKey(){
 		return importedKeyList!=null&&importedKeyList.size()>0;
 	}
 	/**
-	 * åˆ¤æ–­è¯¥è¡¨æŒ‡å®šåˆ—åæ˜¯å¦ä¸ºå¤–é”®å¼•å…¥(å‚ç…§å…¶ä»–è¡¨çš„é”®)
-	 * @param columnName åˆ—åç§°
-	 * @return å¦‚æœè¯¥è¡¨æŒ‡å®šåˆ—æ˜¯å¼•å…¥çš„å¤–é”®åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶Ï¸Ã±íÖ¸¶¨ÁĞÃûÊÇ·ñÎªÍâ¼üÒıÈë(²ÎÕÕÆäËû±íµÄ¼ü)
+	 * @param columnName ÁĞÃû³Æ
+	 * @return Èç¹û¸Ã±íÖ¸¶¨ÁĞÊÇÒıÈëµÄÍâ¼üÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean isImportedKey(String columnName){
 		boolean result = false;
@@ -254,18 +254,18 @@ public class TableModel  implements CycleRecoverable{
 		}
 		return result;
 	}
-	
+
 	/**
-	 * åˆ¤æ–­è¯¥è¡¨æ˜¯å¦æœ‰è¢«å…¶ä»–è¡¨å‚ç…§çš„é”®
-	 * @return å¦‚æœå­˜åœ¨è¢«å…¶ä»–è¡¨å‚ç…§çš„é”®åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶Ï¸Ã±íÊÇ·ñÓĞ±»ÆäËû±í²ÎÕÕµÄ¼ü
+	 * @return Èç¹û´æÔÚ±»ÆäËû±í²ÎÕÕµÄ¼üÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean hasExportedKey(){
 		return exportedKeyList!=null&&exportedKeyList.size()>0;
 	}
 	/**
-	 * åˆ¤æ–­è¯¥è¡¨æŒ‡å®šåˆ—åæ˜¯å¦ä¸ºå¤–é”®å¯¼å‡ºï¼ˆè¢«å…¶ä»–è¡¨å‚ç…§çš„é”®ï¼‰
-	 * @param columnName åˆ—åç§°
-	 * @return å¦‚æœè¯¥è¡¨æŒ‡å®šåˆ—è¢«å…¶ä»–è¡¨å¼•ç”¨ä½œä¸ºå¤–é”®åˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+	 * ÅĞ¶Ï¸Ã±íÖ¸¶¨ÁĞÃûÊÇ·ñÎªÍâ¼üµ¼³ö£¨±»ÆäËû±í²ÎÕÕµÄ¼ü£©
+	 * @param columnName ÁĞÃû³Æ
+	 * @return Èç¹û¸Ã±íÖ¸¶¨ÁĞ±»ÆäËû±íÒıÓÃ×÷ÎªÍâ¼üÔò·µ»Øtrue£¬·ñÔò·µ»Øfalse
 	 */
 	public boolean isExportedKey(String columnName){
 		boolean result = false;
@@ -278,17 +278,17 @@ public class TableModel  implements CycleRecoverable{
 	}
 
 	/**
-	 * å®ç°è¯¥æ¥å£ä»¥é˜²æ­¢åœ¨åºåˆ—åŒ–æˆ–å…‹éš†æ—¶å¸¦æ¥çš„å¾ªç¯å¼•ç”¨é—®é¢˜
+	 * ÊµÏÖ¸Ã½Ó¿ÚÒÔ·ÀÖ¹ÔÚĞòÁĞ»¯»ò¿ËÂ¡Ê±´øÀ´µÄÑ­»·ÒıÓÃÎÊÌâ
 	 */
 	public Object onCycleDetected(Context arg0) {
 		TableModel temp = new TableModel();
 
-        temp.setTableName(tableName);
+		temp.setTableName(tableName);
 
-        return temp;
+		return temp;
 	}
-	
-	
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -348,5 +348,5 @@ public class TableModel  implements CycleRecoverable{
 		return builder.toString();
 	}
 
-	
+
 }

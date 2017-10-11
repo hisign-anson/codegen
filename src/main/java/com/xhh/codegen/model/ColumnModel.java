@@ -3,147 +3,147 @@ package com.xhh.codegen.model;
 import com.sun.xml.internal.bind.CycleRecoverable;
 
 /**
- * åˆ—æ¨¡å‹ã€‚æ³¨æ„è¯¥ç±»ç”±äºå’ŒTableModelå­˜åœ¨ç›¸äº’å¼•ç”¨çš„å…³ç³»ï¼Œå› æ­¤å®ç°äº†ä¸€ä¸ªæ¥å£CycleRecoverableæ¥é˜²æ­¢åœ¨åºåˆ—åŒ–æˆ–å…‹éš†æ—¶å¸¦æ¥çš„å¾ªç¯å¼•ç”¨é—®é¢˜
- * @author é»„å¤©æ”¿
+ * ÁĞÄ£ĞÍ¡£×¢Òâ¸ÃÀàÓÉÓÚºÍTableModel´æÔÚÏà»¥ÒıÓÃµÄ¹ØÏµ£¬Òò´ËÊµÏÖÁËÒ»¸ö½Ó¿ÚCycleRecoverableÀ´·ÀÖ¹ÔÚĞòÁĞ»¯»ò¿ËÂ¡Ê±´øÀ´µÄÑ­»·ÒıÓÃÎÊÌâ
+ * @author »ÆÌìÕş
  *
  */
 @SuppressWarnings("restriction")
 public class ColumnModel implements CycleRecoverable{
 	/**
-	 * åˆ—å ï¼ˆä¸€èˆ¬å’Œå­—æ®µåç§°ç›¸åŒï¼Œä½†ä¸ºäº†å¢åŠ å¯è¯»æ€§ï¼Œåˆ—åç§°å¯ä»¥ä¸åŒäºå­—æ®µåï¼Œå¦‚åˆ—åä¸€èˆ¬ä¸åŒ…å«ä¸‹åˆ’çº¿ï¼Œæœ‰å¯èƒ½éœ€è¦åšæ›¿æ¢æ‰ä¸‹åˆ’çº¿å¹¶è®©ç´§è·Ÿå®ƒåé¢çš„å­—æ¯å¤§å†™ï¼‰
+	 * ÁĞÃû £¨Ò»°ãºÍ×Ö¶ÎÃû³ÆÏàÍ¬£¬µ«ÎªÁËÔö¼Ó¿É¶ÁĞÔ£¬ÁĞÃû³Æ¿ÉÒÔ²»Í¬ÓÚ×Ö¶ÎÃû£¬ÈçÁĞÃûÒ»°ã²»°üº¬ÏÂ»®Ïß£¬ÓĞ¿ÉÄÜĞèÒª×öÌæ»»µôÏÂ»®Ïß²¢ÈÃ½ô¸úËüºóÃæµÄ×ÖÄ¸´óĞ´£©
 	 */
     private String columnName;
     /**
-     * å­—æ®µå å¯¹åº”æ•°æ®åº“çš„çœŸå®å­—æ®µåç§°ï¼Œä¸€èˆ¬ä¸å¯æ›´æ”¹
+     * ×Ö¶ÎÃû ¶ÔÓ¦Êı¾İ¿âµÄÕæÊµ×Ö¶ÎÃû³Æ£¬Ò»°ã²»¿É¸ü¸Ä
      */
     private String fieldName;
     /**
-     * åˆ—æ³¨é‡Š
+     * ÁĞ×¢ÊÍ
      */
     private String colComment;
     /**
-     * åˆ—æ ‡ç­¾ï¼Œåˆ—æ³¨é‡Šçš„æ ‡ç­¾éƒ¨åˆ†ã€‚ç”¨äºæ‰“å°è¾“å‡ºå’Œæ˜¾ç¤ºçš„æŒ‡å®šåˆ—çš„å»ºè®®æ ‡é¢˜ï¼ˆä¸­æ–‡ï¼‰
+     * ÁĞ±êÇ©£¬ÁĞ×¢ÊÍµÄ±êÇ©²¿·Ö¡£ÓÃÓÚ´òÓ¡Êä³öºÍÏÔÊ¾µÄÖ¸¶¨ÁĞµÄ½¨Òé±êÌâ£¨ÖĞÎÄ£©
      */
     private String columnLabel;
     /**
-     * åˆ—æ³¨é‡Šçš„å¤‡æ³¨éƒ¨åˆ†
+     * ÁĞ×¢ÊÍµÄ±¸×¢²¿·Ö
      */
     private String colRemark;
     /**
-     * é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„ç®€å•ç±»åï¼Œéå…¨é™å®šåï¼Œï¼Œé»˜è®¤çš„ç¼–ç¨‹è¯­è¨€ä¸ºJavaï¼Œå¦‚String
+     * ÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄ¼òµ¥ÀàÃû£¬·ÇÈ«ÏŞ¶¨Ãû£¬£¬Ä¬ÈÏµÄ±à³ÌÓïÑÔÎªJava£¬ÈçString
      */
     private String columnSimpleClassName;
     
     /**
-     * é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„å®Œå…¨é™å®šåç§°ï¼Œé»˜è®¤çš„ç¼–ç¨‹è¯­è¨€ä¸ºJavaï¼Œå¦‚ï¼šjava.lang.Stringã€‚
+     * ÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄÍêÈ«ÏŞ¶¨Ãû³Æ£¬Ä¬ÈÏµÄ±à³ÌÓïÑÔÎªJava£¬Èç£ºjava.lang.String¡£
      */
     private String columnClassName;
     
     /**
-     * é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„æ‰€åœ¨çš„åŒ…(å‘½åç©ºé—´)ï¼Œé»˜è®¤çš„ç¼–ç¨‹è¯­è¨€ä¸ºJavaï¼Œå¦‚ï¼šjava.lang
+     * ÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄËùÔÚµÄ°ü(ÃüÃû¿Õ¼ä)£¬Ä¬ÈÏµÄ±à³ÌÓïÑÔÎªJava£¬Èç£ºjava.lang
      */
     private String columnClassPackage;
     
     /**
-     * åˆ—çš„ SQL ç±»å‹ã€‚
+     * ÁĞµÄ SQL ÀàĞÍ¡£
      */
     private int columnType;
     
     /**
-     * åˆ—çš„ SQLç±»å‹åç§°
+     * ÁĞµÄ SQLÀàĞÍÃû³Æ
      */
     private String columnTypeName;
     
     /**
-     * è·å–æŒ‡å®šåˆ—çš„æŒ‡å®šåˆ—å®½ã€‚å¯¹äºæ•°å€¼å‹æ•°æ®ï¼Œæ˜¯æŒ‡æœ€å¤§ç²¾åº¦ã€‚å¯¹äºå­—ç¬¦å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—ç¬¦ä¸²é•¿åº¦ã€‚
-     * å¯¹äºæ—¥æœŸæ—¶é—´çš„æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡ String è¡¨ç¤ºå½¢å¼çš„å­—ç¬¦ä¸²é•¿åº¦ï¼ˆå‡å®šä¸ºæœ€å¤§å…è®¸çš„å°æ•°ç§’ç»„ä»¶ï¼‰ã€‚
-     * å¯¹äºäºŒè¿›åˆ¶å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚å¯¹äº ROWID æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚
-     * å¯¹äºå…¶åˆ—å¤§å°ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œåˆ™è¿”å› 0ã€‚
+     * »ñÈ¡Ö¸¶¨ÁĞµÄÖ¸¶¨ÁĞ¿í¡£¶ÔÓÚÊıÖµĞÍÊı¾İ£¬ÊÇÖ¸×î´ó¾«¶È¡£¶ÔÓÚ×Ö·ûĞÍÊı¾İ£¬ÊÇÖ¸×Ö·û´®³¤¶È¡£
+     * ¶ÔÓÚÈÕÆÚÊ±¼äµÄÊı¾İÀàĞÍ£¬ÊÇÖ¸ String ±íÊ¾ĞÎÊ½µÄ×Ö·û´®³¤¶È£¨¼Ù¶¨Îª×î´óÔÊĞíµÄĞ¡ÊıÃë×é¼ş£©¡£
+     * ¶ÔÓÚ¶ş½øÖÆĞÍÊı¾İ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£¶ÔÓÚ ROWID Êı¾İÀàĞÍ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£
+     * ¶ÔÓÚÆäÁĞ´óĞ¡²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬Ôò·µ»Ø 0¡£
      */
     private int precision=0;
     /**
-     * åˆ—çš„å°æ•°ç‚¹å³è¾¹çš„ä½æ•°ã€‚å¯¹äºå…¶æ ‡åº¦ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œé»˜è®¤ä¸º 0ã€‚
+     * ÁĞµÄĞ¡ÊıµãÓÒ±ßµÄÎ»Êı¡£¶ÔÓÚÆä±ê¶È²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬Ä¬ÈÏÎª 0¡£
      */
     private  int scale=0;
     
     /**
-     * åˆ—çš„æœ€å¤§æ ‡å‡†å®½åº¦ï¼Œä»¥å­—ç¬¦ä¸ºå•ä½ã€‚
+     * ÁĞµÄ×î´ó±ê×¼¿í¶È£¬ÒÔ×Ö·ûÎªµ¥Î»¡£
      */
     private int columnDisplaySize;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦ä¸ºä¸»é”®
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÎªÖ÷¼ü
      */
     private boolean primaryKey=false;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦å¤–é”®åˆ—ï¼ˆå‚ç…§å…¶ä»–è¡¨çš„é”®ï¼‰
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÍâ¼üÁĞ£¨²ÎÕÕÆäËû±íµÄ¼ü£©
      */
     private boolean importedKey=false;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦å¤–é”®åˆ—ï¼ˆè¢«å…¶ä»–è¡¨å‚ç…§çš„é”®ï¼‰
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÍâ¼üÁĞ£¨±»ÆäËû±í²ÎÕÕµÄ¼ü£©
      */
     private boolean exportedKey=false;
     /**
-     * æ ‡è¯†è¯¥åˆ—çš„å€¼èƒ½å¦ä¸ºç©º
+     * ±êÊ¶¸ÃÁĞµÄÖµÄÜ·ñÎª¿Õ
      */
     private boolean nullable=true;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦ä¸ºè‡ªå¢åˆ—
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÎª×ÔÔöÁĞ
      */
     private boolean autoIncrement = false;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦ä¸ºè´§å¸ç±»å‹
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÎª»õ±ÒÀàĞÍ
      */
     private boolean currency = false;
     /**
-     * æ ‡è¯†è¯¥åˆ—æ˜¯å¦ä¸ºåªè¯»åˆ—
+     * ±êÊ¶¸ÃÁĞÊÇ·ñÎªÖ»¶ÁÁĞ
      */
     private boolean readonly = false;
     /**
-     * æ ‡è¯†è¯¥åˆ—èƒ½å¦ä½œä¸ºæœç´¢åˆ—ï¼Œå‡ºç°åœ¨whereæ¡ä»¶é‡Œ
+     * ±êÊ¶¸ÃÁĞÄÜ·ñ×÷ÎªËÑË÷ÁĞ£¬³öÏÖÔÚwhereÌõ¼şÀï
      */
     private boolean searchable = true;
     
     private TableModel tableModel;
     
     /**
-     * @return å–å¾—åˆ—åç§°ï¼Œåˆ—åç§°ä¸€èˆ¬å’Œå­—æ®µåç§°ç›¸åŒï¼Œä½†ä¸ºäº†å¢åŠ å¯è¯»æ€§ï¼Œåˆ—åç§°å¯ä»¥ä¸åŒäºå­—æ®µåï¼Œ
-     * å¦‚åˆ—åä¸€èˆ¬ä¸åŒ…å«ä¸‹åˆ’çº¿ï¼Œæœ‰å¯èƒ½éœ€è¦åšæ›¿æ¢æ‰ä¸‹åˆ’çº¿å¹¶è®©ç´§è·Ÿå®ƒåé¢çš„å­—æ¯å¤§å†™
+     * @return È¡µÃÁĞÃû³Æ£¬ÁĞÃû³ÆÒ»°ãºÍ×Ö¶ÎÃû³ÆÏàÍ¬£¬µ«ÎªÁËÔö¼Ó¿É¶ÁĞÔ£¬ÁĞÃû³Æ¿ÉÒÔ²»Í¬ÓÚ×Ö¶ÎÃû£¬
+     * ÈçÁĞÃûÒ»°ã²»°üº¬ÏÂ»®Ïß£¬ÓĞ¿ÉÄÜĞèÒª×öÌæ»»µôÏÂ»®Ïß²¢ÈÃ½ô¸úËüºóÃæµÄ×ÖÄ¸´óĞ´
      */
 	public String getColumnName() {
 		return columnName;
 	}
 
 	/**
-	 * @param columnName è¦è®¾ç½®çš„åˆ—åç§°ï¼Œåˆ—åç§°ä¸€èˆ¬å’Œå­—æ®µåç§°ç›¸åŒï¼Œä½†ä¸ºäº†å¢åŠ å¯è¯»æ€§ï¼Œåˆ—åç§°å¯ä»¥ä¸åŒäºå­—æ®µåï¼Œ
-     * å¦‚åˆ—åä¸€èˆ¬ä¸åŒ…å«ä¸‹åˆ’çº¿ï¼Œæœ‰å¯èƒ½éœ€è¦åšæ›¿æ¢æ‰ä¸‹åˆ’çº¿å¹¶è®©ç´§è·Ÿå®ƒåé¢çš„å­—æ¯å¤§å†™
+	 * @param columnName ÒªÉèÖÃµÄÁĞÃû³Æ£¬ÁĞÃû³ÆÒ»°ãºÍ×Ö¶ÎÃû³ÆÏàÍ¬£¬µ«ÎªÁËÔö¼Ó¿É¶ÁĞÔ£¬ÁĞÃû³Æ¿ÉÒÔ²»Í¬ÓÚ×Ö¶ÎÃû£¬
+     * ÈçÁĞÃûÒ»°ã²»°üº¬ÏÂ»®Ïß£¬ÓĞ¿ÉÄÜĞèÒª×öÌæ»»µôÏÂ»®Ïß²¢ÈÃ½ô¸úËüºóÃæµÄ×ÖÄ¸´óĞ´
 	 */
 	public void setColumnName(String columnName) {
 		this.columnName = columnName;
 	}
 	
 	/**
-	 * @return å–å¾—å¯¹åº”æ•°æ®åº“è¡¨å­—æ®µåç§°ï¼Œä¸€èˆ¬ä¸å¯æ›´æ”¹
+	 * @return È¡µÃ¶ÔÓ¦Êı¾İ¿â±í×Ö¶ÎÃû³Æ£¬Ò»°ã²»¿É¸ü¸Ä
 	 */
 	public String getFieldName() {
 		return fieldName;
 	}
 
 	/**
-	 * @param fieldName è®¾ç½®å¯¹åº”æ•°æ®åº“è¡¨å­—æ®µåç§°
+	 * @param fieldName ÉèÖÃ¶ÔÓ¦Êı¾İ¿â±í×Ö¶ÎÃû³Æ
 	 */
 	public void setFieldName(String fieldName) {
 		this.fieldName = fieldName;
 	}
 
 	/**
-	 * @return å–å¾—åˆ—æ³¨é‡Š
+	 * @return È¡µÃÁĞ×¢ÊÍ
 	 */
 	public String getColComment() {
 		return colComment;
 	}
 
 	/**
-	 * @param colComment è¦è®¾ç½®çš„åˆ—æ³¨é‡Š
+	 * @param colComment ÒªÉèÖÃµÄÁĞ×¢ÊÍ
 	 */
 	public void setColComment(String colComment) {
 		this.colComment = colComment;
@@ -151,165 +151,165 @@ public class ColumnModel implements CycleRecoverable{
 	
 	
 	/**
-	 * @return å–å¾—åˆ—å¤‡æ³¨ä¿¡æ¯
+	 * @return È¡µÃÁĞ±¸×¢ĞÅÏ¢
 	 */
 	public String getColRemark() {
 		return colRemark;
 	}
 
 	/**
-	 * @param colRemark è¦è®¾ç½®çš„åˆ—å¤‡æ³¨ä¿¡æ¯
+	 * @param colRemark ÒªÉèÖÃµÄÁĞ±¸×¢ĞÅÏ¢
 	 */
 	public void setColRemark(String colRemark) {
 		this.colRemark = colRemark;
 	}
 
 	/**
-	 * @return å–å¾—é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„ç®€å•ç±»åï¼Œéå…¨é™å®šåï¼Œå¦‚ç¼–Javaä¸­çš„String
+	 * @return È¡µÃÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄ¼òµ¥ÀàÃû£¬·ÇÈ«ÏŞ¶¨Ãû£¬Èç±àJavaÖĞµÄString
 	 */
 	public String getColumnSimpleClassName() {
 		return columnSimpleClassName;
 	}
 
 	/**
-	 * @param columnSimpleClassName è¦è®¾ç½®çš„é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„ç®€å•ç±»åï¼Œéå…¨é™å®šåï¼Œå¦‚ç¼–javaä¸­çš„String
+	 * @param columnSimpleClassName ÒªÉèÖÃµÄÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄ¼òµ¥ÀàÃû£¬·ÇÈ«ÏŞ¶¨Ãû£¬Èç±àjavaÖĞµÄString
 	 */
 	public void setColumnSimpleClassName(String columnSimpleClassName) {
 		this.columnSimpleClassName = columnSimpleClassName;
 	}
 
 	/**
-	 * @return å–å¾—é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„å®Œå…¨é™å®šåç§°ï¼Œå¦‚javaä¸­çš„java.lang.Stringã€‚
+	 * @return È¡µÃÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄÍêÈ«ÏŞ¶¨Ãû³Æ£¬ÈçjavaÖĞµÄjava.lang.String¡£
 	 */
 	public String getColumnClassName() {
 		return columnClassName;
 	}
 
 	/**
-	 * @param columnClassName è¦è®¾ç½®çš„é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„å®Œå…¨é™å®šåç§°ï¼Œå¦‚javaä¸­çš„java.lang.Stringã€‚
+	 * @param columnClassName ÒªÉèÖÃµÄÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄÍêÈ«ÏŞ¶¨Ãû³Æ£¬ÈçjavaÖĞµÄjava.lang.String¡£
 	 */
 	public void setColumnClassName(String columnClassName) {
 		this.columnClassName = columnClassName;
 	}
 
 	/**
-	 * @return å–å¾—é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„æ‰€åœ¨çš„åŒ…(å‘½åç©ºé—´)ï¼Œå¦‚javaä¸­çš„java.lang
+	 * @return È¡µÃÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄËùÔÚµÄ°ü(ÃüÃû¿Õ¼ä)£¬ÈçjavaÖĞµÄjava.lang
 	 */
 	public String getColumnClassPackage() {
 		return columnClassPackage;
 	}
 
 	/**
-	 * @param columnClassPackage è¦è®¾ç½®çš„é¢å‘å…·ä½“ç¼–ç¨‹è¯­è¨€ä¸­ç±»çš„æ‰€åœ¨çš„åŒ…(å‘½åç©ºé—´)ï¼Œå¦‚javaä¸­çš„java.lang
+	 * @param columnClassPackage ÒªÉèÖÃµÄÃæÏò¾ßÌå±à³ÌÓïÑÔÖĞÀàµÄËùÔÚµÄ°ü(ÃüÃû¿Õ¼ä)£¬ÈçjavaÖĞµÄjava.lang
 	 */
 	public void setColumnClassPackage(String columnClassPackage) {
 		this.columnClassPackage = columnClassPackage;
 	}
 
 	/**
-	 * @return è·å–æŒ‡å®šåˆ—çš„æŒ‡å®šåˆ—å®½ã€‚
-	 * <br>å¯¹äºæ•°å€¼å‹æ•°æ®ï¼Œæ˜¯æŒ‡æœ€å¤§ç²¾åº¦ã€‚å¯¹äºå­—ç¬¦å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—ç¬¦ä¸²é•¿åº¦ã€‚
-     * <br>å¯¹äºæ—¥æœŸæ—¶é—´çš„æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡ String è¡¨ç¤ºå½¢å¼çš„å­—ç¬¦ä¸²é•¿åº¦ï¼ˆå‡å®šä¸ºæœ€å¤§å…è®¸çš„å°æ•°ç§’ç»„ä»¶ï¼‰ã€‚
-     * <br>å¯¹äºäºŒè¿›åˆ¶å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚
-     * <br>å¯¹äº ROWID æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚
-     * <br>å¯¹äºå…¶åˆ—å¤§å°ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œåˆ™è¿”å› 0ã€‚
+	 * @return »ñÈ¡Ö¸¶¨ÁĞµÄÖ¸¶¨ÁĞ¿í¡£
+	 * <br>¶ÔÓÚÊıÖµĞÍÊı¾İ£¬ÊÇÖ¸×î´ó¾«¶È¡£¶ÔÓÚ×Ö·ûĞÍÊı¾İ£¬ÊÇÖ¸×Ö·û´®³¤¶È¡£
+     * <br>¶ÔÓÚÈÕÆÚÊ±¼äµÄÊı¾İÀàĞÍ£¬ÊÇÖ¸ String ±íÊ¾ĞÎÊ½µÄ×Ö·û´®³¤¶È£¨¼Ù¶¨Îª×î´óÔÊĞíµÄĞ¡ÊıÃë×é¼ş£©¡£
+     * <br>¶ÔÓÚ¶ş½øÖÆĞÍÊı¾İ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£
+     * <br>¶ÔÓÚ ROWID Êı¾İÀàĞÍ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£
+     * <br>¶ÔÓÚÆäÁĞ´óĞ¡²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬Ôò·µ»Ø 0¡£
 	 */
 	public int getPrecision() {
 		return precision;
 	}
 
 	/**
-	 * @param precision è¦è®¾ç½®çš„æŒ‡å®šåˆ—çš„æŒ‡å®šåˆ—å®½ã€‚
-	 * <br>å¯¹äºæ•°å€¼å‹æ•°æ®ï¼Œæ˜¯æŒ‡æœ€å¤§ç²¾åº¦ã€‚å¯¹äºå­—ç¬¦å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—ç¬¦ä¸²é•¿åº¦ã€‚
-     * <br>å¯¹äºæ—¥æœŸæ—¶é—´çš„æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡ String è¡¨ç¤ºå½¢å¼çš„å­—ç¬¦ä¸²é•¿åº¦ï¼ˆå‡å®šä¸ºæœ€å¤§å…è®¸çš„å°æ•°ç§’ç»„ä»¶ï¼‰ã€‚
-     * <br>å¯¹äºäºŒè¿›åˆ¶å‹æ•°æ®ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚
-     * <br>å¯¹äº ROWID æ•°æ®ç±»å‹ï¼Œæ˜¯æŒ‡å­—èŠ‚é•¿åº¦ã€‚
-     * <br>å¯¹äºå…¶åˆ—å¤§å°ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œåˆ™ä¸º 0ã€‚
+	 * @param precision ÒªÉèÖÃµÄÖ¸¶¨ÁĞµÄÖ¸¶¨ÁĞ¿í¡£
+	 * <br>¶ÔÓÚÊıÖµĞÍÊı¾İ£¬ÊÇÖ¸×î´ó¾«¶È¡£¶ÔÓÚ×Ö·ûĞÍÊı¾İ£¬ÊÇÖ¸×Ö·û´®³¤¶È¡£
+     * <br>¶ÔÓÚÈÕÆÚÊ±¼äµÄÊı¾İÀàĞÍ£¬ÊÇÖ¸ String ±íÊ¾ĞÎÊ½µÄ×Ö·û´®³¤¶È£¨¼Ù¶¨Îª×î´óÔÊĞíµÄĞ¡ÊıÃë×é¼ş£©¡£
+     * <br>¶ÔÓÚ¶ş½øÖÆĞÍÊı¾İ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£
+     * <br>¶ÔÓÚ ROWID Êı¾İÀàĞÍ£¬ÊÇÖ¸×Ö½Ú³¤¶È¡£
+     * <br>¶ÔÓÚÆäÁĞ´óĞ¡²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬ÔòÎª 0¡£
 	 */
 	public void setPrecision(int precision) {
 		this.precision = precision;
 	}
 
 	/**
-	 * @return è·å–åˆ—çš„å°æ•°ç‚¹å³è¾¹çš„ä½æ•°ã€‚å¯¹äºå…¶æ ‡åº¦ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œé»˜è®¤ä¸º 0ã€‚
+	 * @return »ñÈ¡ÁĞµÄĞ¡ÊıµãÓÒ±ßµÄÎ»Êı¡£¶ÔÓÚÆä±ê¶È²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬Ä¬ÈÏÎª 0¡£
 	 */
 	public int getScale() {
 		return scale;
 	}
 
 	/**
-	 * @param scale è¦è®¾ç½®çš„åˆ—çš„å°æ•°ç‚¹å³è¾¹çš„ä½æ•°ã€‚å¯¹äºå…¶æ ‡åº¦ä¸å¯ç”¨çš„æ•°æ®ç±»å‹ï¼Œé»˜è®¤ä¸º 0ã€‚
+	 * @param scale ÒªÉèÖÃµÄÁĞµÄĞ¡ÊıµãÓÒ±ßµÄÎ»Êı¡£¶ÔÓÚÆä±ê¶È²»¿ÉÓÃµÄÊı¾İÀàĞÍ£¬Ä¬ÈÏÎª 0¡£
 	 */
 	public void setScale(int scale) {
 		this.scale = scale;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦ä¸ºä¸»é”®åˆ—
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñÎªÖ÷¼üÁĞ
 	 */
 	public boolean isPrimaryKey() {
 		return primaryKey;
 	}
 
 	/**
-	 * @param primaryKey è®¾ç½®è¯¥åˆ—ä¸ºä¸»é”®åˆ—
+	 * @param primaryKey ÉèÖÃ¸ÃÁĞÎªÖ÷¼üÁĞ
 	 */
 	public void setPrimaryKey(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦ä¸ºå¤–é”®ï¼ˆå‚ç…§å…¶ä»–è¡¨çš„é”®ï¼‰
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñÎªÍâ¼ü£¨²ÎÕÕÆäËû±íµÄ¼ü£©
 	 */
 	public boolean isImportedKey() {
 		return importedKey;
 	}
 
 	/**
-	 * @param importedKey è®¾ç½®è¯¥åˆ—ä¸ºå¤–é”®åˆ—ï¼ˆå‚ç…§å…¶ä»–è¡¨çš„é”®ï¼‰
+	 * @param importedKey ÉèÖÃ¸ÃÁĞÎªÍâ¼üÁĞ£¨²ÎÕÕÆäËû±íµÄ¼ü£©
 	 */
 	public void setImportedKey(boolean importedKey) {
 		this.importedKey = importedKey;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦è¢«å…¶ä»–è¡¨å¼•ç”¨ï¼ˆè¢«å…¶ä»–è¡¨å‚ç…§çš„é”®ï¼‰
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñ±»ÆäËû±íÒıÓÃ£¨±»ÆäËû±í²ÎÕÕµÄ¼ü£©
 	 */
 	public boolean isExportedKey() {
 		return exportedKey;
 	}
 
 	/**
-	 * @param exportedKey è®¾ç½®è¯¥åˆ—è¢«å…¶ä»–è¡¨å¼•ç”¨ï¼ˆè¢«å…¶ä»–è¡¨å‚ç…§çš„é”®ï¼‰
+	 * @param exportedKey ÉèÖÃ¸ÃÁĞ±»ÆäËû±íÒıÓÃ£¨±»ÆäËû±í²ÎÕÕµÄ¼ü£©
 	 */
 	public void setExportedKey(boolean exportedKey) {
 		this.exportedKey = exportedKey;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦å…è®¸ç©º
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñÔÊĞí¿Õ
 	 */
 	public boolean isNullable() {
 		return nullable;
 	}
 
 	/**
-	 * @param nullable è®¾ç½®è¯¥åˆ—èƒ½å¦ä¸ºç©º
+	 * @param nullable ÉèÖÃ¸ÃÁĞÄÜ·ñÎª¿Õ
 	 */
 	public void setNullable(boolean nullable) {
 		this.nullable = nullable;
 	}
 
 	/**
-	 * å–å¾—åœ¨java.sql.Typeså®šä¹‰çš„ç±»å‹
-	 * @return è·å–æŒ‡å®šåˆ—çš„ SQL ç±»å‹ã€‚
+	 * È¡µÃÔÚjava.sql.Types¶¨ÒåµÄÀàĞÍ
+	 * @return »ñÈ¡Ö¸¶¨ÁĞµÄ SQL ÀàĞÍ¡£
 	 */
 	public int getColumnType() {
 		return columnType;
 	}
 
 	/**
-	 * è®¾ç½®åœ¨java.sql.Typeså®šä¹‰çš„ç±»å‹
+	 * ÉèÖÃÔÚjava.sql.Types¶¨ÒåµÄÀàĞÍ
 	 * @param columnType the columnType to set
 	 */
 	public void setColumnType(int columnType) {
@@ -317,42 +317,42 @@ public class ColumnModel implements CycleRecoverable{
 	}
 
 	/**
-	 * @return è·å–æŒ‡å®šåˆ—çš„ åœ¨java.sql.Typeså®šä¹‰çš„ç±»å‹çš„åç§°ã€‚
+	 * @return »ñÈ¡Ö¸¶¨ÁĞµÄ ÔÚjava.sql.Types¶¨ÒåµÄÀàĞÍµÄÃû³Æ¡£
 	 */
 	public String getColumnTypeName() {
 		return columnTypeName;
 	}
 
 	/**
-	 * @param columnTypeName è®¾ç½®åœ¨java.sql.Typeså®šä¹‰çš„ç±»å‹çš„åç§°
+	 * @param columnTypeName ÉèÖÃÔÚjava.sql.Types¶¨ÒåµÄÀàĞÍµÄÃû³Æ
 	 */
 	public void setColumnTypeName(String columnTypeName) {
 		this.columnTypeName = columnTypeName;
 	}
 
 	/**
-	 * @return å…è®¸ä½œä¸ºæŒ‡å®šåˆ—å®½åº¦çš„æœ€å¤§æ ‡å‡†å­—ç¬¦æ•°
+	 * @return ÔÊĞí×÷ÎªÖ¸¶¨ÁĞ¿í¶ÈµÄ×î´ó±ê×¼×Ö·ûÊı
 	 */
 	public int getColumnDisplaySize() {
 		return columnDisplaySize;
 	}
 
 	/**
-	 * @param columnDisplaySize æŒ‡å®šåˆ—å®½åº¦çš„æœ€å¤§æ ‡å‡†å­—ç¬¦æ•°
+	 * @param columnDisplaySize Ö¸¶¨ÁĞ¿í¶ÈµÄ×î´ó±ê×¼×Ö·ûÊı
 	 */
 	public void setColumnDisplaySize(int columnDisplaySize) {
 		this.columnDisplaySize = columnDisplaySize;
 	}
 
 	/**
-	 * @return å–å¾—åˆ—æ ‡ç­¾ï¼Œåˆ—æ³¨é‡Šçš„æ ‡ç­¾éƒ¨åˆ†ã€‚ç”¨äºæ‰“å°è¾“å‡ºå’Œæ˜¾ç¤ºçš„æŒ‡å®šåˆ—çš„å»ºè®®æ ‡é¢˜
+	 * @return È¡µÃÁĞ±êÇ©£¬ÁĞ×¢ÊÍµÄ±êÇ©²¿·Ö¡£ÓÃÓÚ´òÓ¡Êä³öºÍÏÔÊ¾µÄÖ¸¶¨ÁĞµÄ½¨Òé±êÌâ
 	 */
 	public String getColumnLabel() {
 		return columnLabel;
 	}
 
 	/**
-	 * @param columnLabel è¦è®¾ç½®çš„åˆ—æ ‡ç­¾ï¼Œåˆ—æ³¨é‡Šçš„æ ‡ç­¾éƒ¨åˆ†ã€‚ç”¨äºæ‰“å°è¾“å‡ºå’Œæ˜¾ç¤ºçš„æŒ‡å®šåˆ—çš„å»ºè®®æ ‡é¢˜
+	 * @param columnLabel ÒªÉèÖÃµÄÁĞ±êÇ©£¬ÁĞ×¢ÊÍµÄ±êÇ©²¿·Ö¡£ÓÃÓÚ´òÓ¡Êä³öºÍÏÔÊ¾µÄÖ¸¶¨ÁĞµÄ½¨Òé±êÌâ
 	 */
 	public void setColumnLabel(String columnLabel) {
 		this.columnLabel = columnLabel;
@@ -360,56 +360,56 @@ public class ColumnModel implements CycleRecoverable{
 	
 	
 	/**
-	 * @return åˆ¤æ–­æ˜¯å¦ä¸ºè‡ªåŠ¨å¢é•¿åˆ—
+	 * @return ÅĞ¶ÏÊÇ·ñÎª×Ô¶¯Ôö³¤ÁĞ
 	 */
 	public boolean isAutoIncrement() {
 		return autoIncrement;
 	}
 
 	/**
-	 * @param autoIncrement è®¾ç½®è¯¥åˆ—æ˜¯å¦ä¸ºè‡ªåŠ¨å¢é•¿åˆ—
+	 * @param autoIncrement ÉèÖÃ¸ÃÁĞÊÇ·ñÎª×Ô¶¯Ôö³¤ÁĞ
 	 */
 	public void setAutoIncrement(boolean autoIncrement) {
 		this.autoIncrement = autoIncrement;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦ä¸ºè´§å¸ç±»å‹
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñÎª»õ±ÒÀàĞÍ
 	 */
 	public boolean isCurrency() {
 		return currency;
 	}
 
 	/**
-	 * @param currency è®¾ç½®è¯¥åˆ—æ˜¯å¦ä¸ºè´§å¸ç±»å‹
+	 * @param currency ÉèÖÃ¸ÃÁĞÊÇ·ñÎª»õ±ÒÀàĞÍ
 	 */
 	public void setCurrency(boolean currency) {
 		this.currency = currency;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—æ˜¯å¦ä¸ºåªè¯»åˆ—
+	 * @return ÅĞ¶Ï¸ÃÁĞÊÇ·ñÎªÖ»¶ÁÁĞ
 	 */
 	public boolean isReadonly() {
 		return readonly;
 	}
 
 	/**
-	 * @param readonly è®¾ç½®è¯¥åˆ—æ˜¯å¦ä¸ºåªè¯»åˆ—
+	 * @param readonly ÉèÖÃ¸ÃÁĞÊÇ·ñÎªÖ»¶ÁÁĞ
 	 */
 	public void setReadonly(boolean readonly) {
 		this.readonly = readonly;
 	}
 
 	/**
-	 * @return åˆ¤æ–­è¯¥åˆ—èƒ½å¦ä½œä¸ºæœç´¢åˆ—ï¼Œå‡ºç°åœ¨whereæ¡ä»¶é‡Œ
+	 * @return ÅĞ¶Ï¸ÃÁĞÄÜ·ñ×÷ÎªËÑË÷ÁĞ£¬³öÏÖÔÚwhereÌõ¼şÀï
 	 */
 	public boolean isSearchable() {
 		return searchable;
 	}
 
 	/**
-	 * @param searchable è®¾ç½®è¯¥åˆ—èƒ½å¦ä½œä¸ºæœç´¢åˆ—ï¼Œå‡ºç°åœ¨whereæ¡ä»¶é‡Œ
+	 * @param searchable ÉèÖÃ¸ÃÁĞÄÜ·ñ×÷ÎªËÑË÷ÁĞ£¬³öÏÖÔÚwhereÌõ¼şÀï
 	 */
 	public void setSearchable(boolean searchable) {
 		this.searchable = searchable;
@@ -447,21 +447,21 @@ public class ColumnModel implements CycleRecoverable{
 	}
 
 	/**
-	 * @return å–å¾—å½“å‰åˆ—æ¨¡å‹æ‰€å±çš„è¡¨æ¨¡å‹å¯¹è±¡
+	 * @return È¡µÃµ±Ç°ÁĞÄ£ĞÍËùÊôµÄ±íÄ£ĞÍ¶ÔÏó
 	 */
 	public TableModel getTableModel() {
 		return tableModel;
 	}
 
 	/**
-	 * @param tableModel è®¾ç½®å½“å‰åˆ—æ¨¡å‹æ‰€å±çš„è¡¨æ¨¡å‹å¯¹è±¡
+	 * @param tableModel ÉèÖÃµ±Ç°ÁĞÄ£ĞÍËùÊôµÄ±íÄ£ĞÍ¶ÔÏó
 	 */
 	public void setTableModel(TableModel tableModel) {
 		this.tableModel = tableModel;
 	}
 
 	/**
-	 * å®ç°è¯¥æ¥å£ä»¥é˜²æ­¢åœ¨åºåˆ—åŒ–æˆ–å…‹éš†æ—¶å¸¦æ¥çš„å¾ªç¯å¼•ç”¨é—®é¢˜
+	 * ÊµÏÖ¸Ã½Ó¿ÚÒÔ·ÀÖ¹ÔÚĞòÁĞ»¯»ò¿ËÂ¡Ê±´øÀ´µÄÑ­»·ÒıÓÃÎÊÌâ
 	 */
 	public Object onCycleDetected(Context arg0) {
 		ColumnModel temp = new ColumnModel();

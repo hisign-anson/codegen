@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE codegen-config PUBLIC "-//Apache Software Foundation//DTD Tengen Configuration 1.0//EN"
+		"codegen-config_1_0.dtd">
+<codegen-config>
+	<project name="codegen-framework" label="应用基础框架" outputEncoding="UTF-8" isDefault="true">
+		<!-- 自定义的构建配置处理器，可以在配置信息初始化、获取数据模型前后、获取输出模型前后时进行定制处理 -->
+		<buildConfigHandler class="com.xhh.codegen.handler.buildConfigHandler.FrameworkBuildConfigHandler" />
+			
+		<dataModel name="templateDirectory">template/FRAMEWORK-MAVEN</dataModel>
+		<dataModel name="appCode">CODEGEN_XHH</dataModel>
+		<dataModel name="appName">sample</dataModel>
+		<dataModel name="appLabel">构建整体项目</dataModel>
+		<dataModel name="appBaseDir">com.hisign.framework</dataModel>
+		<dataModel name="appBaseDir1">${appBaseDir?replace(".","/")}</dataModel>
+		<dataModel name="outputDirectory">e:/data/project/${appName}</dataModel>
+	</project>
+</codegen-config>

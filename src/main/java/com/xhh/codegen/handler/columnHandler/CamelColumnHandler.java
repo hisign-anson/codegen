@@ -1,6 +1,7 @@
 package com.xhh.codegen.handler.columnHandler;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.xhh.codegen.model.ColumnModel;
 import com.xhh.codegen.service.ColumnHandler;
@@ -33,6 +34,11 @@ public class CamelColumnHandler implements ColumnHandler,Serializable{
 		if ("SMALLINT".equalsIgnoreCase(col.getColumnTypeName())) {
 			col.setColumnClassName("java.lang.Short");
 			col.setColumnSimpleClassName("Short");
+		}
+		//
+		if ("DATETIME".equalsIgnoreCase(col.getColumnTypeName())) {
+			col.setColumnClassName("java.util.Date");
+			col.setColumnSimpleClassName("TIMESTAMP");
 		}
 	}
 }

@@ -26,5 +26,10 @@ public class OracleColumnHandler implements ColumnHandler{
         }  
         String ss = sb.toString().replaceAll("_","");
         col.setColumnName(ss);
+        if ("DATETIME".equalsIgnoreCase(col.getColumnTypeName())) {
+            col.setColumnClassName("java.util.Date");
+            col.setColumnTypeName("TIMESTAMP");
+            col.setColumnSimpleClassName("Date");
+        }
     }
 }

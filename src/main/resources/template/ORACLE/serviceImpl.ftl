@@ -1,5 +1,4 @@
 <#include "include/head.ftl">
-
 package ${serviceImplDir};
 
 import ${MapperDir}.${Po}Mapper;
@@ -9,7 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ${bfun}.benum.BaseEnum;
 import ${bfun}.bif.*;
+import ${bfun}.butils.JsonResultUtil;
 import ${bfun}.bexception.BusinessException;
 import ${bfun}.bmodel.*;
 
@@ -36,7 +37,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po}, ${pkcolumnSimpleCla
 		try {
 			${po}Mapper.batchInsert(list);
 		} catch (Exception e) {
-			throw new BusinessException(BusinessExceptionEnum.INSERT,e);
+			throw new BusinessException(BaseEnum.BusinessExceptionEnum.INSERT,e);
 		}
 		return JsonResultUtil.success();
 	}
@@ -47,7 +48,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po}, ${pkcolumnSimpleCla
 		try {
 			${po}Mapper.updateCustom(params);
 		} catch (Exception e) {
-			throw new BusinessException(BusinessExceptionEnum.UPDATE,e);
+			throw new BusinessException(BaseEnum.BusinessExceptionEnum.UPDATE,e);
 		}
 		return JsonResultUtil.success();
 	}
@@ -58,7 +59,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po}, ${pkcolumnSimpleCla
 		try {
 			${po}Mapper.deleteByIds(ids);
 		} catch (Exception e) {
-			throw new BusinessException(BusinessExceptionEnum.DELETE,e);
+			throw new BusinessException(BaseEnum.BusinessExceptionEnum.DELETE,e);
 		}
 		return JsonResultUtil.success();
 	}
@@ -69,7 +70,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po}, ${pkcolumnSimpleCla
 		try {
 			${po}Mapper.deleteCustom(conditions);
 		} catch (Exception e) {
-			throw new BusinessException(BusinessExceptionEnum.DELETE,e);
+			throw new BusinessException(BaseEnum.BusinessExceptionEnum.DELETE,e);
 		}
 		return JsonResultUtil.success();
 	}

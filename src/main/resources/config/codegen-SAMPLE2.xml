@@ -38,9 +38,9 @@
 		<dataModel name="api">${pname}/${pname}-api</dataModel>
 		<dataModel name="service">${pname}</dataModel>
 
-		<dataModel name="MapperDir">${NamespaceProject}.mapper</dataModel>
-		<dataModel name="ModelDir">${NamespaceProject}.${groupName}.entity</dataModel>
-		<dataModel name="serviceDir">${NamespaceProject}.${groupName}.service</dataModel>
+		<dataModel name="MapperDir">${NamespaceProject}.${groupName}.mapper</dataModel>
+		<dataModel name="ModelDir">${NamespaceProject}.${groupName}.api.entity</dataModel>
+		<dataModel name="serviceDir">${NamespaceProject}.${groupName}.api.service</dataModel>
 		<dataModel name="serviceImplDir">${NamespaceProject}.${groupName}.service.impl</dataModel>
 
 		<!-- 输出  -->

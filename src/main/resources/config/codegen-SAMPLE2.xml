@@ -19,14 +19,15 @@
 		<buildConfigHandler class="com.xhh.codegen.handler.buildConfigHandler.SampleBuildConfigHandler" />
 
 		<dataModel name="templateDirectory">template/ORACLE</dataModel>
-		<dataModel name="outputDirectory">d:/xhh/Project-Workspaces/idea/base_framework/Server</dataModel>
+		<dataModel name="outputDirectory">d:/xhh/test</dataModel>
 		<dataModel name="NamespaceProject">com.hisign.${projectName}</dataModel>
 
 		<!-- 自定义变量 -->
-		<dataModel name="NamespaceDomain" >${NamespaceProject}.${groupName}.entity</dataModel>
+		<dataModel name="NamespaceDomain" >${NamespaceProject}.${groupName}.api.entity</dataModel>
+		<dataModel name="NamespaceModel" >${NamespaceProject}.${groupName}.api.model</dataModel>
 		<dataModel name="NamespaceDao">${NamespaceProject}.${groupName}.mapper</dataModel>
-		<dataModel name="NamespaceService">${NamespaceProject}.${groupName}.service</dataModel>
-		<dataModel name="NamespaceServiceImpl">${NamespaceProject}.service.${groupName}.impl</dataModel>
+		<dataModel name="NamespaceService">${NamespaceProject}.${groupName}.api.service</dataModel>
+		<dataModel name="NamespaceServiceImpl">${NamespaceProject}.${groupName}.service.impl</dataModel>
 		<!-- 对应bfun项目中的类，尽量别改 -->
 		<dataModel name="bfun">com.hisign.bfun</dataModel>
 		<dataModel name="Conditions">${bfun}.bmodel.Conditions</dataModel>
@@ -40,12 +41,17 @@
 
 		<dataModel name="MapperDir">${NamespaceProject}.${groupName}.mapper</dataModel>
 		<dataModel name="ModelDir">${NamespaceProject}.${groupName}.api.entity</dataModel>
+		<dataModel name="VoDir">${NamespaceProject}.${groupName}.api.model</dataModel>
 		<dataModel name="serviceDir">${NamespaceProject}.${groupName}.api.service</dataModel>
 		<dataModel name="serviceImplDir">${NamespaceProject}.${groupName}.service.impl</dataModel>
+		<dataModel name="restDir">${NamespaceProject}.${groupName}.rest</dataModel>
 
 		<!-- 输出  -->
 		<output name="domain" type="file">
 			/${domain}/src/main/java/${ModelDir?replace(".","/")}/${moduleName?cap_first}.java
+		</output>
+		<output name="model" type="file">
+			/${domain}/src/main/java/${VoDir?replace(".","/")}/${moduleName?cap_first}Model.java
 		</output>
 		<output name="daoxml" type="file">
 			/${service}/src/main/resources/mybatis/${moduleName?cap_first}Mapper.xml
@@ -58,6 +64,9 @@
 		</output>
 		<output name="service" type="file">
 			/${api}/src/main/java/${serviceDir?replace(".","/")}/${moduleName?cap_first}Service.java
+		</output>
+		<output name="rest" type="file">
+			/${service}/src/main/java/${restDir?replace(".","/")}/${moduleName?cap_first}Rest.java
 		</output>
 	</project>
 </codegen-config>

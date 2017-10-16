@@ -19,7 +19,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="${MapperDir}.${Po}Mapper">
-	<resultMap type="${entity}" id="BaseResultMap">
+	<resultMap type="${NamespaceModel}.${Po}Model" id="BaseResultMap">
 	  <#list table.columnList as column>
       <result column="${column.fieldName}" property="${column.columnName}" jdbcType="${column.columnTypeName}"/>
 	  </#list>

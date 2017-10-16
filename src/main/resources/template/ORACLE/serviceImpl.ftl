@@ -3,6 +3,7 @@ package ${serviceImplDir};
 
 import ${MapperDir}.${Po}Mapper;
 import ${ModelDir}.${Po};
+import ${ModelDir}.${Po}Model;
 import ${serviceDir}.${Po}Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,13 @@ import ${bfun}.bmodel.*;
  *
  */
 @Service("${po}Service")
-public class ${Po}ServiceImpl extends BaseServiceImpl<${Po}, ${pkcolumnSimpleClassName}> implements ${Po}Service{
+public class ${Po}ServiceImpl extends BaseServiceImpl<${Po},${Po}Model, ${pkcolumnSimpleClassName}> implements ${Po}Service{
 
 	@Autowired
 	protected ${Po}Mapper ${po}Mapper;
 	
 	@Override
-	protected BaseMapper<${Po}, ${pkcolumnSimpleClassName}> initMapper() {
+	protected BaseMapper<${Po}, ${Po}Model, ${pkcolumnSimpleClassName}> initMapper() {
 		return ${po}Mapper;
 	}
 	

@@ -10,12 +10,11 @@
     </#if>
 </#list>
 
-package ${ModelDir};
+package ${VoDir};
 
 import java.io.Serializable;
+import com.alibaba.fastjson.JSON;
 import java.util.*;
-import ${bfun}.bannotation.*;
-import com.hisign.framework.common.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -25,16 +24,11 @@ import io.swagger.annotations.ApiModelProperty;
  *
  */
 @ApiModel(value = "${tableLabel}")
-@Table(value="${table.tableName}")
-public class ${Po} extends BaseModel implements Serializable {
+public class ${Po}Model implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	<#list table.columnList as column>
-	<#if (column.primaryKey && column.columnName?lower_case='id')>
-	@PK(value="${column.fieldName}")
-	<#else>
-	@Column(value="${column.fieldName}")
-	</#if>
     @ApiModelProperty(value = "${column.columnLabel}")
 	private ${column.columnSimpleClassName} ${column.columnName?uncap_first}; //${column.columnLabel}
 	
@@ -43,7 +37,7 @@ public class ${Po} extends BaseModel implements Serializable {
 	/**
 	 *默认空构造函数
 	 */
-	public ${Po}() {
+	public ${Po}Model() {
 		super();
 	}
 	 
@@ -62,48 +56,8 @@ public class ${Po} extends BaseModel implements Serializable {
 	}
 	</#list>
 	
-	public static String getTbName() {
-		return "${table.tableName}";
-	}
-	
 	@Override
 	public String toString(){
-		StringBuilder builder = new StringBuilder();
-		builder.append("${Po} [")
-		<#list table.columnList as column>
-		<#if column_index==0>
-		.append("${column.columnName}=").append(this.get${column.columnName?cap_first}())
-		<#else>
-		.append(",${column.columnName}=").append(this.get${column.columnName?cap_first}())
-		</#if>
-		</#list>
-		.append("]");
-		return builder.toString();
-	}
-	
-	public static enum ${Po}Enum{
-		<#list table.columnList as column>
-		<#if !column_has_next>
-		${column.columnName}("${column.fieldName}","${column.columnLabel}");
-		<#else>
-		${column.columnName}("${column.fieldName}","${column.columnLabel}"),
-		</#if>
-		</#list>
-		
-		private String fieldName;
-		private String remark;
-		
-		${Po}Enum(String fieldName,String remark){
-			this.fieldName = fieldName;
-			this.remark = remark;
-		}
-		
-		public String get(){
-			return this.fieldName;
-		}
-		
-		public String getRemark(){
-			return this.remark;
-		}
+		return JSON.toJSONString(this);
 	}
 }

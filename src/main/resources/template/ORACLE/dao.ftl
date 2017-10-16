@@ -10,6 +10,6 @@ import ${ModelDir}.${Po};
  * @author ${copyright.author}
  *
  */
-public interface ${Po}Mapper extends BaseMapper<${Po},${pkcolumnSimpleClassName}> {
+public interface ${Po}Mapper extends BaseMapper<${Po},${Po}Model,${pkcolumnSimpleClassName}> {
 
 }

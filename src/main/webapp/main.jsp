@@ -1,7 +1,6 @@
 <%@page import="java.net.URLDecoder"%>
 <%@page import="com.xhh.codegen.service.DbProvider"%>
 <%@page import="java.net.URLEncoder"%>
-<%@page import="java.io.File"%>
 <%@page import="com.xhh.codegen.utils.ZipUtil"%>
 <%@page import="com.xhh.codegen.utils.FileUtil"%>
 <%@page import="com.xhh.codegen.model.InOutType"%>
@@ -16,6 +15,7 @@
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="com.xhh.codegen.model.TableModel"%>
 <%@page import="com.xhh.codegen.utils.BuildHelper"%>
+<%@ page import="java.io.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -130,8 +130,27 @@ response.setCharacterEncoding("UTF-8");
 			String filedisplay = projectName+".zip";//下载文件时显示的文件保存名称
 			String filenamedisplay = URLEncoder.encode(filedisplay,"UTF-8");
 			response.addHeader("Content-Disposition","attachment;filename=" + filenamedisplay);
-			 
-			try
+
+			ServletOutputStream ou = response.getOutputStream();
+			BufferedInputStream bis = null;
+			BufferedOutputStream bos = null;
+			try {
+				bis = new BufferedInputStream(new FileInputStream(zipFilename));
+				bos = new BufferedOutputStream(ou);
+				byte[] buff = new byte[2048];
+				int bytesRead;
+				while (-1 != (bytesRead = bis.read(buff, 0, buff.length))) {
+					bos.write(buff, 0, bytesRead);
+				}
+			} catch (final IOException e) {
+				throw e;
+			} finally {
+				if (bis != null)
+					bis.close();
+				if (bos != null)
+					bos.close();
+			}
+			/*try
 			{
 			RequestDispatcher dis = application.getRequestDispatcher(filedownload);
 			if(dis!= null)
@@ -149,7 +168,7 @@ response.setCharacterEncoding("UTF-8");
 			 	new File(zipFilename).delete();
 			}
 			out.clear();   
-			out = pageContext.pushBody(); 
+			out = pageContext.pushBody(); */
 			//return;
 		}
 	}else if("cleanProject".equals(method)){

@@ -21,6 +21,7 @@
 		<dataModel name="templateDirectory">template/ORACLE</dataModel>
 		<!--<dataModel name="outputDirectory">d:/xhh/Project-Workspaces/idea/base_framework/Server</dataModel>-->
 		<dataModel name="outputDirectory">/home/appuser/project/codegen/data/${projectName}</dataModel>
+		<!--<dataModel name="outputDirectory">d:/xhh/test/${projectName}</dataModel>-->
 		<dataModel name="NamespaceProject">com.hisign.${projectName}</dataModel>
 
 		<!-- 自定义变量 -->

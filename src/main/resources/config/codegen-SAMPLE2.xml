@@ -6,9 +6,9 @@
 		<dbProvider class="com.xhh.codegen.service.impl.MysqlProvider">
 			<jdbcConfig>
 				<driver>com.mysql.jdbc.Driver</driver>
-				<url>jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</url>
+				<url>jdbc:mysql://192.168.1.85:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</url>
 				<user>root</user>
-				<password>root</password>
+				<password>hisign.com.cn</password>
 			</jdbcConfig>
 			<columnHandler class="com.xhh.codegen.service.impl.DataTypeConverterForJava"/>
 			<columnHandler class="com.xhh.codegen.handler.columnHandler.OracleColumnHandler"/>
@@ -19,7 +19,7 @@
 		<buildConfigHandler class="com.xhh.codegen.handler.buildConfigHandler.SampleBuildConfigHandler" />
 
 		<dataModel name="templateDirectory">template/ORACLE</dataModel>
-		<dataModel name="outputDirectory">d:/xhh/test</dataModel>
+		<dataModel name="outputDirectory">d:/xhh/Project-Workspaces/idea/base_framework/Server</dataModel>
 		<dataModel name="NamespaceProject">com.hisign.${projectName}</dataModel>
 
 		<!-- 自定义变量 -->

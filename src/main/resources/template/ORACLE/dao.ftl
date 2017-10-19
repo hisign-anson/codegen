@@ -4,6 +4,7 @@ package ${MapperDir};
 
 import ${bfun}.bif.BaseMapper;
 import ${ModelDir}.${Po};
+import ${VoDir}.${Po}Model;
 
  /**
  * 《${tableLabel}》 数据访问接口

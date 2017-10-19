@@ -32,7 +32,7 @@
 	     <trim suffixOverrides="and">
 	     <foreach collection="o.criteriaWithoutValue" item="oc" separator="and"><@jspEl 'oc'/> and </foreach>
 	     <foreach collection="o.criteriaWithSingleValue" item="os"><@jspEl 'os.condition'/> <@mapperEl 'os.val'/> and </foreach>
-	     <foreach collection="o.criteriaWithBetweenValue" item="ob"><@jspEl 'ob.condition'/> <@mapperEl 'ob.val[0]'/> and <@mapperEl 'ob.val[1]'/> and</foreach>
+	     <foreach collection="o.criteriaWithBetweenValue" item="ob"><@jspEl 'ob.condition'/> <@mapperEl 'ob.val[0]'/> and <@mapperEl 'ob.val[1]'/> and </foreach>
 	     <foreach collection="o.criteriaWithListValue" item="ol"><@jspEl 'ol.condition'/>
 	       <foreach collection="ol.val" open="(" close=")" item="olv" separator=","><@mapperEl 'olv'/></foreach>
 	     </foreach>
@@ -149,11 +149,12 @@
             </#if>
 		    </#list>
         </trim>
+        <#assign hasData=false>
         <#list table.columnList as column>
-	    <#if column.primaryKey=true>
-        WHERE n_id=<@mapperEl column.columnName?uncap_first />
-        </#if>
-	    </#list>
+            <#if column.primaryKey>
+            ${column.fieldName} = ${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}<#if hasData==false><#assign hasData=true><#else> AND </#if>
+            </#if>
+        </#list>
     </update>
 
     <update id="updateCustom" parameterType="${UpdateParams}">
@@ -171,21 +172,19 @@
     
     <!-- 按Id删除 -->
     <delete id="deleteById" parameterType="${idJavaType}">
-        DELETE FROM ${tableName}
-        <trim prefix="WHERE" prefixOverrides="AND | OR">
-            <#list table.columnList as column>
-			<#if column.primaryKey>
-            AND ${column.fieldName} = <@mapperEl 'id'/>
-            </#if>
-			</#list>
-        </trim>
+        DELETE FROM ${tableName} WHERE
+        <#list table.columnList as column>
+        <#if column.primaryKey>
+         ${column.fieldName} = ${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}
+        </#if>
+        </#list>
     </delete>
 
     <!--根据list(ids)删除对象-->
     <delete id="deleteByIds">
         DELETE FROM ${tableName}
         WHERE id in
-        <foreach collection="list" item="id" open="(" separator="," close=")"><@mapperEl 'id'/></foreach>
+        <foreach collection="list" item="id" open="(" separator="," close=")"><@jspEl 'id'/></foreach>
     </delete>
 
 	<!--根据自定义删除对象-->
@@ -198,8 +197,12 @@
         SELECT  
 	    <include refid="Base_Column_List" />
         FROM ${tableName} 
-        WHERE 
-        ${pkName} = <@mapperEl 'id'/>
+        WHERE
+        <#list table.columnList as column>
+        <#if column.primaryKey>
+        ${column.fieldName} = ${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}
+        </#if>
+        </#list>
         and rownum = 1 
     </select>
     
@@ -223,7 +226,7 @@
         WHERE 1 = 1
         <#list table.columnList as column>
 	     	<if test="${column.columnName} != null <#if column.columnClassName=='java.lang.String'> and ${column.columnName} != '' </#if>">
-		   	 and ${column.fieldName}=${'#'}{${column.columnName?uncap_first}}
+                and ${column.fieldName}=${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}
 		    </if>
 	 	</#list>
     </select>
@@ -276,13 +279,13 @@
         <if test="orderByClause!=null"><@jspEl 'orderByClause'/></if> 
         
         ) t ) a
-	      <if test="end !=null and end !=0">
-	        where rownum <![CDATA[<=]]> <@jspEl 'end'/>
-	      </if>
-	      ) p
-	    <if test="begin !=null and begin !=0">
-	      where rn >= <@jspEl 'begin'/>
-	    </if>
+        <if test="end !=null and end !=0">
+            where rownum <![CDATA[<=]]> ${"#{"}end,jdbcType=INTEGER}
+        </if>
+        ) p
+        <if test="begin !=null and begin !=0">
+            where rn >= ${"#{"}begin,jdbcType=INTEGER}
+        </if>
     </select>
 
     <select id="findCount" parameterType="${Conditions}" resultType="java.lang.Long">

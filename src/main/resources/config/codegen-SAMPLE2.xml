@@ -2,7 +2,7 @@
 <!DOCTYPE codegen-config PUBLIC "-//Apache Software Foundation//DTD Tengen Configuration 1.0//EN"
 		"codegen-config_1_0.dtd">
 <codegen-config>
-	<project name="framework" label="刑侦" outputEncoding="UTF-8" >
+	<project name="xingzhen" label="刑侦" outputEncoding="UTF-8" >
 		<dbProvider class="com.xhh.codegen.service.impl.MysqlProvider">
 			<jdbcConfig>
 				<driver>com.mysql.jdbc.Driver</driver>
@@ -19,8 +19,8 @@
 		<buildConfigHandler class="com.xhh.codegen.handler.buildConfigHandler.SampleBuildConfigHandler" />
 
 		<dataModel name="templateDirectory">template/ORACLE</dataModel>
-		<!--<dataModel name="outputDirectory">d:/xhh/Project-Workspaces/idea/base_framework/Server</dataModel>-->
-		<dataModel name="outputDirectory">/home/appuser/project/codegen/data/${projectName}</dataModel>
+		<dataModel name="outputDirectory">d:/xhh/Project-Workspaces/idea/base_framework/Server</dataModel>
+		<!--<dataModel name="outputDirectory">/home/appuser/project/codegen/data/${projectName}</dataModel>-->
 		<!--<dataModel name="outputDirectory">d:/xhh/test/${projectName}</dataModel>-->
 		<dataModel name="NamespaceProject">com.hisign.${projectName}</dataModel>
 
@@ -35,11 +35,11 @@
 		<dataModel name="Conditions">${bfun}.bmodel.Conditions</dataModel>
 		<dataModel name="UpdateParams">${bfun}.bmodel.UpdateParams</dataModel>
 
-		<dataModel name="pname">server-${groupName}</dataModel>
+		<dataModel name="pname">xingzhen-${groupName}</dataModel>
 
 		<dataModel name="domain">${pname}/${pname}-api</dataModel>
 		<dataModel name="api">${pname}/${pname}-api</dataModel>
-		<dataModel name="service">${pname}</dataModel>
+		<dataModel name="service">${pname}/${pname}-service</dataModel>
 
 		<dataModel name="MapperDir">${NamespaceProject}.${groupName}.mapper</dataModel>
 		<dataModel name="ModelDir">${NamespaceProject}.${groupName}.api.entity</dataModel>

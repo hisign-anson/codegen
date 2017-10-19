@@ -15,7 +15,7 @@ package ${ModelDir};
 import java.io.Serializable;
 import java.util.*;
 import ${bfun}.bannotation.*;
-import com.hisign.framework.common.model.BaseModel;
+import ${NamespaceProject}.common.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

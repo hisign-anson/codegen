@@ -152,7 +152,7 @@
         <#assign hasData=false>
         <#list table.columnList as column>
             <#if column.primaryKey>
-            ${column.fieldName} = ${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}<#if hasData==false><#assign hasData=true><#else> AND </#if>
+            WHERE ${column.fieldName} = ${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}<#if hasData==false><#assign hasData=true><#else> AND </#if>
             </#if>
         </#list>
     </update>

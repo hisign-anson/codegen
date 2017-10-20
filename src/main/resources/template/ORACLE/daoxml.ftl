@@ -300,7 +300,7 @@
         <include refid="Conditions_Where_Clause" />
     </select>
 
-    <select id="selectMaxId" resultType="${idJavaType}">
+    <select id="findMaxId" resultType="${idJavaType}">
         SELECT
         MAX(id)
         FROM ${tableName}

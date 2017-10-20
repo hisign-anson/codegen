@@ -3,7 +3,7 @@
 package ${serviceDir};
 
 import ${ModelDir}.${Po};
-import ${ModelDir}.${Po}Model;
+import ${VoDir}.${Po}Model;
 import ${bfun}.bif.BaseService;
 
  /**

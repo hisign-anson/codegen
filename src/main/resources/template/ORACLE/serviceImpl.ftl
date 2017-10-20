@@ -3,7 +3,7 @@ package ${serviceImplDir};
 
 import ${MapperDir}.${Po}Mapper;
 import ${ModelDir}.${Po};
-import ${ModelDir}.${Po}Model;
+import ${VoDir}.${Po}Model;
 import ${serviceDir}.${Po}Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -67,10 +67,7 @@
         </#list>
     </sql>
     
-    <insert id="insert" keyProperty="${primaryKey}" useGeneratedKeys="true" parameterType="${entity}">
-    	<selectKey resultType="${idJavaType}" order="BEFORE" keyProperty="${primaryKey}">
-        SELECT sys_guid() from DUAL
-    	</selectKey>
+    <insert id="insert" parameterType="${entity}">
         INSERT INTO ${tableName} (
 		    <#list table.columnList as column>
 		    ${column.fieldName}<#if column_has_next>,</#if>
@@ -82,10 +79,7 @@
         )
     </insert>
     
-    <insert id="insertNotNull" keyProperty="${primaryKey}" useGeneratedKeys="true" parameterType="${entity}">
-    <selectKey resultType="${idJavaType}" order="BEFORE" keyProperty="${primaryKey}">
-        SELECT sys_guid() from DUAL
-    </selectKey>
+    <insert id="insertNotNull" parameterType="${entity}">
     insert into ${tableName}
     <trim prefix="(" suffix=")" suffixOverrides=",">
      <#list table.columnList as column>
@@ -207,7 +201,8 @@
     </select>
     
     <select id="findByEntity" parameterType="${entity}" resultMap="BaseResultMap">
-        SELECT  
+        SELECT * FROM (
+        SELECT
 	    <include refid="Base_Column_List" />
         FROM ${tableName} 
         WHERE 1 = 1
@@ -216,6 +211,13 @@
 		   	 and ${column.fieldName}=${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}
 		    </if>
 	 	</#list>
+        <if test="orderBy!=null and orderBy!=''">
+            order by ${'$'}{orderBy}
+            <if test="isDesc==true">
+                DESC
+            </if>
+        </if>
+        )
 	 	and rownum = 1 
     </select>
     
@@ -229,6 +231,12 @@
                 and ${column.fieldName}=${'#'}{${column.columnName?uncap_first},jdbcType=${column.columnTypeName}}
 		    </if>
 	 	</#list>
+        <if test="orderBy!=null and orderBy!=''">
+            order by ${'$'}{orderBy}
+            <if test="isDesc==true">
+                DESC
+            </if>
+        </if>
     </select>
     
     <select id="findByCondition" parameterType="${Conditions}" resultMap="BaseResultMap">
@@ -256,7 +264,6 @@
 	    select
 	      rownum,rownum as rn,a.* from (
 	      select t.* from (
-	      
         SELECT
         <if test="distinct!=false">
         DISTINCT
@@ -305,5 +312,7 @@
         MAX(id)
         FROM ${tableName}
     </select>
+
+    <!--========================================以上为生成器生成,新加代码请在下面书写============================================================-->
    
 </mapper>

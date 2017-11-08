@@ -31,7 +31,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
 
     public void afterParseDataModel(BuildConfig buildConfig) {
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
-        //»ñÈ¡Êä³öÎÄ¼þ¼Ð
+        //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
         String outDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_OUTPUTDIRECTORY);
         /*if (OSinfo.isWindows()) {
             outDir = "f:" + outDir;
@@ -42,28 +42,28 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
 
     public void afterParseOutputModel(BuildConfig buildConfig) {
         ProjectBuildConfig pbConfig = (ProjectBuildConfig) buildConfig;
-        //»ñÈ¡Ä£°åÎÄ¼þ¼Ð
+        //ï¿½ï¿½È¡Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
         String tplDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_TEMPLATEDIRECTORY);
         tplDir = new File(ClassLoaderUtil.getResource(tplDir).getFile()).getAbsolutePath();
         tplDir = FilenameUtil.normalize(tplDir + File.separatorChar);
 
-        //»ñÈ¡Ä£°åÎÄ¼þÁÐ±í
+        //ï¿½ï¿½È¡Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð±ï¿½
         List<String> tplFileList = new ArrayList<String>();
         getAllFiles(new File(tplDir), tplFileList);
 
-        //»ñÈ¡Êä³öÎÄ¼þ¼Ð
+        //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
         String outDir = (String) pbConfig.getDataModel().get(ProjectBuildConfig.DMK_OUTPUTDIRECTORY);
 
-        //ÏÈÇåÀíÊä³öÎÄ¼þ¼Ð£¬·ÀÖ¹´ò°üÏÂÔØÊ±°üº¬ÀúÊ·ÎÄ¼þ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½Ä¼ï¿½
         File outDirFile = new File(outDir);
         if (outDirFile.exists()) {
             FileUtil.deleteDirectory(outDirFile);
         }
 
-        //ÏÈ°ÑÄ£°åÎÄ¼þ¼Ð¿½±´µ½Ä¿±êÎÄ¼þ¼Ð£¬È»ºóÔÙ½âÎöÊä³öÌæ»»
+        //ï¿½È°ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð£ï¿½È»ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»
         //FileUtil.copyFolder(tplDir, outDir);
 
-        //¸ù¾ÝÄ£°åÎÄ¼þ½á¹¹×é×°Í¬½á¹¹µÄÊä³öÎÄ¼þÁÐ±í
+        //ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½á¹¹ï¿½ï¿½×°Í¬ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð±ï¿½
         TemplateModel templateModel;
         OutputModel outputModel;
         Map<String, OutputModel> outputModelMap = pbConfig.getOutputModel();
@@ -75,7 +75,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
             templateModel.setTemplate(tplFile);
 
             String outFile = outDir + StringUtils.removeStart(tplFile, tplDir);
-            //½âÎö´øÓÐ¹¹½¨²ÎÊýµÄ×Ö·û´®
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
             outFile = BuilderHelper.parseBuildParams(pbConfig.getDataModel(), outFile);
             outputModel = new OutputModel(outFile);
             outputModel.setType(InOutType.FILE);
@@ -88,19 +88,19 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
             }
         }
 
-        //²»ÐèÒª½âÎö¹¹½¨µÄÎÄ¼þÖ±½Ó¸´ÖÆ
+        //ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ö±ï¿½Ó¸ï¿½ï¿½ï¿½
         for (Entry<String, OutputModel> entry : excludeOutputMap.entrySet()) {
             File file = new File(entry.getValue().getOutput());
             if (file.getParentFile().exists() == false) {
                 file.getParentFile().mkdirs();
             }
             String outputPath = entry.getValue().getOutput();
-            //ÌØÊâÎÄ¼þ´¦Àí
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
             if (outputPath.endsWith("gitignore") && !outputPath.endsWith(".gitignore")) {
                 outputPath = outputPath.replace("gitignore", ".gitignore");
             }
             FileUtil.copyFile(entry.getValue().getTemplateModel().getTemplate(), outputPath);
-            System.out.println("¸´ÖÆÔ­Ê¼ÎÄ¼þ=" + entry.getValue().getOutput());
+            System.out.println("ï¿½ï¿½ï¿½ï¿½Ô­Ê¼ï¿½Ä¼ï¿½=" + entry.getValue().getOutput());
         }
     }
 
@@ -131,7 +131,7 @@ public class FrameworkBuildConfigHandler implements BuildConfigHandler, Serializ
     }
 
     /**
-     * ÊÇ·ñ°üº¬ÎÄ¼þ£¬·µ»ØtrueÔò°üº¬£¬·ñÔò²»°üº¬
+     * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò²»°ï¿½ï¿½ï¿½
      *
      * @param outputModel
      * @return

@@ -33,7 +33,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po},${Po}Model, ${pkcolu
 	}
 	
 	@Override
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public JsonResult add(List<${Po}> list) throws BusinessException {
 		try {
 			${po}Mapper.batchInsert(list);
@@ -44,7 +44,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po},${Po}Model, ${pkcolu
 	}
 	
 	@Override
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public JsonResult update(UpdateParams params) throws BusinessException {
 		try {
 			${po}Mapper.updateCustom(params);
@@ -55,7 +55,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po},${Po}Model, ${pkcolu
 	}
 
 	@Override
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public JsonResult delByIds(List<${pkcolumnSimpleClassName}> ids) throws BusinessException {
 		try {
 			${po}Mapper.deleteByIds(ids);
@@ -66,7 +66,7 @@ public class ${Po}ServiceImpl extends BaseServiceImpl<${Po},${Po}Model, ${pkcolu
 	}
 
 	@Override
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public JsonResult delBy(Conditions conditions) throws BusinessException {
 		try {
 			${po}Mapper.deleteCustom(conditions);
